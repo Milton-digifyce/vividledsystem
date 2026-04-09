@@ -353,6 +353,86 @@
             background-color: #3b82f6;
             transform: scale(1.2);
         }
+
+        :root {
+            /* Fallback definition of your neon colors in case they aren't in your main CSS */
+            --neon-blue: #38bdf8;
+            /* Sky blue */
+            --neon-pink: #ec4899;
+            /* Pink */
+        }
+
+        /* Gradient for Material Icons */
+        .icon-gradient {
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Gradient Border for Cards */
+        .card-gradient-border {
+            position: relative;
+            background-clip: padding-box;
+            border: 1px solid transparent;
+            /* The transparent border acts as the spacer */
+        }
+
+        .card-gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            margin: -1px;
+            /* Pulls the pseudo-element out by exactly 1px to create the border */
+            border-radius: inherit;
+        }
+
+        .text-rotator {
+            display: inline-flex;
+            overflow: hidden;
+            height: 1.2em;
+            vertical-align: bottom;
+        }
+
+        .text-rotator-inner {
+            display: flex;
+            flex-direction: column;
+            animation: rotateText 6s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+        }
+
+        .text-rotator-inner span {
+            height: 1.2em;
+            line-height: 1.2em;
+            display: block;
+            /* Changed to block so the gradient applies cleanly */
+        }
+
+        @keyframes rotateText {
+
+            0%,
+            22% {
+                transform: translateY(0);
+            }
+
+            33%,
+            55% {
+                transform: translateY(-1.2em);
+            }
+
+            66%,
+            88% {
+                transform: translateY(-2.4em);
+            }
+
+            100% {
+                transform: translateY(-3.6em);
+            }
+        }
     </style>
 
 </head>
@@ -407,59 +487,43 @@
 
         <!-- Section 1: Hero -->
 
-        <section
-            class="relative min-h-[700px] md:min-h-[921px] flex items-center px-4 md:px-8 overflow-hidden py-12 md:py-0">
+        <section class="relative py-16 md:py-24 px-4 md:px-8 overflow-hidden">
 
             <div class="absolute inset-0 z-0">
-
                 <div class="absolute inset-0 bg-gradient-to-b from-surface/20 via-surface to-surface"></div>
-
                 <img class="w-full h-full object-cover opacity-40"
                     data-alt="abstract architectural led screen installation with vibrant neon waves and cinematic reflections in a dark industrial space"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfuahd_p5LyvgbTjDFjEszXq5Ea3KFJdjrmoYyfbQchYF0knQW820Ifvo9ijfSfmaM3CBVVkqOq6dXDiBfipKvfmQMlVV5df65XxFSoEB5D9Aahz2c7moZk5YFbmusN8N25TxhIkpF9e4L5ELdsxtZdUJinJKLlXhmFspWAaqZun1MrrGg6_yLg1CKVRjxUlxYc3gcATuVdzvlwtHWHGOAvtGYVJ92xmsLT7BP463gG6Dhz5sBwifwdlYK5ewEkasLhXShvs2xbEU" />
-
             </div>
 
             <div class="relative z-10 max-w-5xl mx-auto text-center space-y-4 md:space-y-8">
 
-                <div
-                    class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs uppercase tracking-widest text-on-surface-variant">
+                <h1 class="text-4xl sm:text-5xl md:text-8xl font-bold tracking-tighter leading-[1.1]">
+                    <span class="inline-block pr-[0.1em]">India's Most Trusted LED</span> <br />
 
-                    <span class="w-2 h-2 rounded-full spectral-gradient"></span>
+                    <span class="text-rotator inline-block pr-[0.1em]">
+                        <span class="text-rotator-inner">
+                            <span class="text-gradient pb-2">Creative</span>
+                            <span class="text-gradient pb-2">Custom</span>
+                            <span class="text-gradient pb-2">Outdoor</span>
+                            <span class="text-gradient pb-2" aria-hidden="true">Creative</span>
+                        </span>
+                    </span> <br />
 
-                    Custom Outdoor Creative
-
-                </div>
-
-                <h1 class="text-4xl sm:text-5xl md:text-8xl font-black tracking-tighter leading-[1.1] italic">
-
-                    <span class="inline-block pr-[0.1em]">India's Most Trusted</span> <br />
-
-                    <span class="text-gradient inline-block pr-[0.1em]">LED Expert</span>
-
+                    <span class="inline-block pr-[0.1em]">Expert</span>
                 </h1>
 
                 <div class="h-1 w-48 mx-auto spectral-gradient rounded-full"></div>
 
                 <p class="text-xl text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed">
-
-                    Pioneering precision technology and visual brilliance. We don't just
-
-                    build screens; we architect unforgettable experiences.
-
+                    Premium LED display solutions for every space
                 </p>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4 w-full px-4 sm:px-0">
-
                     <button onclick="openPopupForm()"
                         class="w-full sm:w-auto px-8 py-4 bg-white text-surface font-bold rounded-lg hover:bg-primary transition-colors">
-
-                        Start Project
-
+                        Get a Quote Today!
                     </button>
-
-
-
                 </div>
 
             </div>
@@ -468,7 +532,7 @@
 
         <!-- Section 2: Solutions -->
 
-        <section class="py-16 md:py-32 px-4 md:px-8 max-w-7xl mx-auto">
+        <section class="py-10 md:py-20 px-4 md:px-8 max-w-7xl mx-auto">
 
             <div class="grid md:grid-cols-2 gap-8 md:gap-12">
 
@@ -544,7 +608,7 @@
 
         <section class="py-12 md:py-20 bg-surface-container-low">
             <div class="max-w-7xl mx-auto px-4 md:px-8">
-                <p class="text-center text-xs uppercase tracking-widest text-on-surface-variant mb-12">
+                <p class="text-center text-lg uppercase tracking-widest text-on-surface-variant mb-12">
                     Trusted by Global Giants
                 </p>
 
@@ -566,103 +630,163 @@
 
         <!-- Section 4: Industry -->
 
-        <section id="projects" class="py-16 md:py-32 px-4 md:px-8">
-
-            <div class="max-w-7xl mx-auto space-y-8 md:space-y-16">
+        <section id="projects" class="py-16 md:py-32 px-4 md:px-8 z-10 relative">
+            <div class="max-w-7xl mx-auto space-y-10 md:space-y-16">
 
                 <div class="space-y-4">
-
-                    <h2 class="text-3xl md:text-5xl font-black tracking-tight">
-
-                        Tailored for every <span class="text-gradient inline-block pr-[0.1em]">Industry</span>
-
+                    <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white">
+                        Tailored for every <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-sky-400 inline-block pr-[0.1em]">Industry</span>
                     </h2>
-
                     <p class="text-on-surface-variant max-w-xl">
-
-                        From retail therapy to high-stakes control rooms, our tech scales
-
-                        to your specific sectoral needs.
-
+                        From retail therapy to high-stakes control rooms, our tech scales to your specific sectoral
+                        needs.
                     </p>
-
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
                     <div
-                        class="bg-surface-container p-8 rounded-xl border border-white/5 hover:border-primary/20 transition-all group">
-
-                        <span class="material-symbols-outlined text-primary mb-4 text-4xl"
-                            style="font-variation-settings: &quot;FILL&quot; 1">shopping_bag</span>
-
-                        <h4 class="font-bold text-lg mb-2">Retail</h4>
-
-                        <p class="text-sm text-on-surface-variant">
-
-                            Elevate store-front appeal with dynamic visual merchandising.
-
+                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
+                        <span
+                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
+                            style="font-variation-settings: 'FILL' 1;">storefront</span>
+                        <h4 class="font-bold text-lg mb-3 text-white">Retail</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Transform your retail space with vibrant LED lighting and dynamic displays that captivate
+                            customers and drive sales. Ideal for showrooms, stores, malls, and shopping centers.
                         </p>
-
                     </div>
 
                     <div
-                        class="bg-surface-container p-8 rounded-xl border border-white/5 hover:border-secondary/20 transition-all group">
-
-                        <span class="material-symbols-outlined text-secondary mb-4 text-4xl"
-                            style="font-variation-settings: &quot;FILL&quot; 1">monitor_heart</span>
-
-                        <h4 class="font-bold text-lg mb-2">Healthcare</h4>
-
-                        <p class="text-sm text-on-surface-variant">
-
-                            Critical data visualization for modern medical facilities.
-
+                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
+                        <span
+                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
+                            style="font-variation-settings: 'FILL' 1;">school</span>
+                        <h4 class="font-bold text-lg mb-3 text-white">Education</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Create engaging and energy-efficient learning environments with LED lighting and digital
+                            displays. Perfect for classrooms, campuses, libraries, and lecture halls to enhance focus
+                            and communication.
                         </p>
-
                     </div>
 
                     <div
-                        class="bg-surface-container p-8 rounded-xl border border-white/5 hover:border-tertiary/20 transition-all group">
-
-                        <span class="material-symbols-outlined text-tertiary mb-4 text-4xl"
-                            style="font-variation-settings: &quot;FILL&quot; 1">school</span>
-
-                        <h4 class="font-bold text-lg mb-2">Education</h4>
-
-                        <p class="text-sm text-on-surface-variant">
-
-                            Interactive and immersive learning for modern campuses.
-
+                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
+                        <span
+                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
+                            style="font-variation-settings: 'FILL' 1;">movie</span>
+                        <h4 class="font-bold text-lg mb-3 text-white">Virtual</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Transform your creative workflow with cutting-edge virtual production solutions that blend
+                            live-action footage with real-time CGI. Perfect for film, TV, advertising, and immersive
+                            media.
                         </p>
-
                     </div>
 
                     <div
-                        class="bg-surface-container p-8 rounded-xl border border-white/5 hover:border-primary/20 transition-all group">
-
-                        <span class="material-symbols-outlined text-primary mb-4 text-4xl"
-                            style="font-variation-settings: &quot;FILL&quot; 1">flight_takeoff</span>
-
-                        <h4 class="font-bold text-lg mb-2">Transport</h4>
-
-                        <p class="text-sm text-on-surface-variant">
-
-                            Wayfinding and real-time transit information systems.
-
+                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
+                        <span
+                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
+                            style="font-variation-settings: 'FILL' 1;">business</span>
+                        <h4 class="font-bold text-lg mb-3 text-white">Corporate</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Elevate your workplace with sleek LED lighting and digital displays that enhance
+                            professionalism, boost productivity, and create a modern corporate atmosphere.
                         </p>
+                    </div>
 
+                    <div
+                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
+                        <span
+                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
+                            style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                        <h4 class="font-bold text-lg mb-3 text-white">Control-Room</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Deliver real-time visibility and seamless monitoring with high-performance LED video walls
+                            and displays. Designed for 24/7 operation.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
+                        <span
+                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
+                            style="font-variation-settings: 'FILL' 1;">hotel</span>
+                        <h4 class="font-bold text-lg mb-3 text-white">Hospitality</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Create memorable guest experiences with stylish LED lighting and digital displays that
+                            elevate ambiance, guide visitors, and promote services.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
+                        <span
+                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
+                            style="font-variation-settings: 'FILL' 1;">flight_takeoff</span>
+                        <h4 class="font-bold text-lg mb-3 text-white">Airport</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Enhance passenger flow and communication with high-visibility LED displays for flight info,
+                            wayfinding, and advertising.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
+                        <div class="w-8 h-8 mb-5 opacity-90 group-hover:opacity-100 transition-opacity"
+                            style="background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink)); -webkit-mask: url(https://img.icons8.com/ios-filled/100/space-needle.png) no-repeat center; mask: url(https://img.icons8.com/ios-filled/100/space-needle.png) no-repeat center; -webkit-mask-size: contain; mask-size: contain;">
+                        </div>
+
+                        <h4 class="font-bold text-lg mb-3 text-white">DOOH</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Capture attention with vibrant, high-impact LED displays built for outdoor advertising.
+                            Perfect for billboards and transit hubs.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
+                        <span
+                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
+                            style="font-variation-settings: 'FILL' 1;">directions_run</span>
+                        <h4 class="font-bold text-lg mb-3 text-white">Sports</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Energize stadiums and arenas with high-resolution LED scoreboards, perimeter displays, and
+                            video walls that amplify the fan experience.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
+                        <span
+                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
+                            style="font-variation-settings: 'FILL' 1;">satellite_alt</span>
+                        <h4 class="font-bold text-lg mb-3 text-white">Broad casting</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Deliver stunning visuals and crystal-clear content with LED screens designed for live
+                            broadcasting, newsrooms, and studios.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
+                        <span
+                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
+                            style="font-variation-settings: 'FILL' 1;">monitor_heart</span>
+                        <h4 class="font-bold text-lg mb-3 text-white">Healthcare</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Enhance patient care and communication with LED displays that provide real-time information,
+                            wayfinding, and health updates.
+                        </p>
                     </div>
 
                 </div>
-
             </div>
-
         </section>
-
         <!-- Section 5: Collection -->
 
-        <section class="py-16 md:py-32 px-4 md:px-8 max-w-7xl mx-auto">
+        <section class=" px-4 md:px-8 max-w-7xl mx-auto">
             <div class="mb-10 md:mb-16 text-center">
                 <h2 class="text-3xl md:text-5xl font-black">
                     LED Systems
@@ -766,7 +890,7 @@
 
         <!-- Section 6: Experience Center -->
 
-        <section class="py-16 md:py-32 px-4 md:px-8">
+        <section class="py-10 md:py-20 px-4 md:px-8">
 
             <div class="max-w-7xl mx-auto">
 
@@ -855,7 +979,7 @@
 
         <!-- Section 7: Resources -->
 
-        <section class="py-16 md:py-32 px-4 md:px-8 bg-surface">
+        <section class="py-5 md:py-10 px-4 md:px-8 bg-surface">
             <div class="max-w-7xl mx-auto space-y-12">
 
                 <div class="text-center max-w-3xl mx-auto">
@@ -881,7 +1005,7 @@
                                 Learn how LED vision will offer a better and efficient visual input for development
                             </p>
                             <button
-                                class="px-8 py-2 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full font-bold text-white text-sm hover:opacity-90 transition-opacity">
+                                class="px-8 py-2 bg-[linear-gradient(90deg,#facc15,#f97316,#ec4899)] rounded-full font-bold text-white text-sm hover:opacity-90 transition-opacity">
                                 Explore more
                             </button>
                         </div>
@@ -899,7 +1023,7 @@
                                 Digital design is created when creating a LED display for your current vision
                             </p>
                             <button
-                                class="px-8 py-2 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full font-bold text-white text-sm hover:opacity-90 transition-opacity">
+                                class="px-8 py-2 bg-[linear-gradient(90deg,#facc15,#f97316,#ec4899)] rounded-full font-bold text-white text-sm hover:opacity-90 transition-opacity">
                                 Explore more
                             </button>
                         </div>
@@ -917,7 +1041,7 @@
                                 Explore the LED display as best as our customers can serve in the world
                             </p>
                             <button
-                                class="px-8 py-2 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full font-bold text-white text-sm hover:opacity-90 transition-opacity">
+                                class="px-8 py-2 bg-[linear-gradient(90deg,#facc15,#f97316,#ec4899)] rounded-full font-bold text-white text-sm hover:opacity-90 transition-opacity">
                                 Explore more
                             </button>
                         </div>
@@ -935,7 +1059,7 @@
                                 Optimize the basics and a LED display is designed using key connections and training
                             </p>
                             <button
-                                class="px-8 py-2 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full font-bold text-white text-sm hover:opacity-90 transition-opacity">
+                                class="px-8 py-2 bg-[linear-gradient(90deg,#facc15,#f97316,#ec4899)] rounded-full font-bold text-white text-sm hover:opacity-90 transition-opacity">
                                 Explore more
                             </button>
                         </div>
@@ -953,7 +1077,7 @@
                                 Improve the impact of the LED display on the use of new tools for your business areas
                             </p>
                             <button
-                                class="px-8 py-2 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full font-bold text-white text-sm hover:opacity-90 transition-opacity">
+                                class="px-8 py-2 bg-[linear-gradient(90deg,#facc15,#f97316,#ec4899)] rounded-full font-bold text-white text-sm hover:opacity-90 transition-opacity">
                                 Explore more
                             </button>
                         </div>
@@ -971,7 +1095,7 @@
                                 Digital technologies are used with customized networking techniques
                             </p>
                             <button
-                                class="px-8 py-2 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full font-bold text-white text-sm hover:opacity-90 transition-opacity">
+                                class="px-8 py-2 bg-[linear-gradient(90deg,#facc15,#f97316,#ec4899)] rounded-full font-bold text-white text-sm hover:opacity-90 transition-opacity">
                                 Explore more
                             </button>
                         </div>
@@ -989,8 +1113,9 @@
                                 Enhance the importance of users' expertise that can help you get home and put LED lights
                             </p>
                             <button onclick="openPopupForm()"
-                                class="text-cyan-400 text-sm font-bold flex items-center gap-1 hover:text-cyan-300 transition-colors">
-                                Get Support <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+                                class="text-transparent bg-clip-text bg-[linear-gradient(90deg,#facc15,#f97316,#ec4899)] text-sm font-bold flex items-center gap-1 hover:opacity-80 transition-opacity">
+                                Get Support <span
+                                    class="material-symbols-outlined text-sm text-[#ec4899]">arrow_forward_ios</span>
                             </button>
                         </div>
                     </div>
@@ -1004,8 +1129,10 @@
         <section class="py-16 md:py-32 px-4 md:px-8 bg-surface-container-low overflow-hidden">
             <div class="max-w-4xl mx-auto space-y-8 md:space-y-12 text-center">
 
-                <h2 class="text-2xl md:text-4xl font-black text-on-surface">
-                    What our customers are saying about their experience
+                <h2 class="text-2xl md:text-4xl font-black text-center text-white">
+                    What
+                    <span class="text-gradient inline-block px-2">Our Customers</span>
+                    are saying about their experience
                 </h2>
 
                 <div class="relative">
@@ -1028,8 +1155,6 @@
 
                         <div
                             class="slider-item relative p-6 md:p-12 bg-surface-container rounded-2xl border border-white-5 shadow-2xl">
-                            <span
-                                class="material-symbols-outlined text-6xl text-primary/20 absolute top-4 left-8">format_quote</span>
                             <p
                                 class="text-xl md:text-2xl font-light italic leading-relaxed text-on-surface mb-8 relative z-10">
                                 "Excellent support has the aim to fit our digital team into some of our professional
@@ -1213,8 +1338,10 @@
 
         <section class="py-16 md:py-32 px-4 md:px-8 bg-surface-container-low">
             <div class="max-w-3xl mx-auto space-y-8 md:space-y-12">
-                <h2 class="text-2xl md:text-4xl font-black text-center">
-                    What our customers are saying about their experience
+                <h2 class="text-2xl md:text-4xl font-black text-center text-white">
+                    What
+                    <span class="text-gradient inline-block px-2">Our Customers</span>
+                    are saying about their experience
                 </h2>
 
                 <div class="space-y-4" id="testimonial-accordion">
@@ -1458,20 +1585,6 @@
                         class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-white transition-all cursor-pointer">
                         <i class="fab fa-twitter"></i>
                     </a>
-                </div>
-
-                <p class="text-slate-500 text-xs mt-4">
-                    Subscribe to our newsletter
-                </p>
-
-                <div class="relative mt-2">
-                    <input
-                        class="w-full bg-transparent border-0 border-b border-white/10 focus:ring-0 focus:border-sky-400 outline-none text-sm text-white placeholder:text-slate-600 px-0 pr-10 py-2"
-                        placeholder="Your email address" type="email" />
-                    <button
-                        class="absolute right-0 bottom-2 text-sky-400 font-bold text-xs uppercase hover:text-white transition-colors">
-                        Go
-                    </button>
                 </div>
             </div>
 
