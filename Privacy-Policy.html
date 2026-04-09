@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | The VividLED</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300..800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+        /* Base Styles */
+        body {
+            font-family: "Host Grotesk", 'Poppins', sans-serif;
+            margin: 0;
+            background-color: rgb(6 14 32 / var(--tw-bg-opacity, 1));
+            color: #333;
+        }
+
+        /* Scoped Privacy Policy Container Styles (Prevents CSS from leaking to the Footer) */
+        .policy-container {
+            max-width: 900px;
+            width: 90%;
+            margin: 140px auto 60px;
+            padding: 60px;
+            background-color: #fff;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border-radius: 16px;
+        }
+
+        .policy-container h2 {
+            font-size: 2rem;
+            color: #0a0a0a;
+            margin-bottom: 10px;
+        }
+
+        .policy-container h3 {
+            margin-top: 30px;
+            color: #0a0a0a;
+            font-size: 1.3rem;
+            border-left: 4px solid #3b82f6;
+            padding-left: 10px;
+        }
+
+        .policy-container p,
+        .policy-container li {
+            line-height: 1.7;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .policy-container ul {
+            padding-left: 20px;
+        }
+
+        .policy-container a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        .policy-container a:hover {
+            text-decoration: underline;
+        }
+
+        .policy-container strong {
+            color: #000;
+        }
+
+        /* Custom Header Components */
+        .spectral-border {
+            position: relative;
+            background: #0f1930;
+            border-radius: 0.5rem;
+        }
+
+        .spectral-border::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(90deg, #facc15, #f97316, #ec4899, #a855f7, #38bdf8);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .policy-container {
+                margin: 100px auto 20px;
+                padding: 30px 20px;
+                width: 95%;
+            }
+
+            .policy-container h2 {
+                font-size: 1.5rem;
+            }
+
+            .policy-container h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="fixed top-0 w-full z-50 bg-slate-950/60 backdrop-blur-3xl border-b border-white/5 h-20">
+        <nav class="flex justify-between items-center px-4 md:px-8 h-full max-w-screen-2xl mx-auto">
+            <a href="Index.html" class="flex items-center no-underline">
+                <div
+                    class="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-pink-500 to-sky-400">
+                    Vivid LED System
+                </div>
+            </a>
+            <div class="hidden md:flex gap-8 items-center font-['Host_Grotesk'] tracking-tight text-white">
+                <a class="text-slate-400 hover:text-white transition-colors" href="Index.html">Home</a>
+                <a class="text-slate-400 hover:text-white transition-colors" href="Index.html#projects">Projects</a>
+                <a class="text-slate-400 hover:text-white transition-colors" href="Index.html#services">Services</a>
+                <a class="text-slate-400 hover:text-white transition-colors" href="javascript:void(0)"
+                    onclick="openPopupForm()">Contact</a>
+            </div>
+            <div class="flex items-center gap-2 md:gap-4">
+                <button onclick="openPopupForm()"
+                    class="bg-gradient-to-r from-sky-400 to-blue-600 px-8 py-3 rounded-full text-white font-bold shadow-lg shadow-blue-500/20 hover:scale-105 transition-all">
+                    Get a Quote
+                </button>
+                <button
+                    class="md:hidden text-white flex items-center justify-center p-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="policy-container" id="privacy-policy">
+        <h2>Privacy Policy</h2>
+        <p><strong>Effective Date:</strong> 16/05/2025</p>
+
+        <p>At <strong>The VividLED</strong>, accessible from <a href="https://thevividled.com"
+                target="_blank">https://thevividled.com</a>, we are committed to protecting your privacy. This Privacy
+            Policy explains how we collect, use, and safeguard your information when you visit our website or interact
+            with us through messaging platforms like WhatsApp.</p>
+
+        <h3>1. Information We Collect</h3>
+        <ul>
+            <li><strong>Personal Information:</strong> Name, email address, phone number, and any other details
+                submitted via forms or communication channels, including WhatsApp.</li>
+            <li><strong>Technical Data:</strong> IP address, browser type, operating system, referral URLs, and visit
+                duration.</li>
+            <li><strong>Cookies & Tracking:</strong> We use cookies and similar tracking technologies for site
+                functionality and analytics.</li>
+        </ul>
+
+        <h3>2. How We Use Your Information</h3>
+        <p>We use your information to:</p>
+        <ul>
+            <li>Respond to your inquiries or support requests</li>
+            <li>Improve our website and services</li>
+            <li>Send promotional offers or updates (only with your consent)</li>
+            <li>Fulfill legal, regulatory, or contractual obligations</li>
+        </ul>
+
+        <p><strong>WhatsApp Communication:</strong><br>
+            If you contact us or opt-in via WhatsApp, we may use your number and message data to respond to your
+            queries, send order updates, or offer support. All interactions comply with WhatsApp's Business Policy.</p>
+
+        <h3>3. Sharing Your Information</h3>
+        <p>We do <strong>not sell or rent</strong> your personal data.</p>
+        <p>We may share information with:</p>
+        <ul>
+            <li>Trusted service providers and partners (under confidentiality agreements)</li>
+            <li>WhatsApp (Meta) or other messaging providers as required for communication</li>
+        </ul>
+
+        <h3>4. Data Protection</h3>
+        <p>We implement reasonable technical and organizational security measures to protect your data, including
+            encryption, access control, and regular audits.</p>
+
+        <h3>5. Your Rights</h3>
+        <p>You may request:</p>
+        <ul>
+            <li>Access to your personal data</li>
+            <li>Correction or deletion of your information</li>
+            <li>To withdraw consent from promotional communications</li>
+        </ul>
+        <p>Contact us at: <a href="mailto:info@vividled.com">info@vividled.com</a></p>
+
+        <h3>6. Changes to This Policy</h3>
+        <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with a new
+            effective date.</p>
+
+        <h3>7. Contact Us</h3>
+        <p><strong>The VividLED</strong><br>
+            Email: info@vividled.com<br>
+            Website: <a href="https://thevividled.com" target="_blank">https://thevividled.com</a></p>
+    </div>
+
+    <footer id="footer" class="bg-slate-950 w-full py-16 border-t border-white/10 text-white">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-6 md:px-12 max-w-screen-2xl mx-auto">
+
+            <div class="space-y-6">
+                <div
+                    class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-sky-400">
+                    Vivid LED System
+                </div>
+                <div class="font-['Host_Grotesk'] font-normal text-slate-400 text-sm leading-relaxed space-y-4">
+                    <p class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-lg mt-0.5">location_on</span>
+                        <span>
+                            Marudhar Global Tech PVT LTD<br>
+                            The Avenue, 210/4, <br>
+                            E TV Swamy Rd, R.S. Puram,<br>
+                            Coimbatore,<br>
+                            Tamilnadu, INDIA - 641002
+                        </span>
+                    </p>
+                    <p class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-lg">mail</span>
+                        <a href="mailto:sales@vividled.in"
+                            class="hover:text-white transition-colors">sales@vividled.in</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <h5 class="text-white font-bold uppercase tracking-widest text-xs">
+                    Quick Links
+                </h5>
+                <ul class="space-y-4 text-slate-500 text-sm">
+                    <li>
+                        <a class="hover:text-yellow-400 transition-colors" href="#home">Home</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-yellow-400 transition-colors" href="#industry-section">Projects</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-yellow-400 transition-colors" href="#services">Services</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-6">
+                <h5 class="text-white font-bold uppercase tracking-widest text-xs">
+                    Contact Us
+                </h5>
+                <ul class="space-y-4 text-slate-500 text-sm">
+                    <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-lg">call</span>
+                        <span>Sales: +91 9626262481</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-lg">support_agent</span>
+                        <span>Support: +91 9626277111</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-lg">manage_accounts</span>
+                        <span>LED Display Expert: +91 96556 13000</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-6">
+                <h5 class="text-white font-bold uppercase tracking-widest text-xs">
+                    Stay Connected
+                </h5>
+
+                <div class="flex flex-wrap gap-3">
+                    <a href="http://api.whatsapp.com/send/?phone=%2B919626262481&text=Hi+there%21+I+am+interested+in+learning+more+about+your+LED+display+solutions.+Can+you+provide+me+with+more+information%3F&type=phone_number&app_absent=0"
+                        title="WhatsApp" target="_blank"
+                        class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-green-500 hover:border-green-500 transition-all cursor-pointer">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/vividledsystem/" title="LinkedIn" target="_blank"
+                        class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-blue-500 hover:border-blue-500 transition-all cursor-pointer">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/vividledsystem/" title="Instagram" target="_blank"
+                        class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-pink-500 hover:border-pink-500 transition-all cursor-pointer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/VividLedSystem" title="Facebook" target="_blank"
+                        class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-blue-600 hover:border-blue-600 transition-all cursor-pointer">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@Vividledsystem" title="YouTube" target="_blank"
+                        class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-red-500 hover:border-red-500 transition-all cursor-pointer">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://x.com/vividledsystem" title="Twitter" target="_blank"
+                        class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-white transition-all cursor-pointer">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+
+                <p class="text-slate-500 text-xs mt-4">
+                    Subscribe to our newsletter
+                </p>
+
+                <div class="relative mt-2">
+                    <input
+                        class="w-full bg-transparent border-0 border-b border-white/10 focus:ring-0 focus:border-sky-400 outline-none text-sm text-white placeholder:text-slate-600 px-0 pr-10 py-2"
+                        placeholder="Your email address" type="email" />
+                    <button
+                        class="absolute right-0 bottom-2 text-sky-400 font-bold text-xs uppercase hover:text-white transition-colors">
+                        Go
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div
+            class="mt-16 pt-8 border-t border-white/5 px-6 md:px-12 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="font-['Host_Grotesk'] font-normal text-slate-500 text-xs">
+                © 2026 Vivid LED System. All Rights Reserved.
+            </p>
+            <div class="flex gap-6 text-slate-500 text-xs">
+                <a href="./Privacy-Policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="./Privacy-Policy.html" class="hover:text-white transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
