@@ -1,10 +1,5 @@
 <!doctype html>
-
-
-
 <html class="dark" lang="en">
-
-
 
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -26,316 +21,166 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300;400;500;700;900&amp;family=Space+Grotesk:wght@300;700&amp;family=Manrope:wght@300;400;700&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;700&family=Manrope:wght@300;400;700&display=swap"
         rel="stylesheet" />
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
 
     <script id="tailwind-config">
-
         tailwind.config = {
-
             darkMode: "class",
-
             theme: {
-
                 extend: {
-
                     colors: {
-
                         "surface-container-lowest": "#000000",
-
                         "surface-bright": "#1f2b49",
-
                         "outline-variant": "#40485d",
-
                         "on-tertiary-container": "#003044",
-
                         "on-error": "#490013",
-
                         "inverse-surface": "#faf8ff",
-
                         "tertiary-fixed-dim": "#1bafe9",
-
-                        surface: "#060e20",
-
+                        surface: "#05050a",
                         "primary-container": "#fbcd16",
-
-                        "surface-container": "#0f1930",
-
+                        "surface-container": "#090a14",
                         "primary-fixed-dim": "#eec200",
-
                         "primary-dim": "#eec200",
-
                         "on-error-container": "#ffb2b9",
-
                         "on-tertiary-fixed": "#001a27",
-
                         "on-secondary-fixed-variant": "#9e005e",
-
                         "on-primary": "#624e00",
-
                         "on-tertiary": "#003b52",
-
                         "on-background": "#dee5ff",
-
                         "on-tertiary-fixed-variant": "#003e56",
-
                         primary: "#ffdd73",
-
                         "on-secondary-fixed": "#6b003e",
-
                         "on-surface-variant": "#a3aac4",
-
                         "tertiary-fixed": "#37bcf7",
-
                         "inverse-primary": "#735c00",
-
                         secondary: "#ff67ad",
-
                         "secondary-fixed": "#ffc1d6",
-
                         "on-surface": "#dee5ff",
-
                         "secondary-container": "#aa0266",
-
                         "on-primary-fixed-variant": "#645000",
-
                         "on-secondary": "#460027",
-
                         "surface-dim": "#060e20",
-
                         "error-container": "#a70138",
-
                         "surface-container-low": "#091328",
-
                         "surface-tint": "#ffdd73",
-
                         "surface-variant": "#192540",
-
                         "primary-fixed": "#fed01b",
-
                         "on-primary-fixed": "#433500",
-
                         tertiary: "#47c4ff",
-
                         "tertiary-container": "#2db7f2",
-
                         "error-dim": "#d73357",
-
                         "on-primary-container": "#574500",
-
                         "secondary-dim": "#ff67ad",
-
                         "surface-container-highest": "#192540",
-
                         "surface-container-high": "#141f38",
-
                         error: "#ff6e84",
-
                         "on-secondary-container": "#ffe5ec",
-
                         background: "#060e20",
-
                         "inverse-on-surface": "#4d556b",
-
                         outline: "#6d758c",
-
                         "tertiary-dim": "#05a9e3",
-
                         "secondary-fixed-dim": "#ffaccb",
-
                     },
-
                     borderRadius: {
-
                         DEFAULT: "0.125rem",
-
                         lg: "0.25rem",
-
                         xl: "0.5rem",
-
                         full: "0.75rem",
-
                     },
-
                     fontFamily: {
-
                         headline: ["Host Grotesk", "sans-serif"],
-
                         body: ["Host Grotesk", "sans-serif"],
-
                         label: ["Host Grotesk", "sans-serif"],
-
                     },
-
                 },
-
             },
-
         };
-
     </script>
 
     <style>
         body {
-
             font-family: "Host Grotesk", sans-serif;
-
         }
 
         /* Base Button Styling */
-.whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 40px;
-  right: 40px;
-  background-color: #25d366; /* Official WhatsApp Green */
-  color: #FFF;
-  border-radius: 50%;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50%;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-/* Hover Animation */
-.whatsapp-float:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-}
+        /* Hover Animation */
+        .whatsapp-float:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+        }
 
-/* Icon Sizing */
-.whatsapp-icon {
-  width: 35px;
-  height: 35px;
-  display: block;
-}
+        .whatsapp-icon {
+            width: 35px;
+            height: 35px;
+            display: block;
+        }
 
-/* Mobile Adjustments */
-@media screen and (max-width: 768px) {
-  .whatsapp-float {
-    width: 50px;
-    height: 50px;
-    bottom: 20px;
-    right: 20px;
-  }
-  
-  .whatsapp-icon {
-    width: 28px;
-    height: 28px;
-  }
-}
+        @media screen and (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
 
-
+            .whatsapp-icon {
+                width: 28px;
+                height: 28px;
+            }
+        }
 
         .spectral-gradient {
-
-            background: linear-gradient(90deg,
-
-                    #facc15 0%,
-
-                    #f97316 20%,
-
-                    #ec4899 30%,
-
-                    #a855f7 50%,
-
-                    #38bdf8 100%);
-
+            background: linear-gradient(90deg, #facc15 0%, #f97316 20%, #ec4899 30%, #a855f7 50%, #38bdf8 100%);
         }
-
-
 
         .spectral-border {
-
             position: relative;
-
             background: #0f1930;
-
             border-radius: 0.5rem;
-
         }
-
-
 
         .spectral-border::before {
-
             content: "";
-
             position: absolute;
-
             inset: 0;
-
             border-radius: inherit;
-
             padding: 2px;
-
-            background: linear-gradient(90deg,
-
-                    #facc15,
-
-                    #f97316,
-
-                    #ec4899,
-
-                    #a855f7,
-
-                    #38bdf8);
-
-            -webkit-mask:
-
-                linear-gradient(#fff 0 0) content-box,
-
-                linear-gradient(#fff 0 0);
-
-            mask:
-
-                linear-gradient(#fff 0 0) content-box,
-
-                linear-gradient(#fff 0 0);
-
+            background: linear-gradient(90deg, #facc15, #f97316, #ec4899, #a855f7, #38bdf8);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
-
             mask-composite: exclude;
-
             pointer-events: none;
-
         }
-
-
 
         .text-gradient {
-
-            background: linear-gradient(90deg,
-
-                    #facc15,
-
-                    #f97316,
-
-                    #ec4899,
-
-                    #a855f7,
-
-                    #38bdf8);
-
+            background: linear-gradient(90deg, #facc15, #f97316, #ec4899, #a855f7, #38bdf8);
             -webkit-background-clip: text;
-
             -webkit-text-fill-color: transparent;
-
         }
 
-        /* Fallback classes assuming you are using custom Tailwind config for these colors. */
         .bg-surface-container-low {
             background-color: #0f1115;
             color: #ffffff;
@@ -361,11 +206,6 @@
             border-color: rgba(255, 255, 255, 0.05);
         }
 
-        .spectral-gradient {
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
-        }
-
-        /* Grid setup to stack items on top of each other for cross-fading */
         .slider-grid {
             display: grid;
         }
@@ -381,7 +221,6 @@
             visibility: visible;
         }
 
-        /* Interactive Nav Styles */
         .nav-btn {
             transition: all 0.3s ease;
         }
@@ -402,14 +241,10 @@
         }
 
         :root {
-            /* Fallback definition of your neon colors in case they aren't in your main CSS */
             --neon-blue: #38bdf8;
-            /* Sky blue */
             --neon-pink: #ec4899;
-            /* Pink */
         }
 
-        /* Gradient for Material Icons */
         .icon-gradient {
             background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
             -webkit-background-clip: text;
@@ -418,12 +253,10 @@
             color: transparent;
         }
 
-        /* Gradient Border for Cards */
         .card-gradient-border {
             position: relative;
             background-clip: padding-box;
             border: 1px solid transparent;
-            /* The transparent border acts as the spacer */
         }
 
         .card-gradient-border::before {
@@ -435,7 +268,6 @@
             left: 0;
             z-index: -1;
             margin: -1px;
-            /* Pulls the pseudo-element out by exactly 1px to create the border */
             border-radius: inherit;
         }
 
@@ -447,398 +279,566 @@
         }
 
         .text-rotator-inner {
-    display: flex;
-    flex-direction: column;
-    /* Increased from 6s to 8s so it doesn't spin too frantically with the extra words */
-    animation: rotateText 8s cubic-bezier(0.8, 0, 0.2, 1) infinite;
-}
+            display: flex;
+            flex-direction: column;
+            animation: rotateText 8s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+        }
 
         .text-rotator-inner span {
             height: 1.2em;
             line-height: 1.2em;
             display: block;
-            /* Changed to block so the gradient applies cleanly */
         }
 
-       @keyframes rotateText {
-    0%, 15% {
-        transform: translateY(0);
-    }
-    20%, 35% {
-        transform: translateY(-1.2em);
-    }
-    40%, 55% {
-        transform: translateY(-2.4em);
-    }
-    60%, 75% {
-        transform: translateY(-3.6em);
-    }
-    80%, 95% {
-        transform: translateY(-4.8em);
-    }
-    100% {
-        transform: translateY(-6.0em);
-    }
+        @keyframes rotateText {
+
+            0%,
+            15% {
+                transform: translateY(0);
+            }
+
+            20%,
+            35% {
+                transform: translateY(-1.2em);
+            }
+
+            40%,
+            55% {
+                transform: translateY(-2.4em);
+            }
+
+            60%,
+            75% {
+                transform: translateY(-3.6em);
+            }
+
+            80%,
+            95% {
+                transform: translateY(-4.8em);
+            }
+
+            100% {
+                transform: translateY(-6.0em);
+            }
+        }
+
+        /* Smooth flowing gradient animation for the button */
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Custom Marquee Animation */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .animated-gradient-btn {
+            background: linear-gradient(270deg, #facc15, #f97316, #ec4899, #a855f7, #38bdf8, #facc15);
+            background-size: 300% 300%;
+            animation: gradient-shift 6s ease infinite;
+            color: #ffffff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .animated-gradient-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.4);
+        }
+
+        .animate-marquee {
+            animation: marquee 25s linear infinite;
+        }
+
+@keyframes multiColorPulse {
+  0%, 100% { background-color: #facc15; }
+  20% { background-color: #f97316; }
+  40% { background-color: #ec4899; }
+  60% { background-color: #a855f7; }
+  80% { background-color: #38bdf8; }
 }
+
+.animate-multi-pulse {
+  animation: multiColorPulse 4s infinite linear, pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+        /* Optional: Pause animation on hover */
+        .marquee-container:hover .animate-marquee {
+            animation-play-state: paused;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    /* Hide scrollbar for the slider but keep functionality */
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
     </style>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
-
-
 
 <body class="bg-surface text-on-surface selection:bg-secondary/30">
 
-    <!-- TopNavBar -->
+    <header id="main-header" class="fixed top-6 left-0 h-20 right-0 w-full z-50 px-4 md:px-8">
+        <nav
+            class="relative flex justify-between h-[72px] items-center px-8 mx-auto max-w-5xl bg-surface-container/50 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] rounded-[100px]">
 
-    <header class="fixed top-0 w-full z-50 bg-slate-950/60 backdrop-blur-3xl border-b border-white/5 h-24">
-
-        <nav class="flex justify-between items-center px-4 md:px-8 h-full max-w-screen-2xl mx-auto">
-
-            <a href="Index.html" class="flex items-center no-underline">
-                <img class="h-16 w-24" src="assets/mbl.png" alt="">
+            <!-- Logo Area -->
+            <a href="Index.html" class="flex items-center gap-2 no-underline">
+                <img class="h-12 w-auto object-contain" src="assets/mbl.png" alt="Logo">
             </a>
 
-            <div class="hidden md:flex gap-8 items-center font-['Host_Grotesk'] tracking-tight text-on-surface">
+            <!-- Navigation Links -->
+            <div class="relative hidden md:flex items-center font-['Host_Grotesk'] text-[15px] font-medium"
+                id="nav-links-container">
 
-                <a class="text-slate-400 hover:text-white transition-colors" href="#projects">Projects</a>
+                <!-- Sliding Active Indicator -->
+                <div id="nav-indicator"
+                    class="absolute rounded-[100px] bg-white/[0.08] border-t-[1.5px] border-white/60 shadow-[0_2px_10px_rgba(0,0,0,0.2)] pointer-events-none"
+                    style="width: 0; left: 0;"></div>
 
-                <a class="text-slate-400 hover:text-white transition-colors" href="#service">Services</a>
-
-                <a class="text-slate-400 hover:text-white transition-colors" href="javascript:void(0)"
-                    onclick="openPopupForm()">Contact</a>
-
+                <a class="nav-link text-white px-5 py-2 transition-colors relative z-10" href="#home">Home</a>
+                <a class="nav-link text-slate-300 hover:text-white px-5 py-2 transition-colors relative z-10"
+                    href="#about">About</a>
+                <a class="nav-link text-slate-300 hover:text-white px-5 py-2 transition-colors relative z-10"
+                    href="#projects">Features</a>
+                <a class="nav-link text-slate-300 hover:text-white px-5 py-2 transition-colors relative z-10"
+                    href="#service">Pricing</a>
+                <a class="text-slate-300 hover:text-white px-5 py-2 transition-colors relative z-10"
+                    href="javascript:void(0)" onclick="openPopupForm()">Contact</a>
             </div>
 
-            <div class="flex items-center gap-2 md:gap-4">
-
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
                 <button onclick="openPopupForm()"
-                    class="bg-surface-container-highest px-6 py-2.5 rounded-lg border border-transparent spectral-border overflow-hidden relative group">
-
-                    <span class="relative z-10 text-primary font-bold">Get Quote</span></button><button
-                    class="md:hidden text-white flex items-center justify-center p-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-
-                    <span class="material-symbols-outlined">menu</span>
-
+                    class="hidden md:block text-white px-7 py-2.5 rounded-[100px] font-medium text-[15px]  transition-all duration-500 ease-in-out bg-gradient-to-b from-[#5a94fa] via-[#1d4ed8] to-[#5a94fa] bg-[length:100%_200%] bg-top hover:bg-bottom ">
+                    Get started
                 </button>
 
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-btn"
+                    class="md:hidden text-white flex items-center justify-center p-2 rounded-[100px] bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+
+            <!-- Mobile Dropdown Menu -->
+            <div id="mobile-menu" class="hidden absolute top-[80px] left-0 right-0 bg-surface-container/95 backdrop-blur-xl border border-white/10 rounded-2xl p-4 flex-col gap-4 shadow-2xl md:hidden z-50 transition-all duration-300">
+                <a class="text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#home">Home</a>
+                <a class="text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#about">About</a>
+                <a class="text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#projects">Features</a>
+                <a class="text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#service">Pricing</a>
+                <a class="text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="javascript:void(0)" onclick="openPopupForm()">Contact</a>
             </div>
 
         </nav>
-
     </header>
 
-    <main class="pt-20">
+    <main class="bg-surface">
 
-        <!-- Section 1: Hero -->
-
-        <section class="relative py-16 md:py-24 px-4 md:px-8 overflow-hidden">
-
+        <!-- section 1: Hero Banner -->
+        <!-- Optimized for Mobile: Full screen min-height, reduced font sizes, centered content -->
+        <section id="home" class="relative min-h-[100dvh] flex flex-col justify-center py-16 px-4 md:px-8 overflow-hidden">
             <div class="absolute inset-0 z-0">
-                <div class="absolute inset-0 bg-gradient-to-b from-surface/20 via-surface to-surface"></div>
-                <img class="w-full h-full object-cover opacity-40"
+
+                <!-- Background Image -->
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent from-surface to-[10%]"></div>
+                <img class="absolute inset-0 w-full h-full object-cover opacity-40"
                     data-alt="abstract architectural led screen installation with vibrant neon waves and cinematic reflections in a dark industrial space"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfuahd_p5LyvgbTjDFjEszXq5Ea3KFJdjrmoYyfbQchYF0knQW820Ifvo9ijfSfmaM3CBVVkqOq6dXDiBfipKvfmQMlVV5df65XxFSoEB5D9Aahz2c7moZk5YFbmusN8N25TxhIkpF9e4L5ELdsxtZdUJinJKLlXhmFspWAaqZun1MrrGg6_yLg1CKVRjxUlxYc3gcATuVdzvlwtHWHGOAvtGYVJ92xmsLT7BP463gG6Dhz5sBwifwdlYK5ewEkasLhXShvs2xbEU" />
+                    src="assets/1-Herobanner.jpg" />
+
+                <!-- Gradient: Stays completely transparent from 0% to 80%, then fades to the solid background color from 80% to 100% -->
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent from-[70%] to-surface"></div>
+
             </div>
 
-            <div class="relative z-10 max-w-5xl mx-auto text-center space-y-4 md:space-y-8">
-
-                <h1 class="text-4xl sm:text-5xl md:text-8xl font-bold tracking-tighter leading-[1.1]">
+            <div class="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center justify-center w-full space-y-4 md:space-y-8">
+                <!-- Adjusted font sizes for mobile -->
+                <h1 class="text-3xl sm:text-4xl md:text-8xl font-bold tracking-tighter leading-[1.1]">
                     <span class="inline-block pr-[0.1em]">India's Most Trusted </span> <br />
-
                     <span class="text-rotator inline-block pr-[0.1em]">
-    <span class="text-rotator-inner">
-        <span class="text-gradient">Indoor</span>
-        <span class="text-gradient">Outdoor</span>
-        <span class="text-gradient">Custom</span>
-        <span class="text-gradient">Creative</span>
-        <span class="text-gradient">Transparent</span>
-        <span class="text-gradient" aria-hidden="true">Indoor</span>
-    </span>
-</span>
+                        <span class="text-rotator-inner">
+                            <span class="text-gradient">Indoor</span>
+                            <span class="text-gradient">Outdoor</span>
+                            <span class="text-gradient">Custom</span>
+                            <span class="text-gradient">Creative</span>
+                            <span class="text-gradient">Transparent</span>
+                            <span class="text-gradient" aria-hidden="true">Indoor</span>
+                        </span>
                     </span> <br />
-
                     <span class="inline-block pr-[0.1em]">LED Video Wall Expert</span>
                 </h1>
 
                 <div class="h-1 w-48 mx-auto spectral-gradient rounded-full"></div>
 
-                <p class="text-xl text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed">
+                <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed">
                     Premium LED display solutions for every space
                 </p>
 
-                <div class="flex flex-col sm:flex-row justify-center gap-4 w-full px-4 sm:px-0">
-                    <button onclick="openPopupForm()"
-                        class="w-full sm:w-auto px-8 py-4 bg-white text-surface font-bold rounded-lg hover:bg-primary transition-colors">
-                        Get a Quote Today!
-                    </button>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 w-full px-4 sm:px-0 mt-4 md:mt-0">
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 w-full px-4 sm:px-0">
+                        <!-- Adjusted button size for mobile -->
+                        <button onclick="openPopupForm()"
+                            class="animated-gradient-btn w-full sm:w-auto px-6 py-3 md:px-8 md:py-4 text-sm md:text-base font-bold rounded-lg border border-white/20">
+                            Get a Quote Today!
+                        </button>
+                    </div>
                 </div>
-
             </div>
-
         </section>
+
 
         <!-- Section 2: Solutions -->
-
-        <section class="py-10 md:py-20 px-4 md:px-8 max-w-7xl mx-auto">
-
+        <section class="py-10 md:py-16 px-4 md:px-8 max-w-7xl mx-auto bg-[#05050a] text-white">
             <div class="grid md:grid-cols-2 gap-8 md:gap-12">
 
+                <!-- Card 1 -->
                 <div
-                    class="spectral-border p-6 md:p-8 space-y-6 group cursor-pointer transition-transform duration-500 hover:-translate-y-2">
-
-                    <div class="aspect-video overflow-hidden rounded-lg">
-
-                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            data-alt="ultra high resolution indoor led display inside a luxury corporate lobby with reflective marble floors"
-                            src="assets/long-corridor-showcase.jpg" />
-
-                    </div>
-
-                    <p class="text-3xl font-bold">Indoor LED Display Solutions </p>
-
-                    <p class="text-on-surface-variant leading-relaxed">
-
-                        Precision pixel pitch for high-definition visual storytelling in
-
-                        corporate lobbies, auditoriums, and broadcast studios.
-
-                    </p>
-
-                    <button onclick="openPopupForm()"
-                        class="text-tertiary flex items-center gap-2 font-bold uppercase text-xs tracking-widest group-hover:gap-4 transition-all">
-
-                        Explore More
-
-                        <span class="material-symbols-outlined">arrow_forward</span>
-
-                    </button>
-
-                </div>
-
-                <div
-                    class="spectral-border p-6 md:p-8 space-y-6 group cursor-pointer transition-transform duration-500 hover:-translate-y-2">
-
-                    <div class="aspect-video overflow-hidden rounded-lg">
-
-                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            data-alt="large scale outdoor stadium led display at night with intense brightness and vivid color contrast"
-                            src="assets/futuristic-street-neon-lights-background (1).jpg" />
-
-                    </div>
-
-                    <p class="text-3xl font-bold">Outdoor LED Display Solutions </p>
-
-                    <p class="text-on-surface-variant leading-relaxed">
-
-                        Weather-resistant, high-brightness solutions designed for
-
-                        stadiums, digital out-of-home advertising, and public landmarks.
-
-                    </p>
-
-                    <button onclick="openPopupForm()"
-                        class="text-tertiary flex items-center gap-2 font-bold uppercase text-xs tracking-widest group-hover:gap-4 transition-all">
-
-                        Explore More
-
-                        <span class="material-symbols-outlined">arrow_forward</span>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Section 3: Trust -->
-
-        <section class="py-12 md:py-20 bg-surface-container-low">
-            <div class="max-w-7xl mx-auto px-4 md:px-8">
-                <h2 class="text-center text-2xl font-bold uppercase tracking-widest text-on-surface-variant mb-12">
-                    Trusted by Global Giants
-                </h2>
-
-                <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 lg:gap-24">
-                    <img class="h-12 md:h-16 lg:h-20 w-auto object-contain opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer"
-                        src="assets/tanishq.png" alt="Tanishq Logo">
-
-                    <img class="h-12 md:h-16 lg:h-20 w-auto object-contain opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer"
-                        src="assets/big.png" alt="Big Logo">
-
-                    <img class="h-12 md:h-16 lg:h-20 w-auto object-contain opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer"
-                        src="assets/titanwhite.png" alt="Titan Logo">
-
-                    <img class="h-12 md:h-16 lg:h-20 w-auto object-contain opacity-70 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer"
-                        src="assets/v-guard.png" alt="V-Guard Logo">
-                    <img class="h-12 md:h-16 lg:h-20 w-auto object-contain opacity-70 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer"
-                        src="assets/GRT LOGO.png" alt="V-Guard Logo">
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 4: Industry -->
-
-        <section id="projects" class="py-16 md:py-32 px-4 md:px-8 z-10 relative">
-            <div class="max-w-7xl mx-auto space-y-10 md:space-y-16">
-
-                <div class="space-y-4">
-                    <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white">
-                        Tailored for every <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-sky-400 inline-block pr-[0.1em]">Industry</span>
-                    </h2>
-                    <p class="text-on-surface-variant max-w-xl">
-                        From retail therapy to high-stakes control rooms, our tech scales to your specific sectoral
-                        needs.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    class="relative rounded-[1.5rem] p-[1px] group cursor-pointer transition-transform duration-500 hover:-translate-y-2 isolate shadow-xl">
 
                     <div
-                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
-                        <span
-                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
-                            style="font-variation-settings: 'FILL' 1;">storefront</span>
-                        <p class="font-bold text-lg mb-3 text-white">Retail</p>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">
-                            Transform your retail space with vibrant LED lighting and dynamic displays that captivate
-                            customers and drive sales. Ideal for showrooms, stores, malls, and shopping centers.
-                        </p>
+                        class="absolute inset-0 rounded-[1.5rem] bg-white/5 transition-opacity duration-500 group-hover:opacity-0 -z-10">
                     </div>
 
                     <div
-                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
-                        <span
-                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
-                            style="font-variation-settings: 'FILL' 1;">school</span>
-                        <p class="font-bold text-lg mb-3 text-white">Education</p>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">
-                            Create engaging and energy-efficient learning environments with LED digital displays. Perfect for classrooms, campuses, libraries, and lecture halls to enhance focus
-                            and communication.
-                        </p>
+                        class="absolute inset-0 rounded-[1.5rem] bg-[linear-gradient(135deg,#facc15_0%,#f97316_20%,#ec4899_30%,#a855f7_50%,#38bdf8_100%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100 -z-10">
                     </div>
 
-                    <div
-                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
-                        <span
-                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
-                            style="font-variation-settings: 'FILL' 1;">movie</span>
-                        <p class="font-bold text-lg mb-3 text-white">Virtual</p>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">
-                            Transform your creative workflow with cutting-edge virtual production solutions that blend
-                            live-action footage with real-time CGI. Perfect for film, TV, advertising, and immersive
-                            media.
-                        </p>
-                    </div>
+                    <div class="relative bg-[#05050a] rounded-[calc(1.5rem-1px)] p-4 md:p-5 flex flex-col h-full z-10">
 
-                    <div
-                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
-                        <span
-                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
-                            style="font-variation-settings: 'FILL' 1;">business</span>
-                        <p class="font-bold text-lg mb-3 text-white">Corporate</p>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">
-                            Elevate your workplace with sleek LED displays that enhance
-                            professionalism, boost productivity, and create a modern corporate atmosphere.
-                        </p>
-                    </div>
-
-                    <div
-                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
-                        <span
-                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
-                            style="font-variation-settings: 'FILL' 1;">dashboard</span>
-                        <p class="font-bold text-lg mb-3 text-white">Control-Room</p>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">
-                            Deliver real-time visibility and seamless monitoring with high-performance LED video walls
-                            and displays. Designed for 24/7 operation.
-                        </p>
-                    </div>
-
-                    <div
-                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
-                        <span
-                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
-                            style="font-variation-settings: 'FILL' 1;">hotel</span>
-                        <p class="font-bold text-lg mb-3 text-white">Hospitality</p>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">
-                            Create memorable guest experiences with stylish LED lighting and digital signage that
-                            elevate ambiance, guide visitors, and promote services.
-                        </p>
-                    </div>
-
-                    <div
-                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
-                        <span
-                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
-                            style="font-variation-settings: 'FILL' 1;">flight_takeoff</span>
-                        <p class="font-bold text-lg mb-3 text-white">Airport</p>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">
-                            Enhance passenger flow and communication with high-visibility LED displays for flight info,
-                            wayfinding, and advertising.
-                        </p>
-                    </div>
-
-                    <div
-                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
-                        <div class="w-8 h-8 mb-5 opacity-90 group-hover:opacity-100 transition-opacity"
-                            style="background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink)); -webkit-mask: url(https://img.icons8.com/ios-filled/100/space-needle.png) no-repeat center; mask: url(https://img.icons8.com/ios-filled/100/space-needle.png) no-repeat center; -webkit-mask-size: contain; mask-size: contain;">
+                        <div class="relative w-full h-64 md:h-72 overflow-hidden rounded-[1rem]">
+                            <!-- Mobile Fix: grayscale-0 on mobile, grayscale on desktop -->
+                            <img class="w-full h-full object-cover grayscale-0 md:grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                                alt="Indoor LED display" src="/assets/long-corridor-showcase.jpg" />
                         </div>
 
-                        <p class="font-bold text-lg mb-3 text-white">DOOH</p>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">
-                            Capture attention with vibrant, high-impact LED dynamic displays built for outdoor advertising.
-                            Perfect for billboards and transit hubs.
-                        </p>
+                        <div class="mt-6 flex flex-col flex-grow">
+
+                            <h3 class="text-2xl font-bold text-white tracking-tight">Indoor LED</h3>
+
+                            <p class="text-[#a0a0a0] text-sm leading-relaxed mt-3 flex-grow">
+                                Precision pixel pitch for high-definition visual storytelling in corporate lobbies,
+                                auditoriums, and broadcast studios.
+                            </p>
+
+                            <div class="mt-6">
+                                <button onclick="openPopupForm()"
+                                    class="group/btn flex items-center gap-4 bg-[#090a14] hover:bg-[#0c0d1a] transition-colors rounded-full py-1.5 pl-6 pr-1.5 w-fit">
+
+                                    <span class="text-white text-sm font-semibold tracking-wide">Explore</span>
+                                    
+                                    <!-- Mobile Fix: grayscale-0 on mobile, grayscale on desktop -->
+                                    <div
+                                        class="bg-[linear-gradient(135deg,#facc15_0%,#f97316_20%,#ec4899_30%,#a855f7_50%,#38bdf8_100%)] text-white w-8 h-8 rounded-full flex items-center justify-center grayscale-0 md:grayscale transition-all duration-500 group-hover:grayscale-0 group-hover/btn:translate-x-1">
+                                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                    </div>
+
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="relative rounded-[1.5rem] p-[1px] group cursor-pointer transition-transform duration-500 hover:-translate-y-2 isolate">
+
+                    <div
+                        class="absolute inset-0 rounded-[1.5rem] bg-white/5 transition-opacity duration-500 group-hover:opacity-0 -z-10">
                     </div>
 
                     <div
-                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
-                        <span
-                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
-                            style="font-variation-settings: 'FILL' 1;">directions_run</span>
-                        <p class="font-bold text-lg mb-3 text-white">Sports</p>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">
-                            Energize stadiums and arenas with high-resolution LED scoreboards, perimeter displays, and
-                            video walls that amplify the fan experience.
-                        </p>
+                        class="absolute inset-0 rounded-[1.5rem] bg-[linear-gradient(135deg,#facc15_0%,#f97316_20%,#ec4899_30%,#a855f7_50%,#38bdf8_100%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100 -z-10">
+                    </div>
+
+                    <div class="relative bg-[#05050a] rounded-[calc(1.5rem-1px)] p-4 md:p-5 flex flex-col h-full z-10">
+
+                        <div class="relative w-full h-64 md:h-72 overflow-hidden rounded-[1rem]">
+                            <!-- Mobile Fix: grayscale-0 on mobile, grayscale on desktop -->
+                            <img class="w-full h-full object-cover grayscale-0 md:grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                                alt="Outdoor LED display" src="/assets/mall-america-scenes-cinematic-style.jpg" />
+                        </div>
+
+                        <div class="mt-6 flex flex-col flex-grow">
+
+                            <h3 class="text-2xl font-bold text-white tracking-tight">Outdoor LED</h3>
+
+                            <p class="text-[#a0a0a0] text-sm leading-relaxed mt-3 flex-grow">
+                                Weather-resistant, high-brightness solutions designed for stadiums, digital out-of-home
+                                advertising, and public landmarks.
+                            </p>
+
+                            <div class="mt-6">
+                                <button onclick="openPopupForm()"
+                                    class="group/btn flex items-center gap-4 bg-[#090a14] hover:bg-[#0c0d1a] transition-colors rounded-full py-1.5 pl-6 pr-1.5 w-fit">
+
+                                    <span class="text-white text-sm font-semibold tracking-wide">Explore</span>
+
+                                    <!-- Mobile Fix: grayscale-0 on mobile, grayscale on desktop -->
+                                    <div
+                                        class="bg-[linear-gradient(135deg,#facc15_0%,#f97316_20%,#ec4899_30%,#a855f7_50%,#38bdf8_100%)] text-white w-8 h-8 rounded-full flex items-center justify-center grayscale-0 md:grayscale transition-all duration-500 group-hover:grayscale-0 group-hover/btn:translate-x-1">
+                                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                    </div>
+
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- section 3: Marquee of Trusted Companies -->
+
+        <section class="py-2 md:py-5 bg-surface">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
+
+                <!-- Mobile Fix: Text size reduced from text-5xl to text-2xl on mobile -->
+                <h2 class="text-center text-2xl md:text-3xl font-bold text-gray-500 mb-10">
+                    Trusted by 500+ companies
+                </h2>
+
+                <!-- Marquee Wrapper -->
+                <div class="relative flex overflow-hidden marquee-container select-none">
+
+                    <div
+                        class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none">
+                    </div>
+
+                    <!-- Track 1 -->
+                    <div
+                        class="flex min-w-full shrink-0 items-center justify-center gap-[60px] pr-[60px] animate-marquee">
+
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/tanishq.png" alt="Tanishq Logo">
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/big.png" alt="Big Logo">
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/titanwhite.png" alt="Titan Logo">
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/v-guard.png" alt="V-Guard Logo">
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/GRT LOGO.png" alt="GRT Logo">
+
+                        <!-- Repeated inside Track 1 -->
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/tanishq.png" alt="Tanishq Logo">
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/big.png" alt="Big Logo">
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/titanwhite.png" alt="Titan Logo">
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/v-guard.png" alt="V-Guard Logo">
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/GRT LOGO.png" alt="GRT Logo">
+                    </div>
+
+                    <!-- Track 2 -->
+                    <div aria-hidden="true"
+                        class="flex min-w-full shrink-0 items-center justify-center gap-[60px] pr-[60px] animate-marquee">
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/tanishq.png" alt="Tanishq Logo">
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/big.png" alt="Big Logo">
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/titanwhite.png" alt="Titan Logo">
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/v-guard.png" alt="V-Guard Logo">
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/GRT LOGO.png" alt="GRT Logo">
+
+                        <!-- Repeated inside Track 2 -->
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/tanishq.png" alt="Tanishq Logo">
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/big.png" alt="Big Logo">
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/titanwhite.png" alt="Titan Logo">
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/v-guard.png" alt="V-Guard Logo">
+                        <img class="h-8 md:h-10 lg:h-12 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                            src="assets/GRT LOGO.png" alt="GRT Logo">
                     </div>
 
                     <div
-                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
-                        <span
-                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
-                            style="font-variation-settings: 'FILL' 1;">satellite_alt</span>
-                        <p class="font-bold text-lg mb-3 text-white">Broad casting</p>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">
-                            Deliver stunning visuals and crystal-clear content with LED screens designed for live
-                            broadcasting, newsrooms, and studios.
-                        </p>
-                    </div>
-
-                    <div
-                        class="bg-surface-container p-6 md:p-8 rounded-xl card-gradient-border hover:-translate-y-1 transition-transform duration-300 group flex flex-col items-start text-left cursor-pointer">
-                        <span
-                            class="material-symbols-outlined icon-gradient mb-5 text-3xl opacity-90 group-hover:opacity-100 transition-opacity"
-                            style="font-variation-settings: 'FILL' 1;">monitor_heart</span>
-                        <p class="font-bold text-lg mb-3 text-white">Healthcare</p>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">
-                            Enhance patient care and communication with digital signage displays that provide real-time information,
-                            wayfinding, and health updates.
-                        </p>
+                        class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none">
                     </div>
 
                 </div>
             </div>
         </section>
-        <!-- Section 5: Collection -->
 
+        <!-- section 4: Industries We Serve -->
+        <section id="projects" class="py-12 md:py-16 px-4 md:px-8 z-10 relative bg-[#05050a] overflow-hidden">
+    <div class="max-w-7xl mx-auto space-y-12">
+
+        <!-- Header Section -->
+        <div class="space-y-6 max-w-3xl">
+            <!-- Pill -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest bg-white/5 backdrop-blur-sm mb-6">
+                    <span class="w-2 h-2 rounded-full animate-multi-pulse"></span>
+                    Features
+                </div>
+            
+            <!-- Heading -->
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-tight">
+                Tailored for every <br />
+                <span class="font-medium font-light text-gradient">Industry</span>
+            </h2>
+            
+            <!-- Description -->
+            <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl">
+                From retail therapy to high-stakes control rooms, our tech scales to your specific sectoral needs. Focus on creating your content, we handle the rest.
+            </p>
+        </div>
+
+        <!-- Slider Container Wrapper -->
+        <div class="relative group">
+            
+            <!-- Left Arrow -->
+            <button onclick="slideLeft()" 
+                class="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center bg-[#1a1d2d]/80 hover:bg-[#252a40] border border-white/10 rounded-full text-white backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-[0_0_20px_rgba(0,0,0,0.5)] hidden md:flex">
+                <span class="material-symbols-outlined text-xl">arrow_back_ios_new</span>
+            </button>
+
+            <!-- Right Arrow -->
+            <button onclick="slideRight()" 
+                class="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center bg-[#1a1d2d]/80 hover:bg-[#252a40] border border-white/10 rounded-full text-white backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-[0_0_20px_rgba(0,0,0,0.5)] hidden md:flex">
+                <span class="material-symbols-outlined text-xl">arrow_forward_ios</span>
+            </button>
+
+            <!-- Slider Track -->
+            <div id="industry-slider" class="flex gap-6 overflow-x-auto hide-scrollbar pb-12 pt-4 px-2 -mx-2">
+
+                <!-- 1. RETAIL -->
+                <div class="tilt-card shrink-0 w-[280px] md:w-[340px] bg-[#0a0f1c] rounded-2xl border border-white/5 relative p-8 cursor-pointer flex flex-col h-[320px] shadow-lg">
+                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-surface to-transparent pointer-events-none rounded-t-2xl"></div>
+                    <div class="relative z-10 w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-8">
+                        <span class="material-symbols-outlined  text-gradient text-2xl">storefront</span>
+                    </div>
+                    <div class="relative z-10 mt-auto pointer-events-none">
+                        <h3 class="text-xl font-semibold  text-gradient mb-3">Retail</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Transform your retail space with vibrant LED lighting and dynamic displays that captivate customers.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. EDUCATION -->
+                <div class="tilt-card shrink-0 w-[280px] md:w-[340px] bg-[#0a0f1c] rounded-2xl border border-white/5 relative p-8 cursor-pointer flex flex-col h-[320px] shadow-lg">
+                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-surface to-transparent pointer-events-none rounded-t-2xl"></div>
+                    <div class="relative z-10 w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-8">
+                        <span class="material-symbols-outlined  text-gradient text-2xl">school</span>
+                    </div>
+                    <div class="relative z-10 mt-auto pointer-events-none">
+                        <h3 class="text-xl font-semibold  text-gradient mb-3">Education</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Create engaging learning environments with LED digital displays that keep students focused.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. VIRTUAL -->
+                <div class="tilt-card shrink-0 w-[280px] md:w-[340px] bg-[#0a0f1c] rounded-2xl border border-white/5 relative p-8 cursor-pointer flex flex-col h-[320px] shadow-lg">
+                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-surface to-transparent pointer-events-none rounded-t-2xl"></div>
+                    <div class="relative z-10 w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-8">
+                        <span class="material-symbols-outlined  text-gradient text-2xl">movie</span>
+                    </div>
+                    <div class="relative z-10 mt-auto pointer-events-none">
+                        <h3 class="text-xl font-semibold  text-gradient mb-3">Virtual</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Blending live-action footage with real-time CGI for deeply immersive media production.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. CORPORATE -->
+                <div class="tilt-card shrink-0 w-[280px] md:w-[340px] bg-[#0a0f1c] rounded-2xl border border-white/5 relative p-8 cursor-pointer flex flex-col h-[320px] shadow-lg">
+                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-surface to-transparent pointer-events-none rounded-t-2xl"></div>
+                    <div class="relative z-10 w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-8">
+                        <span class="material-symbols-outlined  text-gradient text-2xl">business</span>
+                    </div>
+                    <div class="relative z-10 mt-auto pointer-events-none">
+                        <h3 class="text-xl font-semibold  text-gradient mb-3">Corporate</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Sleek LED displays that enhance professionalism, presentations, and workplace productivity.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5. CONTROL ROOM -->
+                <div class="tilt-card shrink-0 w-[280px] md:w-[340px] bg-[#0a0f1c] rounded-2xl border border-white/5 relative p-8 cursor-pointer flex flex-col h-[320px] shadow-lg">
+                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-surface to-transparent pointer-events-none rounded-t-2xl"></div>
+                    <div class="relative z-10 w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-8">
+                        <span class="material-symbols-outlined  text-gradient text-2xl">dashboard</span>
+                    </div>
+                    <div class="relative z-10 mt-auto pointer-events-none">
+                        <h3 class="text-xl font-semibold  text-gradient mb-3">Control Room</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            High-performance, ultra-reliable video walls designed specifically for 24/7 monitoring.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 6. SPORTS -->
+                <div class="tilt-card shrink-0 w-[280px] md:w-[340px] bg-[#0a0f1c] rounded-2xl border border-white/5 relative p-8 cursor-pointer flex flex-col h-[320px] shadow-lg">
+                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-surface to-transparent pointer-events-none rounded-t-2xl"></div>
+                    <div class="relative z-10 w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-8">
+                        <span class="material-symbols-outlined  text-gradient text-2xl">directions_run</span>
+                    </div>
+                    <div class="relative z-10 mt-auto pointer-events-none">
+                        <h3 class="text-xl font-semibold  text-gradient mb-3">Sports</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Massive stadium scoreboards and vivid perimeter displays to amplify fan energy and engagement.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- section 5: LED Systems -->
         <section id="service" class=" px-4 md:px-8 max-w-7xl mx-auto">
             <div class="mb-10 md:mb-16 text-center">
-                <h2 class="text-3xl md:text-5xl font-black">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest bg-white/5 backdrop-blur-sm mb-6">
+                        <span class="w-2 h-2 rounded-full animate-multi-pulse"></span>
+                        Collections
+                    </div>
+                <h2 class="text-3xl md:text-5xl font-medium text-white tracking-tight">
                     LED Systems
-                    <span class="italic font-light text-gradient">Collection</span>
+                    <span class="font-medium font-light text-gradient">Collection</span>
                 </h2>
             </div>
 
@@ -849,9 +849,7 @@
                     <img src="assets/traditional-christmas-stollen-christmas-symbol.jpg" alt="Indoor LED"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent"></div>
-
                     <div class="absolute bottom-6 left-6 right-6">
-                       
                         <p class="text-2xl font-bold text-white mb-2">Indoor</p>
                         <p class="text-on-surface-variant text-sm mb-4 line-clamp-2">
                             High-resolution indoor systems for seamless visual experiences.
@@ -866,13 +864,10 @@
 
                 <div class="relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden group cursor-pointer"
                     onclick="openPopupForm()">
-                    <img src="assets/dynamic-digital-flyer-mockup.jpg"
-                        alt="Outdoor"
+                    <img src="assets/dynamic-digital-flyer-mockup.jpg" alt="Outdoor"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent"></div>
-
                     <div class="absolute bottom-6 left-6 right-6">
-                       
                         <p class="text-2xl font-bold text-white mb-2">Outdoor</p>
                         <p class="text-on-surface-variant text-sm mb-4 line-clamp-2">
                             Durable and weatherproof for vibrant outdoor advertising.
@@ -890,9 +885,7 @@
                     <img src="assets/led-wall-abstract-artwork.jpg" alt="Finepitch LED"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent"></div>
-
                     <div class="absolute bottom-6 left-6 right-6">
-                        
                         <p class="text-2xl font-bold text-white mb-2">Finepitch</p>
                         <p class="text-on-surface-variant text-sm mb-4 line-clamp-2">
                             Ultra-high resolution displays for close-proximity viewing.
@@ -910,9 +903,7 @@
                     <img src="assets/hd-digital-art-wallpaper-background.jpg" alt="Creative LED"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent"></div>
-
                     <div class="absolute bottom-6 left-6 right-6">
-                        
                         <p class="text-2xl font-bold text-white mb-2">Creative</p>
                         <p class="text-on-surface-variant text-sm mb-4 line-clamp-2">
                             Customizable solutions for unique architectural shapes.
@@ -928,612 +919,809 @@
             </div>
         </section>
 
-        <!-- Section 6: Experience Center -->
-
-        <section class="py-10 md:py-20 px-4 md:px-8">
-
+        <!-- section 6: Visit Us -->
+        <section class="py-10 md:py-16 px-4 md:px-8">
             <div class="max-w-7xl mx-auto">
-
-                <div class="overflow-hidden bg-surface-container">
-
-                    <div class="grid md:grid-cols-2">
-
-                        <div class="p-6 md:p-12 lg:p-20 space-y-8">
-
-                            <h2 class="text-3xl md:text-5xl font-black">
-
+                <div class="overflow-hidden ">
+                    <div class="grid md:grid-cols-2  group cursor-pointer">
+                        <div class="p-6 md:p-12  lg:p-20 space-y-8">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest bg-white/5 backdrop-blur-sm mb-6">
+                    <span class="w-2 h-2 rounded-full animate-multi-pulse"></span>
+                    Visit Us
+                </div>
+                            <h2 style="margin: 0;" class="text-3xl mt-0 md:text-5xl font-black transition-all duration-700">
                                 Visit us at
 
-                                <span class="text-gradient inline-block pr-[0.1em]">Vivid LED System's</span>
+                                <span class="relative inline-block pr-[0.1em]">
+                                    <span
+                                        class="bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-gray-400 transition-opacity duration-700 group-hover:opacity-0">
+                                        Vivid LED System's
+                                    </span>
+                                    <span
+                                        class="absolute left-0 top-0 bg-clip-text text-transparent bg-[linear-gradient(to_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] opacity-0 transition-opacity duration-700 group-hover:opacity-100">
+                                        Vivid LED System's
+                                    </span>
+                                </span>
 
                                 comprehensive visual technology experience centers
-
                             </h2>
 
                             <div class="space-y-4">
-
                                 <div class="flex items-start gap-4">
-
-                                    <span class="material-symbols-outlined text-primary mt-1">location_on</span>
-
-                                    <div>
-
-                                        <p class="font-bold text-lg">
-
-                                            Marudhar Global Tech PVT LTD
-
-                                        </p>
-
-                                        <p class="text-on-surface-variant">
-
-                                            The Avenue, 210/4,
-E TV Swamy Rd, R.S. Puram,Coimbatore,
-Tamilnadu, INDIA - 641002
-
-                                        </p>
-
+                                    <div class="relative w-6 h-6 mt-1 flex-shrink-0">
+                                        <!-- Mobile Fix: grayscale-0 on mobile, grayscale on desktop -->
+                                        <span
+                                            class="material-symbols-outlined grayscale-0 md:grayscale text-primary absolute inset-0 transition-opacity duration-700 group-hover:opacity-0">location_on</span>
+                                        <span
+                                            class="material-symbols-outlined absolute inset-0 bg-clip-text text-transparent bg-[linear-gradient(to_bottom_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)]   opacity-0 transition-opacity duration-700 group-hover:opacity-100">location_on</span>
                                     </div>
-
+                                    <div>
+                                        <p class="font-bold text-lg">
+                                            Marudhar Global Tech PVT LTD
+                                        </p>
+                                        <p class="text-gray-400">
+                                            The Avenue, 210/4, E TV Swamy Rd, R.S. Puram, Coimbatore, Tamilnadu, INDIA -
+                                            641002
+                                        </p>
+                                    </div>
                                 </div>
 
                                 <div class="flex items-center gap-4">
-
-                                    <span class="material-symbols-outlined text-primary">schedule</span>
-
-                                    <p class="text-on-surface-variant">
-
+                                    <div class="relative w-6 h-6 flex-shrink-0">
+                                        <!-- Mobile Fix: grayscale-0 on mobile, grayscale on desktop -->
+                                        <span
+                                            class="material-symbols-outlined text-primary absolute inset-0 grayscale-0 md:grayscale transition-opacity duration-700 group-hover:opacity-0">schedule</span>
+                                        <span
+                                            class="material-symbols-outlined absolute inset-0 bg-clip-text  text-transparent bg-[linear-gradient(to_bottom_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] opacity-0 transition-opacity duration-700 group-hover:opacity-100">schedule</span>
+                                    </div>
+                                    <p class="text-gray-400">
                                         Open Mon - Sat | 10:00 AM - 07:00 PM
-
                                     </p>
-
                                 </div>
-
                             </div>
 
-                            <button onclick="openPopupForm()"
-                                class="px-10 py-4 bg-surface text-white font-bold rounded-lg border border-white/10 hover:bg-slate-900 transition-all">
-
-                                Schedule Visit
-
-                            </button>
+<div class="relative inline-block mt-4">
+    <div class="absolute inset-0 rounded-[calc(0.5rem-1px)] bg-white/10 transition-opacity duration-700 group-hover:opacity-0"></div>
+    
+    <div class="absolute inset-0 rounded-[calc(0.5rem-1px)] bg-[linear-gradient(to_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
+    
+    <button onclick="openPopupForm()"
+        class="relative z-10 block ml-[2px] mt-[2px] m-[1px] px-10 py-4 bg-surface text-white font-bold rounded-[calc(0.5rem-1px)] hover:bg-slate-900 transition-colors duration-500">
+        Schedule Visit
+    </button>
+</div>
 
                         </div>
 
                         <div class="relative h-96 md:h-auto overflow-hidden">
-
-                            <img class="absolute inset-0 w-full h-full object-cover"
-                                data-alt="ultra modern futuristic showroom interior with immersive floor-to-ceiling led walls and floating digital displays"
+                            <!-- Mobile Fix: grayscale-0 on mobile, grayscale on desktop -->
+                            <img class="absolute inset-0 w-full h-full object-cover border border-white/10 rounded-3xl grayscale-0 md:grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                                alt="Ultra modern futuristic showroom interior with immersive floor-to-ceiling led walls and floating digital displays"
                                 src="assets/digital-art-inmersive-exhibition.jpg" />
 
-                            <div class="absolute inset-0 bg-gradient-to-l from-transparent to-surface-container/50">
-
+                            <div
+                                class="absolute inset-0 bg-gradient-to-l from-transparent to-surface-container/50 group-hover:to-surface-container/20 transition-all duration-700">
                             </div>
-
                         </div>
 
                     </div>
-
                 </div>
-
             </div>
-
         </section>
 
-        <!-- Section 7: Resources -->
+<!-- section 7: Learn More about LED Display Solutions -->
+        <section id="solutions" class="py-12 md:py-16 px-4 md:px-8 z-10 relative bg-surface">
+    <div class="max-w-7xl mx-auto space-y-10">
 
-        <section class="py-5 md:py-10 px-4 md:px-8 bg-surface">
-            <div class="max-w-7xl mx-auto space-y-12">
+        <!-- Header Section -->
+        <div class="space-y-4 text-center md:text-left flex flex-col items-center md:items-start">
+           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest bg-white/5 backdrop-blur-sm mb-6">
+                    <span class="w-2 h-2 rounded-full animate-multi-pulse"></span>
+                    Solutions
+                </div>
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+                Learn more about <br class="hidden md:block" />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500">
+                    LED Display Solutions
+                </span>
+            </h2>
+            <p class="text-gray-400 max-w-xl text-base">
+                Discover our innovative LED solutions with cutting-edge technology, tailored to scale and adapt to your specific sectoral needs.
+            </p>
+        </div>
 
-                <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-cyan-400">
-                        Learn more about LED Display Solutions
-                    </h2>
-                    <p class="text-on-surface-variant text-sm md:text-base">
-                        Discover our innovative LED solutions with cutting-edge technology
+        <!-- Bento Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+
+            <!-- 1. BENEFITS (Span 7) -->
+            <div class="md:col-span-7 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-all group relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
+                <div class="absolute -top-10 -right-10 w-64 h-64 bg-cyan-600/10 blur-[80px] group-hover:bg-cyan-600/20 transition-colors pointer-events-none z-10"></div>
+                
+                <div class="relative w-full h-56 overflow-hidden">
+                    <img src="assets/compact-fluorescent-light-bulb-hand.jpg" alt="Abstract tech particles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
+                </div>
+
+                <div class="p-7 md:p-9 flex flex-col flex-grow relative z-20 -mt-16">
+                    <h3 class="text-2xl font-bold text-white mb-2">The Benefits of LED Vision Works</h3>
+                    <p class="text-gray-400 text-sm max-w-md leading-relaxed mb-6 flex-grow">
+                        Learn how LED vision will offer a better and efficient visual input for development and enhance your environmental lighting.
                     </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-6 gap-6">
-
-                    <div
-                        class="md:col-span-2 bg-surface-container border border-white/10 rounded-xl overflow-hidden flex flex-col items-center text-center pb-6">
-                        <div class="w-full h-36 overflow-hidden">
-                            <img src="assets/compact-fluorescent-light-bulb-hand.jpg"
-                                alt="Abstract tech particles" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6 flex flex-col items-center flex-grow w-full">
-                            <p class="text-cyan-400 font-bold mb-3">The Benefits of LED Vision Works</p>
-                            <p class="text-xs text-on-surface-variant mb-6 flex-grow leading-relaxed">
-                                Learn how LED vision will offer a better and efficient visual input for development
-                            </p>
-                            <button onclick="openPopupForm()"
-                                class="px-8 py-2  rounded-full font-bold text-white text-sm hover:opacity-90 transition-opacity">
-                                Explore more
-                            </button>
-                        </div>
+                    <div class="mt-auto">
+                        <span class="inline-flex items-center gap-2 text-cyan-400 text-sm font-bold group-hover:text-cyan-300 transition-colors">
+                            Explore more <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </span>
                     </div>
-
-                    <div
-                        class="md:col-span-2 bg-surface-container border border-white/10 rounded-xl overflow-hidden flex flex-col items-center text-center pb-6">
-                        <div class="w-full h-36 overflow-hidden">
-                            <img src="assets/shopping-girl-looking-store-window.jpg"
-                                alt="Green circuit board" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6 flex flex-col items-center flex-grow w-full">
-                            <p class="text-cyan-400 font-bold mb-3">Choosing the Right LED Display</p>
-                            <p class="text-xs text-on-surface-variant mb-6 flex-grow leading-relaxed">
-                                Digital design is created when creating a LED display for your current vision
-                            </p>
-                            <button onclick="openPopupForm()"
-                                class="px-8 py-2 rounded-full font-bold text-white text-sm hover:opacity-90 transition-opacity">
-                                Explore more
-                            </button>
-                        </div>
-                    </div>
-
-                    <div
-                        class="md:col-span-2 bg-surface-container border border-white/10 rounded-xl overflow-hidden flex flex-col items-center text-center pb-6">
-                        <div class="w-full h-36 overflow-hidden">
-                            <img src="assets/programmers-data-center-using-mockup-laptop-inspecting-server-rigs.jpg"
-                                alt="Retail space display" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6 flex flex-col items-center flex-grow w-full">
-                            <p class="text-cyan-400 font-bold mb-3">LED Solutions for Retail</p>
-                            <p class="text-xs text-on-surface-variant mb-6 flex-grow leading-relaxed">
-                                Explore the LED display as best as our customers can serve in the world
-                            </p>
-                            <button onclick="openPopupForm()"
-                                class="px-8 py-2 rounded-full font-bold text-white text-sm hover:opacity-90 transition-opacity">
-                                Explore more
-                            </button>
-                        </div>
-                    </div>
-
-                    <div
-                        class="md:col-span-3 bg-surface-container border border-white/10 rounded-xl overflow-hidden flex flex-col items-center text-center pb-6">
-                        <div class="w-full h-40 overflow-hidden">
-                            <img src="assets/financial-advisor-presents-detailed-stock-market-analysis-clients.jpg"
-                                alt="Corporate meeting room" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6 flex flex-col items-center flex-grow w-full">
-                            <p class="text-cyan-400 font-bold mb-3">Corporate LED Display Applications</p>
-                            <p class="text-xs text-on-surface-variant mb-6 flex-grow leading-relaxed max-w-sm">
-                                Optimize the basics and a LED display is designed using key connections and training
-                            </p>
-                            <button onclick="openPopupForm()"
-                                class="px-8 py-2 rounded-full font-bold text-white text-sm hover:opacity-90 transition-opacity">
-                                Explore more
-                            </button>
-                        </div>
-                    </div>
-
-                    <div
-                        class="md:col-span-3 bg-surface-container border border-white/10 rounded-xl overflow-hidden flex flex-col items-center text-center pb-6">
-                        <div class="w-full h-40 overflow-hidden">
-                            <img src="assets/medium-shot-people-talking-about-color-palette.jpg"
-                                alt="Curved LED ceiling display" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6 flex flex-col items-center flex-grow w-full">
-                            <p class="text-cyan-400 font-bold mb-3">Customizing Your LED Display</p>
-                            <p class="text-xs text-on-surface-variant mb-6 flex-grow leading-relaxed max-w-sm">
-                                Improve the impact of the LED display on the use of new tools for your business areas
-                            </p>
-                            <button onclick="openPopupForm()"
-                                class="px-8 py-2 rounded-full font-bold text-white text-sm hover:opacity-90 transition-opacity">
-                                Explore more
-                            </button>
-                        </div>
-                    </div>
-
-                    <div
-                        class="md:col-span-2 bg-surface-container border border-white/10 rounded-xl overflow-hidden flex flex-col items-center text-center pb-6">
-                        <div class="w-full h-36 overflow-hidden">
-                            <img src="assets/65854375_2306.w022.n003.924B.p15.924.jpg"
-                                alt="Blue digital silhouettes" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6 flex flex-col items-center flex-grow w-full">
-                            <p class="text-cyan-400 font-bold mb-3">Introducing LED Vision Work</p>
-                            <p class="text-xs text-on-surface-variant mb-6 flex-grow leading-relaxed">
-                                Digital technologies are used with customized networking techniques
-                            </p>
-                            <button onclick="openPopupForm()"
-                                class="px-8 py-2 rounded-full  font-bold text-white text-sm hover:opacity-90 transition-opacity">
-                                Explore more
-                            </button>
-                        </div>
-                    </div>
-
-                    <div
-                        class="md:col-span-4 bg-surface-container border border-white/10 rounded-xl overflow-hidden flex flex-col items-center text-center pb-6">
-                        <div class="w-full h-36 overflow-hidden">
-                            <img src="assets/confident-call-center-operator-talking-with-client.jpg"
-                                alt="Abstract network connections" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6 flex flex-col items-center flex-grow w-full">
-                            <p class="text-cyan-400 font-bold mb-3">Expert Support for LED Displays</p>
-                            <p class="text-xs text-on-surface-variant mb-6 flex-grow leading-relaxed max-w-lg">
-                                Enhance the importance of users' expertise that can help you get home and put LED lights
-                            </p>
-                            <button onclick="openPopupForm()"
-                                class="text-transparent bg-clip-text bg-[linear-gradient(90deg,#facc15,#f97316,#ec4899)] text-sm font-bold flex items-center gap-1 hover:opacity-80 transition-opacity">
-                                Get Support <span
-                                    class="material-symbols-outlined text-sm text-[#ec4899]">arrow_forward_ios</span>
-                            </button>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-        </section>
 
-        <!-- Section 8: Testimonials -->
+            <!-- 2. CHOOSING RIGHT (Span 5) -->
+            <div class="md:col-span-5 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-all group relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
+                <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-purple-600/10 blur-[80px] group-hover:bg-purple-600/20 transition-colors pointer-events-none z-10"></div>
+                
+                <div class="relative w-full h-56 overflow-hidden">
+                    <img src="assets/shopping-girl-looking-store-window.jpg" alt="Choosing LED" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
+                </div>
 
-        <section class="py-16 md:py-32 px-4 md:px-8 bg-surface-container-low overflow-hidden">
-            <div class="max-w-4xl mx-auto space-y-8 md:space-y-12 text-center">
+                <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
+                    <h3 class="text-xl font-bold text-white mb-2">Choosing the Right LED</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                        Digital design is created when planning a LED display tailored perfectly for your current vision.
+                    </p>
+                    <div class="mt-auto">
+                        <span class="inline-flex items-center gap-2 text-purple-400 text-sm font-bold group-hover:text-purple-300 transition-colors">
+                            Explore more <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
 
-                <h2 class="text-2xl md:text-4xl font-black text-center text-white">
-                    What
-                    <span class="text-gradient inline-block px-2">Our Customers</span>
-                    are saying about their experience
+            <!-- 3. RETAIL (Span 4) -->
+            <div class="md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-all group relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-sky-600/10 blur-[60px] group-hover:bg-sky-600/20 transition-colors pointer-events-none z-10"></div>
+                
+                <div class="relative w-full h-44 overflow-hidden">
+                    <img src="assets/programmers-data-center-using-mockup-laptop-inspecting-server-rigs.jpg" alt="Retail Display" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/80 to-transparent"></div>
+                </div>
+
+                <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
+                    <h3 class="text-lg font-bold text-white mb-2">Retail Solutions</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                        Explore how LED displays can serve your customers better in the modern retail world.
+                    </p>
+                    <div class="mt-auto">
+                        <span class="inline-flex items-center gap-2 text-sky-400 text-sm font-bold group-hover:text-sky-300 transition-colors">
+                            Explore more <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. CORPORATE (Span 4) -->
+            <div class="md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-all group relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-600/10 blur-[60px] group-hover:bg-emerald-600/20 transition-colors pointer-events-none z-10"></div>
+                
+                <div class="relative w-full h-44 overflow-hidden">
+                    <img src="assets/financial-advisor-presents-detailed-stock-market-analysis-clients.jpg" alt="Corporate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/80 to-transparent"></div>
+                </div>
+
+                <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
+                    <h3 class="text-lg font-bold text-white mb-2">Corporate Displays</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                        Optimize the basics with LED displays designed for key connections and corporate training.
+                    </p>
+                    <div class="mt-auto">
+                        <span class="inline-flex items-center gap-2 text-emerald-400 text-sm font-bold group-hover:text-emerald-300 transition-colors">
+                            Explore more <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. CUSTOMIZING (Span 4) -->
+            <div class="md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-all group relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-orange-600/10 blur-[60px] group-hover:bg-orange-600/20 transition-colors pointer-events-none z-10"></div>
+                
+                <div class="relative w-full h-44 overflow-hidden">
+                    <img src="assets/medium-shot-people-talking-about-color-palette.jpg" alt="Customizing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/80 to-transparent"></div>
+                </div>
+
+                <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
+                    <h3 class="text-lg font-bold text-white mb-2">Customizing Displays</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                        Improve the impact of your visual array with custom shapes and tools for your business.
+                    </p>
+                    <div class="mt-auto">
+                        <span class="inline-flex items-center gap-2 text-orange-400 text-sm font-bold group-hover:text-orange-300 transition-colors">
+                            Explore more <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. INTRODUCING (Span 6) -->
+            <div class="md:col-span-6 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-all group relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
+                <div class="absolute -top-10 -right-10 w-48 h-48 bg-pink-600/10 blur-[80px] group-hover:bg-pink-600/20 transition-colors pointer-events-none z-10"></div>
+                
+                <div class="relative w-full h-48 overflow-hidden">
+                    <img src="assets/65854375_2306.w022.n003.924B.p15.924.jpg" alt="Intro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
+                </div>
+
+                <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
+                    <h3 class="text-xl font-bold text-white mb-2">Introducing LED Vision</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                        Digital technologies combined seamlessly with customized networking techniques for ultimate control.
+                    </p>
+                    <div class="mt-auto">
+                        <span class="inline-flex items-center gap-2 text-pink-400 text-sm font-bold group-hover:text-pink-300 transition-colors">
+                            Explore more <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. EXPERT SUPPORT (Span 6) -->
+            <div class="md:col-span-6 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-all group relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
+                <div class="absolute -top-10 -right-10 w-48 h-48 bg-yellow-600/10 blur-[80px] group-hover:bg-yellow-600/20 transition-colors pointer-events-none z-10"></div>
+                
+                <div class="relative w-full h-48 overflow-hidden">
+                    <img src="assets/confident-call-center-operator-talking-with-client.jpg" alt="Support" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
+                </div>
+
+                <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
+                    <h3 class="text-xl font-bold text-white mb-2">Expert Support</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                        Enhance the importance of user expertise that can help you seamlessly install and maintain your LED arrays.
+                    </p>
+                    
+                    <div class="mt-auto">
+                        <button onclick="openPopupForm()" class="text-transparent bg-clip-text bg-[linear-gradient(90deg,#facc15,#f97316,#ec4899)] text-sm font-bold flex items-center gap-1 hover:opacity-80 transition-opacity">
+                            Get Support <span class="material-symbols-outlined text-sm text-[#ec4899] transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- //section 8: Testimonials -->
+       <section class="py-12 md:py-16 bg-[#05050a] overflow-hidden relative">
+    
+    <!-- Header Section (Left Aligned) -->
+    <div class="max-w-7xl mx-auto px-4 md:px-8 mb-12 md:mb-16">
+        <!-- Green Pill -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest bg-white/5 backdrop-blur-sm mb-6">
+                    <span class="w-2 h-2 rounded-full animate-multi-pulse"></span>
+                    Testimonials
+                </div>
+        
+        <!-- Heading -->
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">
+            What Our Customers <br class="hidden md:block" /> 
+            Are Saying About Their Experience
+        </h2>
+    </div>
+
+    <!-- Slider Wrapper (Full width for edge-to-edge scrolling) -->
+    <div class="relative w-full group">
+        
+        <!-- Left Gradient Fade -->
+        <div class="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-[#05050a] to-transparent z-10 pointer-events-none"></div>
+
+        <!-- Left Navigation Arrow (Mobile Fix: Hidden on mobile using hidden md:flex) -->
+        <button onclick="slideTestimonialLeft()" 
+            class="hidden md:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-[#1a1d2d]/90 hover:bg-[#252a40] border border-white/10 rounded-full text-white backdrop-blur-md opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 shadow-xl cursor-pointer">
+            <span class="material-symbols-outlined text-xl">arrow_back_ios_new</span>
+        </button>
+
+        <!-- Right Gradient Fade -->
+        <div class="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-[#05050a] to-transparent z-10 pointer-events-none"></div>
+
+        <!-- Right Navigation Arrow (Mobile Fix: Hidden on mobile using hidden md:flex) -->
+        <button onclick="slideTestimonialRight()" 
+            class="hidden md:flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-[#1a1d2d]/90 hover:bg-[#252a40] border border-white/10 rounded-full text-white backdrop-blur-md opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 shadow-xl cursor-pointer">
+            <span class="material-symbols-outlined text-xl">arrow_forward_ios</span>
+        </button>
+
+        <!-- Slider Track -->
+        <div id="testimonial-slider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar pb-12 pt-4 px-8 md:px-[10%]">
+            
+            <!-- Testimonial 1 -->
+            <div class="snap-center shrink-0 w-[300px] md:w-[380px] bg-[#0e0e11] border border-white/5 rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:border-white/10 shadow-xl">
+                <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
+                
+                <h3 class="text-white font-bold text-lg relative z-10 mt-4">Managing Ethernet</h3>
+                <p class="text-gray-500 text-xs md:text-sm mb-5 relative z-10 uppercase tracking-widest mt-1">Mobile License for LCL Channel</p>
+                
+                <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-5 relative z-10"></div>
+                
+                <div class="flex items-center gap-1 mb-5 relative z-10">
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="text-white font-bold text-sm ml-1.5">5.0</span>
+                </div>
+                
+                <p class="text-gray-400 text-sm leading-relaxed relative z-10 flex-grow">
+                    "Using the LED tool to fit digital system, it helps a good experience and build up and improve our ability to fly. That supports our own highly competitive and able to maintain all the time ahead."
+                </p>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="snap-center shrink-0 w-[300px] md:w-[380px] bg-[#0e0e11] border border-white/5 rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:border-white/10 shadow-xl">
+                <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
+                
+                <h3 class="text-white font-bold text-lg relative z-10 mt-4">Field Manager</h3>
+                <p class="text-gray-500 text-xs md:text-sm mb-5 relative z-10 uppercase tracking-widest mt-1">Tanishq</p>
+                
+                <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-5 relative z-10"></div>
+                
+                <div class="flex items-center gap-1 mb-5 relative z-10">
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="text-white font-bold text-sm ml-1.5">5.0</span>
+                </div>
+                
+                <p class="text-gray-400 text-sm leading-relaxed relative z-10 flex-grow">
+                    "Excellent support has the aim to fit our digital team into some of our professional strengths and capabilities. This is worthy of being the most well working skill that Vivid uses."
+                </p>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="snap-center shrink-0 w-[300px] md:w-[380px] bg-[#0e0e11] border border-white/5 rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:border-white/10 shadow-xl">
+                <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
+                
+                <h3 class="text-white font-bold text-lg relative z-10 mt-4">Learning Technology Director</h3>
+                <p class="text-gray-500 text-xs md:text-sm mb-5 relative z-10 uppercase tracking-widest mt-1">Tech Corp</p>
+                
+                <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-5 relative z-10"></div>
+                
+                <div class="flex items-center gap-1 mb-5 relative z-10">
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="text-white font-bold text-sm ml-1.5">5.0</span>
+                </div>
+                
+                <p class="text-gray-400 text-sm leading-relaxed relative z-10 flex-grow">
+                    "Experience Vivid uses a large-scale virtual smartphone, which provides an immersive experience with the global user experience, reflecting their career trajectory."
+                </p>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="snap-center shrink-0 w-[300px] md:w-[380px] bg-[#0e0e11] border border-white/5 rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:border-white/10 shadow-xl">
+                <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
+                
+                <h3 class="text-white font-bold text-lg relative z-10 mt-4">Suganya R</h3>
+                <p class="text-gray-500 text-xs md:text-sm mb-5 relative z-10 uppercase tracking-widest mt-1">GV residency</p>
+                
+                <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-5 relative z-10"></div>
+                
+                <div class="flex items-center gap-1 mb-5 relative z-10">
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="text-white font-bold text-sm ml-1.5">5.0</span>
+                </div>
+                
+                <p class="text-gray-400 text-sm leading-relaxed relative z-10 flex-grow">
+                    "I recently installed LED video wall in GV residency. The team was very approachable and able to clarify my queries in a professional manner. I initially had minor hiccups, but the team was able to respond appropriately. I would definitely recommend the service."
+                </p>
+            </div>
+
+            <!-- Testimonial 5 -->
+            <div class="snap-center shrink-0 w-[300px] md:w-[380px] bg-[#0e0e11] border border-white/5 rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:border-white/10 shadow-xl">
+                <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
+                
+                <h3 class="text-white font-bold text-lg relative z-10 mt-4">Vignesh Karuppaiya</h3>
+                <p class="text-gray-500 text-xs md:text-sm mb-5 relative z-10 uppercase tracking-widest mt-1">Moonlight Villa Resort</p>
+                
+                <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-5 relative z-10"></div>
+                
+                <div class="flex items-center gap-1 mb-5 relative z-10">
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="text-white font-bold text-sm ml-1.5">5.0</span>
+                </div>
+                
+                <p class="text-gray-400 text-sm leading-relaxed relative z-10 flex-grow">
+                    "We’re extremely happy with the installation of the VIVID LED system at our Moonlight Villa Resort. It has elevated the entire look and feel of the property, giving it a modern and luxurious ambiance."
+                </p>
+            </div>
+
+            <!-- Testimonial 6 -->
+            <div class="snap-center shrink-0 w-[300px] md:w-[380px] bg-[#0e0e11] border border-white/5 rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:border-white/10 shadow-xl">
+                <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
+                
+                <h3 class="text-white font-bold text-lg relative z-10 mt-4">Rajmahal</h3>
+                <p class="text-gray-500 text-xs md:text-sm mb-5 relative z-10 uppercase tracking-widest mt-1">Retail Private Limited</p>
+                
+                <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-5 relative z-10"></div>
+                
+                <div class="flex items-center gap-1 mb-5 relative z-10">
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="text-white font-bold text-sm ml-1.5">5.0</span>
+                </div>
+                
+                <p class="text-gray-400 text-sm leading-relaxed relative z-10 flex-grow">
+                    "Integration with our existing systems was seamless. The support team was responsive and knowledgeable throughout the implementation process."
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <a href="https://wa.me/919626383000?text=Hi,%20I%E2%80%99m%20looking%20for%20LED%20solutions"
+            class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+            <svg viewBox="0 0 32 32" class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16 2a13.9 13.9 0 0 0-11.8 21.2L2 30l7-1.8A13.9 13.9 0 0 0 16 30a14 14 0 1 0 0-28zm0 25.6a11.6 11.6 0 0 1-5.9-1.6l-.4-.3-4.4 1.2 1.2-4.3-.3-.5A11.6 11.6 0 1 1 16 27.6zm6.3-8.6c-.3-.2-2-.9-2.3-1s-.6-.2-.8.2-.9 1.1-1.1 1.3-.4.3-.8.1-1.4-.5-2.7-1.7c-1-1-1.7-2.1-1.9-2.5s0-.6.2-.8c.2-.2.4-.4.6-.7s.3-.4.4-.7.1-.6 0-.8c-.1-.3-.8-2-1.1-2.7-.3-.8-.6-.7-.8-.7h-.7c-.3 0-.7.1-1.1.5s-1.4 1.4-1.4 3.4 1.5 3.9 1.7 4.1 2.8 4.3 6.8 6 4 .9 4.7.8 2.2-.9 2.5-1.8.3-1.6.2-1.8-.4-.3-.7-.5z"
+                    fill="#FFF" />
+            </svg>
+        </a>
+
+        <section class="py-16 md:py-20 px-4 md:px-8 bg-[#05050a] relative overflow-hidden">
+    
+    <!-- Ambient Background Glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10">
+        
+        <!-- Left Column: Content & Features -->
+        <div class="space-y-12">
+            
+            <!-- Heading Section -->
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest bg-white/5 backdrop-blur-sm mb-6">
+                    <span class="w-2 h-2 rounded-full animate-multi-pulse"></span>
+                    Why Us
+                </div>
+                
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] mb-6 text-white tracking-tight">
+                    Why Choose <br />
+                    <span class="text-transparent bg-clip-text bg-[linear-gradient(to_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)]">
+                        Vivid LED System?
+                    </span>
                 </h2>
-
-                <div class="relative">
-                    <div class="slider-grid" id="testimonialSlider">
-
-                        <div
-                            class="slider-item active relative p-6 md:p-12 bg-surface-container rounded-2xl border border-white-5 shadow-2xl">
-                            <p
-                                class="text-xl md:text-2xl font-light italic leading-relaxed text-on-surface mb-8 relative z-10">
-                                "Using the LED tool to fit digital system, it helps a good experience and build up and
-                                improve our ability to fly. That supports our own highly competitive and able to
-                                maintain all the time ahead."
-                            </p>
-                            <div class="flex flex-col items-center gap-2">
-                                <p class="font-bold text-on-surface mt-4">Managing Ethernet</p>
-                                <p class="text-xs uppercase tracking-widest text-on-surface-variant">Mobile License for
-                                    LCL Channel</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="slider-item relative p-6 md:p-12 bg-surface-container rounded-2xl border border-white-5 shadow-2xl">
-                            <p
-                                class="text-xl md:text-2xl font-light italic leading-relaxed text-on-surface mb-8 relative z-10">
-                                "Excellent support has the aim to fit our digital team into some of our professional
-                                strengths and capabilities. This is worthy of being the most well working skill that
-                                Vivid uses."
-                            </p>
-                            <div class="flex flex-col items-center gap-2">
-                                <p class="font-bold text-on-surface mt-4">Field Manager</p>
-                                <p class="text-xs uppercase tracking-widest text-on-surface-variant">Tanishq</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="slider-item relative p-6 md:p-12 bg-surface-container rounded-2xl border border-white-5 shadow-2xl">
-
-                            <p
-                                class="text-xl md:text-2xl font-light italic leading-relaxed text-on-surface mb-8 relative z-10">
-                                "Experience Vivid uses a large-scale virtual smartphone, which provides an immersive
-                                experience with the global user experience, reflecting their career trajectory."
-                            </p>
-                            <div class="flex flex-col items-center gap-2">
-                                <p class="font-bold text-on-surface mt-4">Learning Technology Director</p>
-                                <p class="text-xs uppercase tracking-widest text-on-surface-variant">Tech Corp</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="slider-item relative p-6 md:p-12 bg-surface-container rounded-2xl border border-white-5 shadow-2xl">
-
-                            <p
-                                class="text-xl md:text-2xl font-light italic leading-relaxed text-on-surface mb-8 relative z-10">
-                                I recently installed LED video wall in GV residency. The team was very approachable and able to clarify my queries in a professional manner. I initially had minor hiccups , but the team was able to respond appropriately. I would definitely recommend the service. 
-                            </p>
-                            <div class="flex flex-col items-center gap-2">
-                                <p class="font-bold text-on-surface mt-4">Suganya R</p>
-                                <p class="text-xs uppercase tracking-widest text-on-surface-variant">GV residency</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="slider-item relative p-6 md:p-12 bg-surface-container rounded-2xl border border-white-5 shadow-2xl">
-
-                            <p
-                                class="text-xl md:text-2xl font-light italic leading-relaxed text-on-surface mb-8 relative z-10">
-                                We’re extremely happy with the installation of the VIVID LED system at our Moonlight Villa Resort. It has elevated the entire look and feel of the property, giving it a modern and luxurious ambiance.  
-                            </p>
-                            <div class="flex flex-col items-center gap-2">
-                                <p class="font-bold text-on-surface mt-4">VIGNESH KARUPPAIYA</p>
-                                <p class="text-xs uppercase tracking-widest text-on-surface-variant">Moonlight Villa Resort</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="slider-item relative p-6 md:p-12 bg-surface-container rounded-2xl border border-white-5 shadow-2xl">
-                            <p
-                                class="text-xl md:text-2xl font-light italic leading-relaxed text-on-surface mb-8 relative z-10">
-                                "Integration with our existing systems was seamless. The support team was responsive and
-                                knowledgeable throughout the implementation process."
-                            </p>
-                            <div class="flex flex-col items-center gap-2">
-                                <p class="font-bold text-on-surface mt-4">Rajmahal</p>
-                                <p class="text-xs uppercase tracking-widest text-on-surface-variant">Retail Private Limited</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="flex items-center justify-between mt-8 max-w-sm mx-auto">
-                        <button id="prevBtn"
-                            class="nav-btn w-12 h-12 flex items-center justify-center rounded-full border border-white-5 bg-surface-container text-on-surface"
-                            aria-label="Previous testimonial">
-                            <span class="material-symbols-outlined">chevron_left</span>
-                        </button>
-
-                        <div id="sliderDots" class="flex gap-3">
-                        </div>
-
-                        <button id="nextBtn"
-                            class="nav-btn w-12 h-12 flex items-center justify-center rounded-full border border-white-5 bg-surface-container text-on-surface"
-                            aria-label="Next testimonial">
-                            <span class="material-symbols-outlined">chevron_right</span>
-                        </button>
-                    </div>
-                </div>
+                <p class="text-gray-400 text-base md:text-lg max-w-lg leading-relaxed">
+                    Innovative LED Solutions Backed by Expertise. We don't just build displays; we engineer visual experiences that leave a lasting impact.
+                </p>
             </div>
-        </section>
 
-        <a href="https://wa.me/919626383000?text=Hi,%20I%E2%80%99m%20looking%20for%20LED%20solutions" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 32 32" class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 2a13.9 13.9 0 0 0-11.8 21.2L2 30l7-1.8A13.9 13.9 0 0 0 16 30a14 14 0 1 0 0-28zm0 25.6a11.6 11.6 0 0 1-5.9-1.6l-.4-.3-4.4 1.2 1.2-4.3-.3-.5A11.6 11.6 0 1 1 16 27.6zm6.3-8.6c-.3-.2-2-.9-2.3-1s-.6-.2-.8.2-.9 1.1-1.1 1.3-.4.3-.8.1-1.4-.5-2.7-1.7c-1-1-1.7-2.1-1.9-2.5s0-.6.2-.8c.2-.2.4-.4.6-.7s.3-.4.4-.7.1-.6 0-.8c-.1-.3-.8-2-1.1-2.7-.3-.8-.6-.7-.8-.7h-.7c-.3 0-.7.1-1.1.5s-1.4 1.4-1.4 3.4 1.5 3.9 1.7 4.1 2.8 4.3 6.8 6 4 .9 4.7.8 2.2-.9 2.5-1.8.3-1.6.2-1.8-.4-.3-.7-.5z" fill="#FFF"/>
-  </svg>
-</a>
-
-        <!-- Section 9: Why Choose Us -->
-
-        <section class="py-16 md:py-32 px-4 md:px-8">
-            <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-20 items-center">
-                <div class="space-y-12">
+            <!-- Features List -->
+            <div class="space-y-4">
+                
+                <!-- Feature 1 -->
+                <div class="group flex gap-5 md:gap-6 p-5 md:p-6 bg-[#0e0e11]/50 border border-white/5 hover:border-white/10 rounded-2xl transition-all duration-500 hover:bg-[#12121a] hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/5 cursor-default">
+                    <!-- Icon Box -->
+                    <div class="shrink-0 relative w-14 h-14 rounded-xl p-[1px] pr-[2px] pb-[2px] isolate transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-white/10 group-hover:bg-[linear-gradient(135deg,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] rounded-xl transition-colors duration-500 -z-10"></div>
+                        <div class="w-full h-full bg-[#05050a] rounded-[calc(0.75rem-1px)] flex items-center justify-center">
+                            <span class="material-symbols-outlined text-gray-500 transition-colors duration-500 group-hover:text-white">desktop_windows</span>
+                        </div>
+                    </div>
+                    <!-- Text -->
                     <div>
-                        <h2 class="text-3xl md:text-5xl font-black leading-tight mb-4">
-                            Why Choose <br /><span class="text-gradient inline-block pr-[0.1em]">Vivid LED
-                                System?</span>
-                        </h2>
-                        <p class="text-on-surface-variant text-sm md:text-base">
-                            Innovative LED Solutions Backed by Expertise
-                        </p>
-                    </div>
-                    <div class="space-y-8">
-                        <div class="flex gap-6">
-                            <div
-                                class="w-12 h-12 shrink-0 rounded-lg spectral-gradient flex items-center justify-center">
-                                <span class="material-symbols-outlined text-surface">desktop_windows</span>
-                            </div>
-                            <div>
-                                <p class="text-xl font-bold mb-2">Crystal Clear Displays</p>
-                                <p class="text-on-surface-variant">
-                                    Experience ultra-sharp, vibrant visuals with our high-resolution LED video walls
-                                    designed for maximum impact.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6">
-                            <div
-                                class="w-12 h-12 shrink-0 rounded-lg spectral-gradient flex items-center justify-center">
-                                <span class="material-symbols-outlined text-surface">trending_up</span>
-                            </div>
-                            <div>
-                                <p class="text-xl font-bold mb-2">Reliable Performance (24/7)</p>
-                                <p class="text-on-surface-variant">
-                                    Built for durability, our LED systems deliver uninterrupted performance 24/7 — even
-                                    in the toughest environments.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6">
-                            <div
-                                class="w-12 h-12 shrink-0 rounded-lg spectral-gradient flex items-center justify-center">
-                                <span class="material-symbols-outlined text-surface">handyman</span>
-                            </div>
-                            <div>
-                                <p class="text-xl font-bold mb-2">1 L+ Sq. Ft. Installed</p>
-                                <p class="text-on-surface-variant">
-                                    Successfully installed over 1 lakh square feet of LED displays across diverse industries and spaces.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6">
-                            <div
-                                class="w-12 h-12 shrink-0 rounded-lg spectral-gradient flex items-center justify-center">
-                                <span class="material-symbols-outlined text-surface">handshake</span>
-                            </div>
-                            <div>
-                                <p class="text-xl font-bold mb-2">Trusted by 10,000+ Customers</p>
-                                <p class="text-on-surface-variant">
-                                    Join over 10,000 satisfied clients who trust Vivid LED System for dependable display
-                                    solutions that deliver results.
-                                </p>
-                            </div>
-                        </div>
+                        <p class="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-[linear-gradient(to_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] transition-all duration-500 w-fit">Crystal Clear Displays</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">Experience ultra-sharp, vibrant visuals with our high-resolution LED video walls designed for maximum impact.</p>
                     </div>
                 </div>
-                <div class="relative">
-                    <div class="aspect-square spectral-border overflow-hidden">
-                        <img class="w-full h-full object-cover"
-                            data-alt="team of engineers and designers collaborating around a large glowing led interface in a high tech workspace"
-                            src="assets/smiling-business-partners-shaking-hands-lounge.jpg" />
+
+                <!-- Feature 2 -->
+                <div class="group flex gap-5 md:gap-6 p-5 md:p-6 bg-[#0e0e11]/50 border border-white/5 hover:border-white/10 rounded-2xl transition-all duration-500 hover:bg-[#12121a] hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/5 cursor-default">
+                    <!-- Icon Box -->
+                    <div class="shrink-0 relative w-14 h-14 rounded-xl p-[1px] pr-[2px] pb-[2px] isolate transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-white/10 group-hover:bg-[linear-gradient(135deg,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] rounded-xl transition-colors duration-500 -z-10"></div>
+                        <div class="w-full h-full bg-[#05050a] rounded-[calc(0.75rem-1px)] flex items-center justify-center">
+                            <span class="material-symbols-outlined text-gray-500 transition-colors duration-500 group-hover:text-white">trending_up</span>
+                        </div>
                     </div>
-                    <div
-                        class="static md:absolute md:-bottom-10 md:-left-10 mt-6 md:mt-0 bg-surface-container p-6 md:p-8 rounded-xl border border-white/10 shadow-2xl">
-                        <p class="text-2xl md:text-4xl font-black text-primary">11+</p>
-                        <p class="text-xs uppercase tracking-widest text-on-surface-variant">
-                            Years of Excellence
+                    <!-- Text -->
+                    <div>
+                        <p class="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-[linear-gradient(to_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] transition-all duration-500 w-fit">Reliable Performance (24/7)</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">Built for durability, our LED systems deliver uninterrupted performance 24/7 — even in the toughest environments.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="group flex gap-5 md:gap-6 p-5 md:p-6 bg-[#0e0e11]/50 border border-white/5 hover:border-white/10 rounded-2xl transition-all duration-500 hover:bg-[#12121a] hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/5 cursor-default">
+                    <!-- Icon Box -->
+                    <div class="shrink-0 relative w-14 h-14 rounded-xl p-[1px] pr-[2px] pb-[2px] isolate transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-white/10 group-hover:bg-[linear-gradient(135deg,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] rounded-xl transition-colors duration-500 -z-10"></div>
+                        <div class="w-full h-full bg-[#05050a] rounded-[calc(0.75rem-1px)] flex items-center justify-center">
+                            <span class="material-symbols-outlined text-gray-500 transition-colors duration-500 group-hover:text-white">handyman</span>
+                        </div>
+                    </div>
+                    <!-- Text -->
+                    <div>
+                        <p class="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-[linear-gradient(to_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] transition-all duration-500 w-fit">1 L+ Sq. Ft. Installed</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">Successfully installed over 1 lakh square feet of LED displays across diverse industries and spaces.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="group flex gap-5 md:gap-6 p-5 md:p-6 bg-[#0e0e11]/50 border border-white/5 hover:border-white/10 rounded-2xl transition-all duration-500 hover:bg-[#12121a] hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/5 cursor-default">
+                    <!-- Icon Box -->
+                    <div class="shrink-0 relative w-14 h-14 rounded-xl p-[1px] pr-[2px] pb-[2px] isolate transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-white/10 group-hover:bg-[linear-gradient(135deg,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] rounded-xl transition-colors duration-500 -z-10"></div>
+                        <div class="w-full h-full bg-[#05050a] rounded-[calc(0.75rem-1px)] flex items-center justify-center">
+                            <span class="material-symbols-outlined text-gray-500 transition-colors duration-500 group-hover:text-white">handshake</span>
+                        </div>
+                    </div>
+                    <!-- Text -->
+                    <div>
+                        <p class="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-[linear-gradient(to_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] transition-all duration-500 w-fit">Trusted by 10,000+ Customers</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">Join over 10,000 satisfied clients who trust Vivid LED System for dependable display solutions that deliver results.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Column: Visual & Stat Badge -->
+        <div class="relative w-full h-[500px] lg:h-[750px] mt-12 lg:mt-0">
+            
+            <!-- Image Card Wrapper with Gradient Border Hover -->
+            <div class="relative w-full h-full rounded-[2rem] p-[1px] isolate group cursor-pointer shadow-2xl">
+                <!-- Default Subtle Border -->
+                <div class="absolute inset-0 rounded-[2rem] bg-white/10 transition-opacity duration-700 group-hover:opacity-0 -z-10"></div>
+                <!-- Hover Gradient Border -->
+                <div class="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] opacity-0 transition-opacity duration-700 group-hover:opacity-100 -z-10"></div>
+                
+                <!-- Inner Image Box -->
+                <div class="relative w-full h-full rounded-[calc(2rem-1px)] overflow-hidden bg-[#0a0f1c]">
+                    <!-- Image: Grayscale to Color + Slow Zoom -->
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                        alt="Team of engineers and designers collaborating around a large glowing led interface in a high tech workspace"
+                        src="assets/smiling-business-partners-shaking-hands-lounge.jpg" />
+                    
+                    <!-- Dark Gradient Overlay for better contrast -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#05050a] via-[#05050a]/20 to-transparent opacity-80 transition-opacity duration-700 group-hover:opacity-30 pointer-events-none"></div>
+                </div>
+
+                <!-- Floating Glassmorphism Badge -->
+                <div class="absolute -bottom-8 -left-4 md:-bottom-12 md:-left-12 p-[1px] isolate rounded-2xl transition-transform duration-700 group-hover:-translate-y-4 shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20">
+                    <!-- Badge Gradient Border -->
+                    <div class="absolute inset-0 rounded-2xl bg-[linear-gradient(135deg,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] -z-10"></div>
+                    
+                    <!-- Badge Inner Content -->
+                    <div class="bg-[#0e0e11]/90 ml-[2px] mb-[2px] backdrop-blur-xl rounded-[calc(1rem-1px)] p-6 md:p-10 flex flex-col items-center text-center w-[160px] md:w-[220px]">
+                        <p class="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-[linear-gradient(to_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] mb-2 md:mb-3">
+                            11+
+                        </p>
+                        <p class="text-xs md:text-sm uppercase tracking-widest text-gray-300 font-bold leading-relaxed">
+                            Years of <br/> Excellence
                         </p>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Section 10: FAQ -->
 
-        <section class="py-10 md:py-20 px-4 md:px-8 bg-surface-container-low">
-            <div class="max-w-3xl mx-auto space-y-8 md:space-y-12">
-                <h2 class="text-2xl md:text-4xl font-black text-center text-white">
-                    Frequently Asked Questions
-                </h2>
+        </div>
+    </div>
+</section>
 
-                <div class="space-y-4" id="testimonial-accordion">
+<section class="py-12 md:py-16 px-4 md:px-8 bg-[#05050a]">
+    <div class="max-w-3xl mx-auto flex flex-col items-center">
+        
+        <!-- Header Section -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest bg-white/5 backdrop-blur-sm mb-6">
+                    <span class="w-2 h-2 rounded-full animate-multi-pulse"></span>
+                    Common Questions
+                </div>
 
-                    <div
-                        class="bg-surface-container p-6 rounded-lg border border-white/5 cursor-pointer group accordion-item">
-                        <div class="flex justify-between items-center accordion-header">
-                            <p class="font-bold">
-                                
-            What industries can benefit from your LED display solutions?
-            
-                            </p>
-                            <span
-                                class="material-symbols-outlined group-hover:text-primary transition-colors duration-300 transform accordion-icon">expand_more</span>
-                        </div>
-                        <div class="accordion-content hidden mt-4 pt-4 border-t border-white/5">
-                            <p class="font-light italic text-on-surface-variant">
-                                Our LED solutions serve diverse industries including retail, hospitality, corporate, education, entertainment, sports venues, transportation hubs, and more. Any business looking to enhance visual communication can benefit from our displays.
-                            </p>
-                        </div>
+        <h2 class="text-3xl md:text-5xl font-bold text-center text-white mb-4 tracking-tight leading-tight">
+            Frequently Asked <br class="hidden md:block" /> <span class="text-gradient">Questions</span> 
+        </h2>
+
+        <p class="text-gray-400 text-center text-sm md:text-base mb-12 max-w-lg">
+            Answers to common questions, so your team can hit the ground running.
+        </p>
+
+        <!-- Accordion Container -->
+        <div class="w-full space-y-3" id="faq-accordion">
+
+            <!-- Question 1 -->
+            <div class="accordion-item bg-[#0e0e11] border border-white/5 hover:border-white/10 rounded-2xl p-5 md:p-6 cursor-pointer transition-all duration-300">
+                <div class="accordion-header flex justify-between items-center gap-4 select-none">
+                    <p class="accordion-title text-gray-300 font-medium transition-colors duration-300">What industries can benefit from your LED display solutions?</p>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon inline-block">add</span>
+                </div>
+                <!-- Replaced 'hidden' with GSAP-ready classes: h-0, opacity-0, overflow-hidden -->
+                <div class="accordion-content h-0 opacity-0 overflow-hidden">
+                    <div class="pt-4 pr-8">
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Our LED solutions serve diverse industries including retail, hospitality, corporate, education, entertainment, sports venues, transportation hubs, and more. Any business looking to enhance visual communication can benefit from our displays.
+                        </p>
                     </div>
-
-                    <div
-                        class="bg-surface-container p-6 rounded-lg border border-white/5 cursor-pointer group accordion-item">
-                        <div class="flex justify-between items-center accordion-header">
-                            <p class="font-bold">
-                                
-            How do your LED Video Walls enhance business visibility and engagement?
-            
-                            </p>
-                            <span
-                                class="material-symbols-outlined group-hover:text-secondary transition-colors duration-300 transform accordion-icon">expand_more</span>
-                        </div>
-                        <div class="accordion-content hidden mt-4 pt-4 border-t border-white/5">
-                            <p class="font-light italic text-on-surface-variant">
-                                Our high-brightness, vibrant displays capture attention effectively. They enable dynamic content delivery, interactive experiences, and real-time information updates that significantly increase customer engagement and brand recall.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-surface-container p-6 rounded-lg border border-white/5 cursor-pointer group accordion-item">
-                        <div class="flex justify-between items-center accordion-header">
-                            <p class="font-bold">
-                                What kind of support and maintenance services do you provide?
-                            </p>
-                            <span
-                                class="material-symbols-outlined group-hover:text-tertiary transition-colors duration-300 transform accordion-icon">expand_more</span>
-                        </div>
-                        <div class="accordion-content hidden mt-4 pt-4 border-t border-white/5">
-                            <p class="font-light italic text-on-surface-variant">
-                                We offer comprehensive support including 24/7 technical assistance, regular maintenance programs, on-site repairs, remote diagnostics, and warranty coverage. Our team ensures your displays operate at peak performance.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-surface-container p-6 rounded-lg border border-white/5 cursor-pointer group accordion-item">
-                        <div class="flex justify-between items-center accordion-header">
-                            <p class="font-bold">
-                                
-                                How can businesses integrate Digital Display into their existing infrastructure?
-            
-                            </p>
-                            <span
-                                class="material-symbols-outlined group-hover:text-primary transition-colors duration-300 transform accordion-icon">expand_more</span>
-                        </div>
-                        <div class="accordion-content hidden mt-4 pt-4 border-t border-white/5">
-                            <p class="font-light italic text-on-surface-variant">
-                              Our displays feature versatile connectivity options (HDMI, USB, network) and compatibility with most content management systems. We provide custom integration services to seamlessly connect with your current AV infrastructure and IT systems.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-surface-container p-6 rounded-lg border border-white/5 cursor-pointer group accordion-item">
-                        <div class="flex justify-between items-center accordion-header">
-                            <p class="font-bold">
-                                
-            
-                                What sets your Digital Display solutions apart from competitors?
-                            </p>
-                            <span
-                                class="material-symbols-outlined group-hover:text-secondary transition-colors duration-300 transform accordion-icon">expand_more</span>
-                        </div>
-                        <div class="accordion-content hidden mt-4 pt-4 border-t border-white/5">
-                            <p class="font-light italic text-on-surface-variant">
-                              We differentiate through superior pixel pitch technology, energy efficiency, customizable configurations, robust construction for all environments, and our proprietary content management platform with advanced scheduling capabilities.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-surface-container p-6 rounded-lg border border-white/5 cursor-pointer group accordion-item">
-                        <div class="flex justify-between items-center accordion-header">
-                            <p class="font-bold">
-                                
-            Can your LED displays be used for advertising and promotional purposes?
-            
-            
-                            </p>
-                            <span
-                                class="material-symbols-outlined group-hover:text-tertiary transition-colors duration-300 transform accordion-icon">expand_more</span>
-                        </div>
-                        <div class="accordion-content hidden mt-4 pt-4 border-t border-white/5">
-                            <p class="font-light italic text-on-surface-variant">
-                               Absolutely! Our displays are perfect for digital signage advertising, promotional campaigns, product showcases, and brand storytelling. They support high-resolution images, videos, animations, and even interactive content to maximize impact.    
-                            </p>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-        </section>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const accordionItems = document.querySelectorAll('.accordion-item');
+            <!-- Question 2 -->
+            <div class="accordion-item bg-[#0e0e11] border border-white/5 hover:border-white/10 rounded-2xl p-5 md:p-6 cursor-pointer transition-all duration-300">
+                <div class="accordion-header flex justify-between items-center gap-4 select-none">
+                    <p class="accordion-title text-gray-300 font-medium transition-colors duration-300">How do your LED Video Walls enhance business visibility and engagement?</p>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon inline-block">add</span>
+                </div>
+                <div class="accordion-content h-0 opacity-0 overflow-hidden">
+                    <div class="pt-4 pr-8">
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Our high-brightness, vibrant displays capture attention effectively. They enable dynamic content delivery, interactive experiences, and real-time information updates that significantly increase customer engagement and brand recall.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-                accordionItems.forEach(item => {
-                    const header = item.querySelector('.accordion-header');
-                    const content = item.querySelector('.accordion-content');
-                    const icon = item.querySelector('.accordion-icon');
+            <!-- Question 3 -->
+            <div class="accordion-item bg-[#0e0e11] border border-white/5 hover:border-white/10 rounded-2xl p-5 md:p-6 cursor-pointer transition-all duration-300">
+                <div class="accordion-header flex justify-between items-center gap-4 select-none">
+                    <p class="accordion-title text-gray-300 font-medium transition-colors duration-300">What kind of support and maintenance services do you provide?</p>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon inline-block">add</span>
+                </div>
+                <div class="accordion-content h-0 opacity-0 overflow-hidden">
+                    <div class="pt-4 pr-8">
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            We offer comprehensive support including 24/7 technical assistance, regular maintenance programs, on-site repairs, remote diagnostics, and warranty coverage. Our team ensures your displays operate at peak performance.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-                    header.addEventListener('click', () => {
-                        // Check if the current item is already open
-                        const isOpen = !content.classList.contains('hidden');
+            <!-- Question 4 -->
+            <div class="accordion-item bg-[#0e0e11] border border-white/5 hover:border-white/10 rounded-2xl p-5 md:p-6 cursor-pointer transition-all duration-300">
+                <div class="accordion-header flex justify-between items-center gap-4 select-none">
+                    <p class="accordion-title text-gray-300 font-medium transition-colors duration-300">How can businesses integrate Digital Display into their existing infrastructure?</p>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon inline-block">add</span>
+                </div>
+                <div class="accordion-content h-0 opacity-0 overflow-hidden">
+                    <div class="pt-4 pr-8">
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Our displays feature versatile connectivity options (HDMI, USB, network) and compatibility with most content management systems. We provide custom integration services to seamlessly connect with your current AV infrastructure and IT systems.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-                        // Optional: Close all other open items (remove this block if you want multiple items open at once)
-                        accordionItems.forEach(otherItem => {
-                            otherItem.querySelector('.accordion-content').classList.add('hidden');
-                            otherItem.querySelector('.accordion-icon').style.transform = 'rotate(0deg)';
+            <!-- Question 5 -->
+            <div class="accordion-item bg-[#0e0e11] border border-white/5 hover:border-white/10 rounded-2xl p-5 md:p-6 cursor-pointer transition-all duration-300">
+                <div class="accordion-header flex justify-between items-center gap-4 select-none">
+                    <p class="accordion-title text-gray-300 font-medium transition-colors duration-300">What sets your Digital Display solutions apart from competitors?</p>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon inline-block">add</span>
+                </div>
+                <div class="accordion-content h-0 opacity-0 overflow-hidden">
+                    <div class="pt-4 pr-8">
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            We differentiate through superior pixel pitch technology, energy efficiency, customizable configurations, robust construction for all environments, and our proprietary content management platform with advanced scheduling capabilities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="accordion-item bg-[#0e0e11] border border-white/5 hover:border-white/10 rounded-2xl p-5 md:p-6 cursor-pointer transition-all duration-300">
+                <div class="accordion-header flex justify-between items-center gap-4 select-none">
+                    <p class="accordion-title text-gray-300 font-medium transition-colors duration-300">Can your LED displays be used for advertising and promotional purposes?</p>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon inline-block">add</span>
+                </div>
+                <div class="accordion-content h-0 opacity-0 overflow-hidden">
+                    <div class="pt-4 pr-8">
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Absolutely! Our displays are perfect for digital signage advertising, promotional campaigns, product showcases, and brand storytelling. They support high-resolution images, videos, animations, and even interactive content to maximize impact.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- GSAP Accordion Logic -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const accordionItems = document.querySelectorAll('.accordion-item');
+
+        // Initialize: Open the first item by default
+        if(accordionItems.length > 0) {
+            const firstItem = accordionItems[0];
+            const content = firstItem.querySelector('.accordion-content');
+            
+            // Set initial state for the first item
+            gsap.set(content, { height: 'auto', opacity: 1 });
+            firstItem.classList.add('is-open');
+            firstItem.querySelector('.accordion-icon').textContent = 'remove';
+            firstItem.querySelector('.accordion-title').classList.replace('text-gray-300', 'text-white');
+            firstItem.querySelector('.accordion-title').classList.replace('font-medium', 'font-bold');
+        }
+
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            const content = item.querySelector('.accordion-content');
+            const icon = item.querySelector('.accordion-icon');
+            const title = item.querySelector('.accordion-title');
+
+            header.addEventListener('click', () => {
+                const isOpen = item.classList.contains('is-open');
+
+                // Close all currently open items
+                accordionItems.forEach(otherItem => {
+                    if (otherItem.classList.contains('is-open')) {
+                        otherItem.classList.remove('is-open');
+                        const otherContent = otherItem.querySelector('.accordion-content');
+                        const otherIcon = otherItem.querySelector('.accordion-icon');
+                        const otherTitle = otherItem.querySelector('.accordion-title');
+                        
+                        // GSAP Close Animation
+                        gsap.to(otherContent, { 
+                            height: 0, 
+                            opacity: 0, 
+                            duration: 0.4, 
+                            ease: "power2.inOut" 
                         });
-
-                        // Toggle current item
-                        if (!isOpen) {
-                            content.classList.remove('hidden');
-                            icon.style.transform = 'rotate(180deg)'; // Flip the arrow up
-                        } else {
-                            content.classList.add('hidden');
-                            icon.style.transform = 'rotate(0deg)'; // Flip the arrow down
-                        }
-                    });
+                        
+                        // Reset Text & Icon
+                        otherIcon.textContent = 'add';
+                        otherTitle.classList.remove('text-white', 'font-bold');
+                        otherTitle.classList.add('text-gray-300', 'font-medium');
+                    }
                 });
+
+                // If the clicked item wasn't open, open it now
+                if (!isOpen) {
+                    item.classList.add('is-open');
+                    
+                    // GSAP Open Animation
+                    gsap.to(content, { 
+                        height: 'auto', 
+                        opacity: 1, 
+                        duration: 0.4, 
+                        ease: "power2.out" 
+                    });
+                    
+                    // Spin animation for the minus icon to make it playful
+                    gsap.fromTo(icon, 
+                        { rotation: -90 }, 
+                        { rotation: 0, duration: 0.3, ease: "back.out(1.7)" }
+                    );
+
+                    // Update Text & Icon
+                    icon.textContent = 'remove';
+                    title.classList.remove('text-gray-300', 'font-medium');
+                    title.classList.add('text-white', 'font-bold');
+                }
             });
-        </script>
+        });
+    });
+</script>
 
     </main>
 
-    <!-- Footer -->
-
-    <footer id="footer" class="bg-slate-950 w-full py-16 border-t border-white/10">
+    <!-- Footer background changed to surface globally -->
+    <footer id="footer" class="bg-surface w-full py-16 border-t border-white/10">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-6 md:px-12 max-w-screen-2xl mx-auto">
-
             <div class="space-y-6">
                 <div
                     class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-sky-400">
@@ -1563,15 +1751,9 @@ Tamilnadu, INDIA - 641002
                     Quick Links
                 </p>
                 <ul class="space-y-4 text-slate-500 text-sm">
-                    <li>
-                        <a class="hover:text-yellow-400 transition-colors" href="#home">Home</a>
-                    </li>
-                    <li>
-                        <a class="hover:text-yellow-400 transition-colors" href="#projects">Projects</a>
-                    </li>
-                    <li>
-                        <a class="hover:text-yellow-400 transition-colors" href="#service">Services</a>
-                    </li>
+                    <li><a class="hover:text-yellow-400 transition-colors" href="#home">Home</a></li>
+                    <li><a class="hover:text-yellow-400 transition-colors" href="#projects">Projects</a></li>
+                    <li><a class="hover:text-yellow-400 transition-colors" href="#service">Services</a></li>
                 </ul>
             </div>
 
@@ -1624,13 +1806,12 @@ Tamilnadu, INDIA - 641002
                     </a>
                 </div>
             </div>
-
         </div>
 
         <div
             class="mt-16 pt-8 border-t border-white/5 px-6 md:px-12 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <p class="font-['Host_Grotesk'] font-normal text-slate-500 text-xs">
-                &copy; 2026 Vivid LED System. All Rights Reserved.
+                © 2026 Vivid LED System. All Rights Reserved.
             </p>
             <div class="flex gap-6 text-slate-500 text-xs">
                 <a href="./Privacy-Policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
@@ -1638,155 +1819,103 @@ Tamilnadu, INDIA - 641002
             </div>
         </div>
     </footer>
-    <!-- Popup Form Structure -->
 
     <div id="popupForm" class="popup-form">
-
         <div class="popup-content">
-
-            <button class="close-popup" id="closePopup">&times;</button>
-
+            <button class="close-popup" id="closePopup">×</button>
             <h2 class="text-2xl font-bold mb-6">Get a Custom Quote</h2>
-
             <form id="contactForm" class="space-y-4">
-
                 <div class="form-row">
-
                     <div class="form-group">
-
                         <label for="firstName">First Name</label>
-
                         <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
-
                         <div id="firstName-error" class="error-message"></div>
-
                     </div>
-
                     <div class="form-group">
-
                         <label for="lastName">Last Name</label>
-
                         <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
-
                         <div id="lastName-error" class="error-message"></div>
-
                     </div>
-
                 </div>
-
                 <div class="form-row">
-
                     <div class="form-group">
-
                         <label for="email">Email Address</label>
-
                         <input type="email" id="email" name="email" placeholder="email@company.com" required>
-
                         <div id="email-error" class="error-message"></div>
-
                     </div>
-
                     <div class="form-group">
-
                         <label for="phone">Phone Number</label>
-
                         <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" required>
-
                         <div id="phone-error" class="error-message"></div>
-
                     </div>
-
                 </div>
-
                 <div class="form-row">
-
                     <div class="form-group">
-
                         <label for="company">Company Name</label>
-
                         <input type="text" id="company" name="company" placeholder="Organization name" required>
-
                         <div id="company-error" class="error-message"></div>
-
                     </div>
-
                     <div class="form-group">
-
                         <label for="city">City</label>
-
                         <input type="text" id="city" name="city" placeholder="Your location" required>
-
                         <div id="city-error" class="error-message"></div>
-
                     </div>
-
                 </div>
-
                 <div class="form-row">
-
                     <div class="form-group">
-
                         <label for="budget">Estimated Budget</label>
-
                         <select id="budget" name="budget" required>
-
                             <option value="" disabled selected>Select Budget Range</option>
-
                             <option value="3 - 10 Lakhs">3 - 10 Lakhs</option>
-
                             <option value="10 - 25 Lakhs">10 - 25 Lakhs</option>
-                            <option value="Need Consultation">Need Consultation
-                            </option>
-
+                            <option value="Need Consultation">Need Consultation</option>
                         </select>
-
                         <div id="budget-error" class="error-message"></div>
-
                     </div>
-
                     <div class="form-group">
-
                         <label for="timeline">Project Timeline</label>
-
                         <select id="timeline" name="timeline" required>
-
                             <option value="" disabled selected>Expected Completion</option>
-
                             <option value="Immediate">Immediate</option>
-
                             <option value="1-3 Months">1-3 Months</option>
-
                             <option value="3+ Months">3+ Months</option>
-
                         </select>
-
                         <div id="timeline-error" class="error-message"></div>
-
                     </div>
-
                 </div>
-
                 <button type="submit" class="submit-btn">Submit Request</button>
-
             </form>
-
         </div>
-
     </div>
 
-
-
-    <!-- Scripts -->
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-
     <script src="pop.js"></script>
-
     <script src="main.js"></script>
 
+    <!-- Script for mobile menu logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
 
+            if(mobileBtn && mobileMenu) {
+                // Toggle menu on hamburger click
+                mobileBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('flex');
+                });
+
+                // Close menu when a link is clicked
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                    });
+                });
+            }
+        });
+    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -1798,9 +1927,8 @@ Tamilnadu, INDIA - 641002
             let currentIndex = 0;
             let isAnimating = false;
 
-            // Initialize Slider
             function initSlider() {
-                // Create dots dynamically
+                if(!dotsContainer) return; // safety check
                 slides.forEach((_, i) => {
                     const dot = document.createElement("div");
                     dot.classList.add("dot", "w-3", "h-3", "rounded-full", "bg-gray-600");
@@ -1809,9 +1937,8 @@ Tamilnadu, INDIA - 641002
                     dotsContainer.appendChild(dot);
                 });
 
-                // Set initial state for GSAP
                 gsap.set(slides, { autoAlpha: 0, x: 50 });
-                gsap.set(slides[0], { autoAlpha: 1, x: 0 });
+                if(slides[0]) gsap.set(slides[0], { autoAlpha: 1, x: 0 });
             }
 
             function updateDots(index) {
@@ -1835,7 +1962,6 @@ Tamilnadu, INDIA - 641002
                 const slideX = direction === 'next' ? -50 : 50;
                 const enterX = direction === 'next' ? 50 : -50;
 
-                // Animate current slide out
                 gsap.to(currentSlide, {
                     autoAlpha: 0,
                     x: slideX,
@@ -1843,7 +1969,6 @@ Tamilnadu, INDIA - 641002
                     ease: "power2.inOut"
                 });
 
-                // Set up next slide position and animate in
                 gsap.fromTo(nextSlide,
                     { autoAlpha: 0, x: enterX },
                     {
@@ -1861,66 +1986,221 @@ Tamilnadu, INDIA - 641002
                 updateDots(currentIndex);
             }
 
-            // Event Listeners
-            nextBtn.addEventListener("click", () => {
-                let nextIndex = (currentIndex + 1) % slides.length;
-                goToSlide(nextIndex, 'next');
-            });
+            if(nextBtn) {
+                nextBtn.addEventListener("click", () => {
+                    let nextIndex = (currentIndex + 1) % slides.length;
+                    goToSlide(nextIndex, 'next');
+                });
+            }
 
-            prevBtn.addEventListener("click", () => {
-                let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
-                goToSlide(prevIndex, 'prev');
-            });
+            if(prevBtn) {
+                prevBtn.addEventListener("click", () => {
+                    let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    goToSlide(prevIndex, 'prev');
+                });
+            }
 
             initSlider();
         });
     </script>
 
     <script>
-
-        // GSAP Smooth Scroll Initialization
-
         gsap.registerPlugin(ScrollToPlugin);
 
-
-
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
             anchor.addEventListener('click', function (e) {
-
                 e.preventDefault();
-
                 const target = this.getAttribute('href');
-
                 if (target === '#') return;
 
-
-
                 gsap.to(window, {
-
                     duration: 1.2,
-
                     scrollTo: {
-
                         y: target,
-
                         offsetY: 80
                     },
-
                     ease: "power4.out",
-
                     overwrite: true
-
                 });
-
             });
-
         });
-
     </script>
 
+    <script>
+        gsap.registerPlugin(ScrollToPlugin);
+
+        // Header functionality & sliding indicator wrapper 
+        const header = document.getElementById('main-header');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const indicator = document.getElementById('nav-indicator');
+        const sections = document.querySelectorAll("section[id]");
+
+        // State flag to prevent the scroll spy glitch during programmatic scrolling
+        let isAutoScrolling = false;
+
+        // Handles dynamically shifting the active pill overlay
+        function updateIndicator(el) {
+            if (!el) return;
+
+            // Premium smooth easing for the tracking pill
+            gsap.to(indicator, {
+                width: el.offsetWidth,
+                height: el.offsetHeight,
+                x: el.offsetLeft,
+                y: el.offsetTop,
+                duration: 0.4,
+                ease: "back.out(1.2)"
+            });
+
+            // Adjusting text contrast based on selection
+            navLinks.forEach(link => {
+                link.classList.remove('text-white');
+                link.classList.add('text-slate-300');
+            });
+            el.classList.add('text-white');
+            el.classList.remove('text-slate-300');
+        }
+
+        // Setup the initial layout correctly after paint
+        window.addEventListener('load', () => {
+            if (navLinks.length > 0) updateIndicator(navLinks[0]);
+        });
+
+        // Smooth Scroll with GSAP
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = this.getAttribute('href');
+                if (target === '#') return;
+
+                // 1. Pause the scroll spy
+                isAutoScrolling = true;
+
+                // 2. Instantly update the indicator for a snappy, premium feel
+                if (this.classList.contains('nav-link')) {
+                    updateIndicator(this);
+                }
+
+                // 3. Execute the scroll
+                gsap.to(window, {
+                    duration: 1.2,
+                    scrollTo: {
+                        y: target,
+                        offsetY: 80
+                    },
+                    ease: "power4.out",
+                    overwrite: true,
+                    onComplete: () => {
+                        // 4. Re-enable the scroll spy once the animation is completely finished
+                        isAutoScrolling = false;
+                    }
+                });
+            });
+        });
+
+        // Scroll spy: Update the pill wrapper dynamically as you naturally scroll
+        window.addEventListener("scroll", () => {
+            // Escape early if GSAP is currently animating the scroll
+            if (isAutoScrolling) return;
+
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                if (link.getAttribute("href") === `#${current}`) {
+                    updateIndicator(link);
+                }
+            });
+        });
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+        const slider = document.getElementById('industry-slider');
+        // Card width + Gap (340px + 24px)
+        const scrollAmount = window.innerWidth < 768 ? 304 : 364; 
+
+        // 1. Smooth GSAP Slider Navigation
+        window.slideLeft = function() {
+            gsap.to(slider, {
+                scrollLeft: slider.scrollLeft - scrollAmount,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+        };
+
+        window.slideRight = function() {
+            gsap.to(slider, {
+                scrollLeft: slider.scrollLeft + scrollAmount,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+        };
+
+        // 2. Interactive 3D Tilt Effect on Cards
+        const cards = document.querySelectorAll('.tilt-card');
+        
+        cards.forEach(card => {
+            // Apply perspective to the parent bounds contextually via GSAP
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                
+                // Get mouse coordinates relative to card center
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                // Calculate rotation (max 10 degrees)
+                const rotateX = ((y - centerY) / centerY) * -10;
+                const rotateY = ((x - centerX) / centerX) * 10;
+
+                // Animate card tilt
+                gsap.to(card, {
+                    rotateX: rotateX,
+                    rotateY: rotateY,
+                    transformPerspective: 1000,
+                    transformOrigin: "center center",
+                    duration: 0.4,
+                    ease: "power2.out",
+                    borderColor: "rgba(255,255,255,0.15)",
+                    boxShadow: "0 20px 40px -20px rgba(37,99,235,0.3)"
+                });
+            });
+
+            // Reset card on mouse leave with a bouncy "snap back" effect
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, {
+                    rotateX: 0,
+                    rotateY: 0,
+                    duration: 0.8,
+                    ease: "elastic.out(1, 0.5)",
+                    borderColor: "rgba(255,255,255,0.05)",
+                    boxShadow: "0 10px 15px -3px rgba(0,0,0,0.1)"
+                });
+            });
+        });
+    });
+
+    function slideTestimonialLeft() {
+        const slider = document.getElementById('testimonial-slider');
+        // Scroll left by roughly one card width + gap
+        slider.scrollBy({ left: -400, behavior: 'smooth' });
+    }
+
+    function slideTestimonialRight() {
+        const slider = document.getElementById('testimonial-slider');
+        // Scroll right by roughly one card width + gap
+        slider.scrollBy({ left: 400, behavior: 'smooth' });
+    }
+    </script>
+
+
 </body>
-
-
 
 </html>
