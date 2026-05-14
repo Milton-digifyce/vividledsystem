@@ -176,9 +176,11 @@
         }
 
         .text-gradient {
-            background: linear-gradient(90deg, #facc15, #f97316, #ec4899, #a855f7, #38bdf8);
+            background: linear-gradient(90deg, #facc15, #f97316, #ec4899, #a855f7, #38bdf8, #facc15);
+            background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: gradient-shift 6s ease infinite;
         }
 
         .bg-surface-container-low {
@@ -405,6 +407,26 @@
 
 <body class="bg-surface text-on-surface selection:bg-secondary/30">
 
+    <!-- PRELOADER START -->
+    <div id="preloader" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#05050a] pointer-events-none">
+        <div class="relative flex items-center justify-center">
+            <!-- Ambient animated glow -->
+            <div class="absolute w-32 h-32 bg-blue-500/20 blur-[50px] rounded-full animate-pulse"></div>
+            <div class="absolute w-32 h-32 bg-pink-500/20 blur-[50px] rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+            
+            <!-- Logo inside preloader -->
+            <img src="assets/mbl.png" alt="Loading Vivid LED System..." class="relative z-10 h-16 md:h-20 w-auto object-contain animate-[pulse_2s_ease-in-out_infinite]">
+        </div>
+        
+        <!-- Animated loading dots -->
+        <div class="mt-8 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-bounce"></span>
+            <span class="w-2 h-2 rounded-full bg-purple-500 animate-bounce" style="animation-delay: 0.15s"></span>
+            <span class="w-2 h-2 rounded-full bg-pink-500 animate-bounce" style="animation-delay: 0.3s"></span>
+        </div>
+    </div>
+    <!-- PRELOADER END -->
+
     <header id="main-header" class="fixed top-6 left-0 h-20 right-0 w-full z-50 px-4 md:px-8">
         <nav class="relative flex justify-between h-[72px] items-center px-8 mx-auto max-w-5xl bg-surface-container/50 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] rounded-[100px]">
 
@@ -419,10 +441,10 @@
                 <!-- Sliding Active Indicator (Style removed so GSAP can calculate cleanly) -->
                 <div id="nav-indicator" class="absolute rounded-[100px] bg-white/[0.08] border-t-[1.5px] border-white/60 shadow-[0_2px_10px_rgba(0,0,0,0.2)] pointer-events-none"></div>
 
-                <a class="nav-link text-white px-4 py-2  rounded-lg transition-colors" href="#home">Home</a>
-                <a class="nav-link text-slate-300 hover:text-white px-4 py-2 rounded-lg transition-colors" href="#projects">Projects</a>
-                <a class="nav-link text-slate-300 hover:text-white px-4 py-2  rounded-lg transition-colors" href="#industries">Industries</a>
-                <a class="nav-link text-slate-300 hover:text-white px-4 py-2  rounded-lg transition-colors" href="#service">Services</a>
+                <a class="nav-link text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#home">Home</a>
+                <a class="nav-link text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#projects">Projects</a>
+                <a class="nav-link text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#industries">Industries</a>
+                <a class="nav-link text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#service">Services</a>
                 <a class="text-slate-300 hover:text-white px-5 py-2 transition-colors relative z-10" href="javascript:void(0)" onclick="openPopupForm()">Contact</a>
             </div>
 
@@ -440,11 +462,11 @@
 
             <!-- Mobile Dropdown Menu -->
             <div id="mobile-menu" class="hidden absolute top-[80px] left-0 right-0 bg-surface-container/95 backdrop-blur-xl border border-white/10 rounded-2xl p-4 flex-col gap-4 shadow-2xl md:hidden z-50 transition-all duration-300">
-                <a class="text-white px-4 py-2 rounded-lg transition-colors" href="#home">Home</a>
-                <a class="text-slate-300 hover:text-white px-4 py-2  rounded-lg transition-colors" href="#projects">Projects</a>
-                <a class="text-slate-300 hover:text-white px-4 py-2 rounded-lg transition-colors" href="#industries">Industries</a>
-                <a class="text-slate-300 hover:text-white px-4 py-2  rounded-lg transition-colors" href="#service">Services</a>
-                <a class="text-slate-300 hover:text-white px-4 py-2 rounded-lg transition-colors" href="javascript:void(0)" onclick="openPopupForm()">Contact</a>
+                <a class="text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#home">Home</a>
+                <a class="text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#projects">Projects</a>
+                <a class="text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#industries">Industries</a>
+                <a class="text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#service">Services</a>
+                <a class="text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="javascript:void(0)" onclick="openPopupForm()">Contact</a>
             </div>
 
         </nav>
@@ -726,7 +748,7 @@
             </button>
 
             <!-- Slider Track -->
-            <div id="industry-slider" class="flex gap-6 overflow-x-auto hide-scrollbar pb-12 pt-4 px-2 -mx-2">
+            <div id="industry-slider" class="flex gap-6 overflow-x-auto hide-scrollbar pb-12 pt-4 px-2 -mx-2 scroll-smooth">
 
                 <!-- 1. RETAIL -->
                 <div class="tilt-card shrink-0 w-[280px] md:w-[340px] bg-[#0a0f1c] rounded-2xl border border-white/5 relative p-8 cursor-pointer flex flex-col h-[320px] shadow-lg">
@@ -1899,6 +1921,8 @@
         });
     </script>
 
+    
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const slides = document.querySelectorAll(".slider-item");
@@ -1985,6 +2009,13 @@
             initSlider();
         });
     </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <script src="pop.js"></script>
+
+  <script src="main.js"></script>
 
    <script>
     // Register the plugin only once
@@ -2020,10 +2051,30 @@
         el.classList.remove('text-slate-300');
     }
 
-    // Setup the initial layout (with a slight delay to ensure fonts have loaded)
+    // Setup the initial layout & Preloader Fade Out
     window.addEventListener('load', () => {
-        if (navLinks.length > 0) {
-            setTimeout(() => updateIndicator(navLinks[0]), 100);
+        const preloader = document.getElementById('preloader');
+        
+        if(preloader) {
+            gsap.to(preloader, {
+                opacity: 0,
+                duration: 0.8,
+                delay: 0.5, // Keeps it visible for just a half-second minimum for a smooth effect
+                ease: "power2.inOut",
+                onComplete: () => {
+                    preloader.style.display = 'none';
+                    
+                    // Initialize indicator once the page is fully visible
+                    if (navLinks.length > 0) {
+                        setTimeout(() => updateIndicator(navLinks[0]), 100);
+                    }
+                }
+            });
+        } else {
+            // Fallback if preloader isn't found
+            if (navLinks.length > 0) {
+                setTimeout(() => updateIndicator(navLinks[0]), 100);
+            }
         }
     });
 
@@ -2077,8 +2128,204 @@
         });
     });
 </script>
+  <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const slides = document.querySelectorAll(".slider-item");
+            const prevBtn = document.getElementById("prevBtn");
+            const nextBtn = document.getElementById("nextBtn");
+            const dotsContainer = document.getElementById("sliderDots");
 
+            let currentIndex = 0;
+            let isAnimating = false;
+
+            // Initialize Slider
+            function initSlider() {
+                // Create dots dynamically
+                slides.forEach((_, i) => {
+                    const dot = document.createElement("div");
+                    dot.classList.add("dot", "w-3", "h-3", "rounded-full", "bg-gray-600");
+                    if (i === 0) dot.classList.add("active", "bg-primary");
+                    dot.addEventListener("click", () => goToSlide(i));
+                    dotsContainer.appendChild(dot);
+                });
+
+                // Set initial state for GSAP
+                gsap.set(slides, { autoAlpha: 0, x: 50 });
+                gsap.set(slides[0], { autoAlpha: 1, x: 0 });
+            }
+
+            function updateDots(index) {
+                document.querySelectorAll(".dot").forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.add("active");
+                        dot.classList.replace("bg-gray-600", "bg-blue-500");
+                    } else {
+                        dot.classList.remove("active");
+                        dot.classList.replace("bg-blue-500", "bg-gray-600");
+                    }
+                });
+            }
+
+            function goToSlide(index, direction = 'next') {
+                if (isAnimating || index === currentIndex) return;
+                isAnimating = true;
+
+                const currentSlide = slides[currentIndex];
+                const nextSlide = slides[index];
+                const slideX = direction === 'next' ? -50 : 50;
+                const enterX = direction === 'next' ? 50 : -50;
+
+                // Animate current slide out
+                gsap.to(currentSlide, {
+                    autoAlpha: 0,
+                    x: slideX,
+                    duration: 0.6,
+                    ease: "power2.inOut"
+                });
+
+                // Set up next slide position and animate in
+                gsap.fromTo(nextSlide,
+                    { autoAlpha: 0, x: enterX },
+                    {
+                        autoAlpha: 1,
+                        x: 0,
+                        duration: 0.6,
+                        ease: "power2.inOut",
+                        onComplete: () => {
+                            isAnimating = false;
+                        }
+                    }
+                );
+
+                currentIndex = index;
+                updateDots(currentIndex);
+            }
+
+            // Event Listeners
+            nextBtn.addEventListener("click", () => {
+                let nextIndex = (currentIndex + 1) % slides.length;
+                goToSlide(nextIndex, 'next');
+            });
+
+            prevBtn.addEventListener("click", () => {
+                let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+                goToSlide(prevIndex, 'prev');
+            });
+
+            initSlider();
+        });
+    </script>
+
+    <script>
+
+        // GSAP Smooth Scroll Initialization
+
+        gsap.registerPlugin(ScrollToPlugin);
+
+
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+            anchor.addEventListener('click', function (e) {
+
+                e.preventDefault();
+
+                const target = this.getAttribute('href');
+
+                if (target === '#') return;
+
+
+
+                gsap.to(window, {
+
+                    duration: 1.2,
+
+                    scrollTo: {
+
+                        y: target,
+
+                        offsetY: 80
+                    },
+
+                    ease: "power4.out",
+
+                    overwrite: true
+
+                });
+
+            });
+
+        });
+
+    </script>
+
+    <script>
+        // Section Horizontal Slider Controls
+        function slideLeft() {
+            const slider = document.getElementById('industry-slider');
+            if (slider) {
+                // Scroll back by approximately one card width
+                slider.scrollBy({ left: -340, behavior: 'smooth' });
+            }
+        }
+
+        function slideRight() {
+            const slider = document.getElementById('industry-slider');
+            if (slider) {
+                slider.scrollBy({ left: 340, behavior: 'smooth' });
+            }
+        }
+
+        function slideTestimonialLeft() {
+            const slider = document.getElementById('testimonial-slider');
+            if (slider) {
+                slider.scrollBy({ left: -380, behavior: 'smooth' });
+            }
+        }
+
+        function slideTestimonialRight() {
+            const slider = document.getElementById('testimonial-slider');
+            if (slider) {
+                slider.scrollBy({ left: 380, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+    const tiltCards = document.querySelectorAll('.tilt-card');
+
+    tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left; // x position within the element
+            const y = e.clientY - rect.top;  // y position within the element
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = ((y - centerY) / centerY) * -15; // Max 15deg rotation
+            const rotateY = ((x - centerX) / centerX) * 15;
+
+            gsap.to(card, {
+                rotationX: rotateX,
+                rotationY: rotateY,
+                transformPerspective: 1000,
+                ease: "power1.out",
+                duration: 0.3
+            });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                rotationX: 0,
+                rotationY: 0,
+                transformPerspective: 1000,
+                ease: "power2.out",
+                duration: 0.5
+            });
+        });
+    });
+});
+    </script>
 
 </body>
-
 </html>
