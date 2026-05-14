@@ -441,10 +441,10 @@
                 <!-- Sliding Active Indicator (Style removed so GSAP can calculate cleanly) -->
                 <div id="nav-indicator" class="absolute rounded-[100px] bg-white/[0.08] border-t-[1.5px] border-white/60 shadow-[0_2px_10px_rgba(0,0,0,0.2)] pointer-events-none"></div>
 
-                <a class="nav-link text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#home">Home</a>
-                <a class="nav-link text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#projects">Projects</a>
-                <a class="nav-link text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#industries">Industries</a>
-                <a class="nav-link text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#service">Services</a>
+                <a class="nav-link text-white px-4 py-2  rounded-lg transition-colors" href="#home">Home</a>
+                <a class="nav-link text-slate-300 hover:text-white px-4 py-2  rounded-lg transition-colors" href="#projects">Projects</a>
+                <a class="nav-link text-slate-300 hover:text-white px-4 py-2  rounded-lg transition-colors" href="#industries">Industries</a>
+                <a class="nav-link text-slate-300 hover:text-white px-4 py-2  rounded-lg transition-colors" href="#service">Services</a>
                 <a class="text-slate-300 hover:text-white px-5 py-2 transition-colors relative z-10" href="javascript:void(0)" onclick="openPopupForm()">Contact</a>
             </div>
 
@@ -462,11 +462,11 @@
 
             <!-- Mobile Dropdown Menu -->
             <div id="mobile-menu" class="hidden absolute top-[80px] left-0 right-0 bg-surface-container/95 backdrop-blur-xl border border-white/10 rounded-2xl p-4 flex-col gap-4 shadow-2xl md:hidden z-50 transition-all duration-300">
-                <a class="text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#home">Home</a>
-                <a class="text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#projects">Projects</a>
-                <a class="text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#industries">Industries</a>
-                <a class="text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="#service">Services</a>
-                <a class="text-slate-300 hover:text-white px-4 py-2 hover:bg-white/5 rounded-lg transition-colors" href="javascript:void(0)" onclick="openPopupForm()">Contact</a>
+                <a class="text-white px-4 py-2  rounded-lg transition-colors" href="#home">Home</a>
+                <a class="text-slate-300 hover:text-white px-4 py-2  rounded-lg transition-colors" href="#projects">Projects</a>
+                <a class="text-slate-300 hover:text-white px-4 py-2  rounded-lg transition-colors" href="#industries">Industries</a>
+                <a class="text-slate-300 hover:text-white px-4 py-2  rounded-lg transition-colors" href="#service">Services</a>
+                <a class="text-slate-300 hover:text-white px-4 py-2  rounded-lg transition-colors" href="javascript:void(0)" onclick="openPopupForm()">Contact</a>
             </div>
 
         </nav>
@@ -858,7 +858,11 @@
         <!-- Card 1 -->
         <div class="relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden group cursor-pointer bg-surface/50"
             onclick="openPopupForm()">
-            <img loading="lazy" decoding="async" src="assets/traditional-christmas-stollen-christmas-symbol.jpg" alt="Indoor LED"
+            <img fetchpriority="high" 
+
+    decoding="async"
+
+class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000" src="assets/traditional-christmas-stollen-christmas-symbol.jpg" alt="Indoor LED"
                 class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000">
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none"></div>
             <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
@@ -875,7 +879,11 @@
         <!-- Card 2 -->
         <div class="relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden group cursor-pointer bg-surface/50"
             onclick="openPopupForm()">
-            <img loading="lazy" decoding="async" src="assets/dynamic-digital-flyer-mockup.jpg" alt="Outdoor"
+            <img fetchpriority="high" 
+
+    decoding="async"
+
+class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000" src="assets/dynamic-digital-flyer-mockup.jpg" alt="Outdoor"
                 class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000">
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none"></div>
             <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
@@ -892,8 +900,11 @@
         <!-- Card 3 -->
         <div class="relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden group cursor-pointer bg-surface/50"
             onclick="openPopupForm()">
-            <img loading="lazy" decoding="async" src="assets/led-wall-abstract-artwork.jpg" alt="Finepitch LED"
-                class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000">
+            <img fetchpriority="high" 
+
+    decoding="async"
+
+class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000" src="assets/led-wall-abstract-artwork.jpg" alt="Finepitch LED">
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none"></div>
             <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
                 <p class="text-2xl font-bold text-white mb-2">Finepitch</p>
@@ -909,8 +920,11 @@
         <!-- Card 4 -->
         <div class="relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden group cursor-pointer bg-surface/50"
             onclick="openPopupForm()">
-            <img loading="lazy" decoding="async" src="assets/hd-digital-art-wallpaper-background.jpg" alt="Creative LED"
-                class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000">
+            <img fetchpriority="high" 
+
+    decoding="async"
+
+class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000" src="assets/hd-digital-art-wallpaper-background.jpg" alt="Creative LED">
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none"></div>
             <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
                 <p class="text-2xl font-bold text-white mb-2">Creative</p>
@@ -1016,15 +1030,18 @@
         </section>
 
 <!-- section 7: Learn More about LED Display Solutions -->
-        <section id="solutions" class="py-12 md:py-16 px-4 md:px-8 z-10 relative bg-surface">
+        <!-- ========================================== -->
+<!-- SOLUTIONS SECTION (GSAP OPTIMIZED)         -->
+<!-- ========================================== -->
+<section id="solutions" class="py-12 md:py-16 px-4 md:px-8 z-10 relative bg-surface">
     <div class="max-w-7xl mx-auto space-y-10">
 
         <!-- Header Section -->
         <div class="space-y-4 text-center md:text-left flex flex-col items-center md:items-start">
            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest bg-white/5 backdrop-blur-sm mb-6">
-                    <span class="w-2 h-2 rounded-full animate-multi-pulse"></span>
-                    Solutions
-                </div>
+                <span class="w-2 h-2 rounded-full animate-multi-pulse"></span>
+                Solutions
+            </div>
             <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
                 Learn more about <br class="hidden md:block" />
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500">
@@ -1039,156 +1056,134 @@
         <!-- Bento Grid Layout -->
         <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
 
-            <!-- 1. BENEFITS (Span 7) - OPTIMIZED: Eager Load + High Priority -->
-            <div class="md:col-span-7 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-all group relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
-                <div class="absolute -top-10 -right-10 w-64 h-64 bg-cyan-600/10 blur-[80px] group-hover:bg-cyan-600/20 transition-colors pointer-events-none z-10"></div>
-                
+            <!-- 1. BENEFITS (Span 7) -->
+            <div class="bento-card md:col-span-7 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
+                <div class="bento-glow absolute -top-10 -right-10 w-64 h-64 bg-cyan-600/20 opacity-50 blur-[80px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-56 overflow-hidden">
-                    <img fetchpriority="high" loading="eager" decoding="sync" src="assets/compact-fluorescent-light-bulb-hand.jpg" alt="Abstract tech particles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <img fetchpriority="high" loading="eager" decoding="async" src="assets/compact-fluorescent-light-bulb-hand.jpg" alt="Abstract tech particles" 
+                        class="bento-img preloader-critical w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
                 </div>
-
                 <div class="p-7 md:p-9 flex flex-col flex-grow relative z-20 -mt-16">
                     <h3 class="text-2xl font-bold text-white mb-2">The Benefits of LED Vision Works</h3>
-                    <p class="text-gray-400 text-sm max-w-md leading-relaxed mb-6 flex-grow">
-                        Learn how LED vision will offer a better and efficient visual input for development and enhance your environmental lighting.
-                    </p>
+                    <p class="text-gray-400 text-sm max-w-md leading-relaxed mb-6 flex-grow">Learn how LED vision will offer a better and efficient visual input for development and enhance your environmental lighting.</p>
                     <div class="mt-auto">
-                        <span class="inline-flex items-center gap-2 text-cyan-400 text-sm font-bold group-hover:text-cyan-300 transition-colors">
-                            Explore more <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        <span class="inline-flex items-center gap-2 text-cyan-400 text-sm font-bold">
+                            Explore more <span class="bento-arrow material-symbols-outlined text-[16px]">arrow_forward</span>
                         </span>
                     </div>
                 </div>
             </div>
 
-            <!-- 2. CHOOSING RIGHT (Span 5) - OPTIMIZED: Eager Load -->
-            <div class="md:col-span-5 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-all group relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
-                <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-purple-600/10 blur-[80px] group-hover:bg-purple-600/20 transition-colors pointer-events-none z-10"></div>
-                
+            <!-- 2. CHOOSING RIGHT (Span 5) -->
+            <div class="bento-card md:col-span-5 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
+                <div class="bento-glow absolute -bottom-10 -left-10 w-48 h-48 bg-purple-600/20 opacity-50 blur-[80px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-56 overflow-hidden">
-                    <img loading="eager" decoding="sync" src="assets/shopping-girl-looking-store-window.jpg" alt="Choosing LED" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <img fetchpriority="high" loading="eager" decoding="async" src="assets/shopping-girl-looking-store-window.jpg" alt="Choosing LED" 
+                        class="bento-img preloader-critical w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
                 </div>
-
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
                     <h3 class="text-xl font-bold text-white mb-2">Choosing the Right LED</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-                        Digital design is created when planning a LED display tailored perfectly for your current vision.
-                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Digital design is created when planning a LED display tailored perfectly for your current vision.</p>
                     <div class="mt-auto">
-                        <span class="inline-flex items-center gap-2 text-purple-400 text-sm font-bold group-hover:text-purple-300 transition-colors">
-                            Explore more <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        <span class="inline-flex items-center gap-2 text-purple-400 text-sm font-bold">
+                            Explore more <span class="bento-arrow material-symbols-outlined text-[16px]">arrow_forward</span>
                         </span>
                     </div>
                 </div>
             </div>
 
-            <!-- 3. RETAIL (Span 4) - OPTIMIZED: Kept Lazy but added Async Decoding -->
-            <div class="md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-all group relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
-                <div class="absolute -top-10 -right-10 w-32 h-32 bg-sky-600/10 blur-[60px] group-hover:bg-sky-600/20 transition-colors pointer-events-none z-10"></div>
-                
+            <!-- 3. RETAIL (Span 4) -->
+            <div class="bento-card md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
+                <div class="bento-glow absolute -top-10 -right-10 w-32 h-32 bg-sky-600/20 opacity-50 blur-[60px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-44 overflow-hidden">
-                    <img loading="lazy" decoding="async" src="assets/programmers-data-center-using-mockup-laptop-inspecting-server-rigs.jpg" alt="Retail Display" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <img loading="lazy" decoding="async" src="assets/programmers-data-center-using-mockup-laptop-inspecting-server-rigs.jpg" alt="Retail Display" 
+                        class="bento-img w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/80 to-transparent"></div>
                 </div>
-
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
                     <h3 class="text-lg font-bold text-white mb-2">Retail Solutions</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-                        Explore how LED displays can serve your customers better in the modern retail world.
-                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Explore how LED displays can serve your customers better in the modern retail world.</p>
                     <div class="mt-auto">
-                        <span class="inline-flex items-center gap-2 text-sky-400 text-sm font-bold group-hover:text-sky-300 transition-colors">
-                            Explore more <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        <span class="inline-flex items-center gap-2 text-sky-400 text-sm font-bold">
+                            Explore more <span class="bento-arrow material-symbols-outlined text-[16px]">arrow_forward</span>
                         </span>
                     </div>
                 </div>
             </div>
 
-            <!-- 4. CORPORATE (Span 4) - OPTIMIZED -->
-            <div class="md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-all group relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
-                <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-600/10 blur-[60px] group-hover:bg-emerald-600/20 transition-colors pointer-events-none z-10"></div>
-                
+            <!-- 4. CORPORATE (Span 4) -->
+            <div class="bento-card md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
+                <div class="bento-glow absolute -top-10 -right-10 w-32 h-32 bg-emerald-600/20 opacity-50 blur-[60px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-44 overflow-hidden">
-                    <img loading="lazy" decoding="async" src="assets/financial-advisor-presents-detailed-stock-market-analysis-clients.jpg" alt="Corporate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <img loading="lazy" decoding="async" src="assets/financial-advisor-presents-detailed-stock-market-analysis-clients.jpg" alt="Corporate" 
+                        class="bento-img w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/80 to-transparent"></div>
                 </div>
-
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
                     <h3 class="text-lg font-bold text-white mb-2">Corporate Displays</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-                        Optimize the basics with LED displays designed for key connections and corporate training.
-                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Optimize the basics with LED displays designed for key connections and corporate training.</p>
                     <div class="mt-auto">
-                        <span class="inline-flex items-center gap-2 text-emerald-400 text-sm font-bold group-hover:text-emerald-300 transition-colors">
-                            Explore more <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        <span class="inline-flex items-center gap-2 text-emerald-400 text-sm font-bold">
+                            Explore more <span class="bento-arrow material-symbols-outlined text-[16px]">arrow_forward</span>
                         </span>
                     </div>
                 </div>
             </div>
 
-            <!-- 5. CUSTOMIZING (Span 4) - OPTIMIZED -->
-            <div class="md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-all group relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
-                <div class="absolute -top-10 -right-10 w-32 h-32 bg-orange-600/10 blur-[60px] group-hover:bg-orange-600/20 transition-colors pointer-events-none z-10"></div>
-                
+            <!-- 5. CUSTOMIZING (Span 4) -->
+            <div class="bento-card md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
+                <div class="bento-glow absolute -top-10 -right-10 w-32 h-32 bg-orange-600/20 opacity-50 blur-[60px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-44 overflow-hidden">
-                    <img loading="lazy" decoding="async" src="assets/medium-shot-people-talking-about-color-palette.jpg" alt="Customizing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <img loading="lazy" decoding="async" src="assets/medium-shot-people-talking-about-color-palette.jpg" alt="Customizing" 
+                        class="bento-img w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/80 to-transparent"></div>
                 </div>
-
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
                     <h3 class="text-lg font-bold text-white mb-2">Customizing Displays</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-                        Improve the impact of your visual array with custom shapes and tools for your business.
-                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Improve the impact of your visual array with custom shapes and tools for your business.</p>
                     <div class="mt-auto">
-                        <span class="inline-flex items-center gap-2 text-orange-400 text-sm font-bold group-hover:text-orange-300 transition-colors">
-                            Explore more <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        <span class="inline-flex items-center gap-2 text-orange-400 text-sm font-bold">
+                            Explore more <span class="bento-arrow material-symbols-outlined text-[16px]">arrow_forward</span>
                         </span>
                     </div>
                 </div>
             </div>
 
-            <!-- 6. INTRODUCING (Span 6) - OPTIMIZED -->
-            <div class="md:col-span-6 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-all group relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
-                <div class="absolute -top-10 -right-10 w-48 h-48 bg-pink-600/10 blur-[80px] group-hover:bg-pink-600/20 transition-colors pointer-events-none z-10"></div>
-                
+            <!-- 6. INTRODUCING (Span 6) -->
+            <div class="bento-card md:col-span-6 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
+                <div class="bento-glow absolute -top-10 -right-10 w-48 h-48 bg-pink-600/20 opacity-50 blur-[80px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-48 overflow-hidden">
-                    <img loading="lazy" decoding="async" src="assets/65854375_2306.w022.n003.924B.p15.924.jpg" alt="Intro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <img loading="lazy" decoding="async" src="assets/65854375_2306.w022.n003.924B.p15.924.jpg" alt="Intro" 
+                        class="bento-img w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
                 </div>
-
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
                     <h3 class="text-xl font-bold text-white mb-2">Introducing LED Vision</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-                        Digital technologies combined seamlessly with customized networking techniques for ultimate control.
-                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Digital technologies combined seamlessly with customized networking techniques for ultimate control.</p>
                     <div class="mt-auto">
-                        <span class="inline-flex items-center gap-2 text-pink-400 text-sm font-bold group-hover:text-pink-300 transition-colors">
-                            Explore more <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        <span class="inline-flex items-center gap-2 text-pink-400 text-sm font-bold">
+                            Explore more <span class="bento-arrow material-symbols-outlined text-[16px]">arrow_forward</span>
                         </span>
                     </div>
                 </div>
             </div>
 
-            <!-- 7. EXPERT SUPPORT (Span 6) - OPTIMIZED -->
-            <div class="md:col-span-6 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-all group relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
-                <div class="absolute -top-10 -right-10 w-48 h-48 bg-yellow-600/10 blur-[80px] group-hover:bg-yellow-600/20 transition-colors pointer-events-none z-10"></div>
-                
+            <!-- 7. EXPERT SUPPORT (Span 6) -->
+            <div class="bento-card md:col-span-6 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
+                <div class="bento-glow absolute -top-10 -right-10 w-48 h-48 bg-yellow-600/20 opacity-50 blur-[80px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-48 overflow-hidden">
-                    <img loading="lazy" decoding="async" src="assets/confident-call-center-operator-talking-with-client.jpg" alt="Support" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <img loading="lazy" decoding="async" src="assets/confident-call-center-operator-talking-with-client.jpg" alt="Support" 
+                        class="bento-img w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
                 </div>
-
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
                     <h3 class="text-xl font-bold text-white mb-2">Expert Support</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-                        Enhance the importance of user expertise that can help you seamlessly install and maintain your LED arrays.
-                    </p>
-                    
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Enhance the importance of user expertise that can help you seamlessly install and maintain your LED arrays.</p>
                     <div class="mt-auto">
                         <button onclick="openPopupForm()" class="text-transparent bg-clip-text bg-[linear-gradient(90deg,#facc15,#f97316,#ec4899)] text-sm font-bold flex items-center gap-1 hover:opacity-80 transition-opacity">
-                            Get Support <span class="material-symbols-outlined text-sm text-[#ec4899] transition-transform group-hover:translate-x-1">arrow_forward</span>
+                            Get Support <span class="bento-arrow material-symbols-outlined text-sm text-[#ec4899]">arrow_forward</span>
                         </button>
                     </div>
                 </div>
@@ -1197,6 +1192,51 @@
         </div>
     </div>
 </section>
+
+<!-- ========================================== -->
+<!-- GSAP HOVER ANIMATION LOGIC                 -->
+<!-- ========================================== -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const bentoCards = document.querySelectorAll('.bento-card');
+
+        bentoCards.forEach(card => {
+            const img = card.querySelector('.bento-img');
+            const arrow = card.querySelector('.bento-arrow');
+            const glow = card.querySelector('.bento-glow');
+
+            // CRITICAL FIX 1: Strip any lingering CSS transitions that might fight GSAP
+            if(img) img.style.transition = 'none';
+            if(arrow) arrow.style.transition = 'none';
+            if(glow) glow.style.transition = 'none';
+
+            card.addEventListener('mouseenter', () => {
+                // CRITICAL FIX 2: overwrite: true immediately kills the "leave" animation if you hover back in quickly
+                if (img) {
+                    gsap.to(img, { scale: 1.05, duration: 0.5, ease: "power2.out", overwrite: true });
+                }
+                if (arrow) {
+                    gsap.to(arrow, { x: 6, duration: 0.3, ease: "power2.out", overwrite: true });
+                }
+                if (glow) {
+                    gsap.to(glow, { opacity: 1, scale: 1.2, duration: 0.6, ease: "power2.out", overwrite: true });
+                }
+            });
+
+            card.addEventListener('mouseleave', () => {
+                if (img) {
+                    gsap.to(img, { scale: 1, duration: 0.6, ease: "power3.out", overwrite: true });
+                }
+                if (arrow) {
+                    gsap.to(arrow, { x: 0, duration: 0.4, ease: "power3.out", overwrite: true });
+                }
+                if (glow) {
+                    gsap.to(glow, { opacity: 0.5, scale: 1, duration: 0.6, ease: "power3.out", overwrite: true });
+                }
+            });
+        });
+    });
+</script>
 <!-- //section 8: Testimonials -->
        <section class="py-12 md:py-16 bg-[#05050a] overflow-hidden relative">
     
@@ -2290,7 +2330,23 @@
             }
         }
 
-        document.addEventListener("DOMContentLoaded", () => {
+        window.addEventListener('load', () => {
+    const images = document.querySelectorAll('.preloader-critical');
+    const imagePromises = Array.from(images).map(img => {
+        if (img.complete) return Promise.resolve();
+        return new Promise(resolve => {
+            img.onload = resolve;
+            img.onerror = resolve; // Continue even if an image fails
+        });
+    });
+
+    Promise.all(imagePromises).then(() => {
+        // Replace this with your actual preloader hide function
+        document.getElementById('preloader').classList.add('fade-out');
+    });
+});
+        
+document.addEventListener("DOMContentLoaded", () => {
     const tiltCards = document.querySelectorAll('.tilt-card');
 
     tiltCards.forEach(card => {
