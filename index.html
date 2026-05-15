@@ -858,10 +858,7 @@
         <!-- Card 1 -->
         <div class="relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden group cursor-pointer bg-surface/50"
             onclick="openPopupForm()">
-            <img fetchpriority="high" 
-loading="lazy"
-    decoding="async"
-
+            <img loading="lazy"
 class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000" src="assets/traditional-christmas-stollen-christmas-symbol.jpg" alt="Indoor LED"
                 class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000">
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none"></div>
@@ -879,9 +876,8 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
         <!-- Card 2 -->
         <div class="relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden group cursor-pointer bg-surface/50"
             onclick="openPopupForm()">
-            <img fetchpriority="high" 
+            <img
 loading="lazy"
-    decoding="async"
 class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000" src="assets/dynamic-digital-flyer-mockup.jpg" alt="Outdoor"
                 class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000">
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none"></div>
@@ -899,8 +895,7 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
         <!-- Card 3 -->
         <div class="relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden group cursor-pointer bg-surface/50"
             onclick="openPopupForm()">
-            <img fetchpriority="high" 
-    decoding="async"
+            <img 
     loading="lazy"
 class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000" src="assets/led-wall-abstract-artwork.jpg" alt="Finepitch LED">
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none"></div>
@@ -918,9 +913,7 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
         <!-- Card 4 -->
         <div class="relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden group cursor-pointer bg-surface/50"
             onclick="openPopupForm()">
-            <img fetchpriority="high" 
-
-    decoding="async"
+            <img 
 loading="lazy"
 class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000" src="assets/hd-digital-art-wallpaper-background.jpg" alt="Creative LED">
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none"></div>
@@ -1058,8 +1051,9 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             <div class="bento-card md:col-span-7 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -top-10 -right-10 w-64 h-64 bg-cyan-600/20 opacity-50 blur-[80px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-56 overflow-hidden">
-                    <img fetchpriority="high" loading="eager" decoding="async" src="assets/compact-fluorescent-light-bulb-hand.jpg" alt="Abstract tech particles" 
-                        class="bento-img preloader-critical w-full h-full object-cover">
+                    <!-- ADDED GPU CLASSES -->
+                    <img  loading="lazy" src="assets/compact-fluorescent-light-bulb-hand.jpg" alt="Abstract tech particles" 
+                        class="bento-img preloader-critical w-full h-full object-cover transform-gpu will-change-transform">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
                 </div>
                 <div class="p-7 md:p-9 flex flex-col flex-grow relative z-20 -mt-16">
@@ -1077,8 +1071,9 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             <div class="bento-card md:col-span-5 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -bottom-10 -left-10 w-48 h-48 bg-purple-600/20 opacity-50 blur-[80px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-56 overflow-hidden">
-                    <img fetchpriority="high" loading="eager" decoding="async" src="assets/shopping-girl-looking-store-window.jpg" alt="Choosing LED" 
-                        class="bento-img preloader-critical w-full h-full object-cover">
+                    <!-- ADDED GPU CLASSES -->
+                    <img loading="lazy"  src="assets/shopping-girl-looking-store-window.jpg" alt="Choosing LED" 
+                        class="bento-img preloader-critical w-full h-full object-cover transform-gpu will-change-transform">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
                 </div>
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
@@ -1096,9 +1091,9 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             <div class="bento-card md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -top-10 -right-10 w-32 h-32 bg-sky-600/20 opacity-50 blur-[60px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-44 overflow-hidden">
-                    <!-- CHANGED TO EAGER -->
-                    <img loading="eager" decoding="async" src="assets/programmers-data-center-using-mockup-laptop-inspecting-server-rigs.jpg" alt="Retail Display" 
-                        class="bento-img w-full h-full object-cover">
+                    <!-- RESTORED LAZY + ADDED GPU CLASSES -->
+                    <img loading="lazy" src="assets/programmers-data-center-using-mockup-laptop-inspecting-server-rigs.jpg" alt="Retail Display" 
+                        class="bento-img w-full h-full object-cover transform-gpu will-change-transform">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/80 to-transparent"></div>
                 </div>
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
@@ -1116,9 +1111,9 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             <div class="bento-card md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -top-10 -right-10 w-32 h-32 bg-emerald-600/20 opacity-50 blur-[60px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-44 overflow-hidden">
-                    <!-- CHANGED TO EAGER -->
-                    <img loading="eager" decoding="async" src="assets/financial-advisor-presents-detailed-stock-market-analysis-clients.jpg" alt="Corporate" 
-                        class="bento-img w-full h-full object-cover">
+                    <!-- RESTORED LAZY + ADDED GPU CLASSES -->
+                    <img loading="lazy" src="assets/financial-advisor-presents-detailed-stock-market-analysis-clients.jpg" alt="Corporate" 
+                        class="bento-img w-full h-full object-cover transform-gpu will-change-transform">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/80 to-transparent"></div>
                 </div>
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
@@ -1136,9 +1131,9 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             <div class="bento-card md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -top-10 -right-10 w-32 h-32 bg-orange-600/20 opacity-50 blur-[60px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-44 overflow-hidden">
-                    <!-- CHANGED TO EAGER -->
-                    <img loading="eager" decoding="async" src="assets/medium-shot-people-talking-about-color-palette.jpg" alt="Customizing" 
-                        class="bento-img w-full h-full object-cover">
+                    <!-- RESTORED LAZY + ADDED GPU CLASSES -->
+                    <img loading="lazy" src="assets/medium-shot-people-talking-about-color-palette.jpg" alt="Customizing" 
+                        class="bento-img w-full h-full object-cover transform-gpu will-change-transform">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/80 to-transparent"></div>
                 </div>
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
@@ -1156,9 +1151,9 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             <div class="bento-card md:col-span-6 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -top-10 -right-10 w-48 h-48 bg-pink-600/20 opacity-50 blur-[80px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-48 overflow-hidden">
-                    <!-- CHANGED TO EAGER -->
-                    <img loading="eager" decoding="async" src="assets/65854375_2306.w022.n003.924B.p15.924.jpg" alt="Intro" 
-                        class="bento-img w-full h-full object-cover">
+                    <!-- RESTORED LAZY + ADDED GPU CLASSES -->
+                    <img loading="lazy" src="assets/65854375_2306.w022.n003.924B.p15.924.jpg" alt="Intro" 
+                        class="bento-img w-full h-full object-cover transform-gpu will-change-transform">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
                 </div>
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
@@ -1176,9 +1171,9 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             <div class="bento-card md:col-span-6 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -top-10 -right-10 w-48 h-48 bg-yellow-600/20 opacity-50 blur-[80px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-48 overflow-hidden">
-                    <!-- CHANGED TO EAGER -->
-                    <img loading="eager" decoding="async" src="assets/confident-call-center-operator-talking-with-client.jpg" alt="Support" 
-                        class="bento-img w-full h-full object-cover">
+                    <!-- RESTORED LAZY + ADDED GPU CLASSES -->
+                    <img loading="lazy"  src="assets/confident-call-center-operator-talking-with-client.jpg" alt="Support" 
+                        class="bento-img w-full h-full object-cover transform-gpu will-change-transform">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
                 </div>
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
