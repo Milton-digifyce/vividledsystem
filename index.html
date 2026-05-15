@@ -859,7 +859,7 @@
         <div class="relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden group cursor-pointer bg-surface/50"
             onclick="openPopupForm()">
             <img fetchpriority="high" 
-
+loading="lazy"
     decoding="async"
 
 class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000" src="assets/traditional-christmas-stollen-christmas-symbol.jpg" alt="Indoor LED"
@@ -880,9 +880,8 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
         <div class="relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden group cursor-pointer bg-surface/50"
             onclick="openPopupForm()">
             <img fetchpriority="high" 
-
+loading="lazy"
     decoding="async"
-
 class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000" src="assets/dynamic-digital-flyer-mockup.jpg" alt="Outdoor"
                 class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000">
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none"></div>
@@ -901,9 +900,8 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
         <div class="relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden group cursor-pointer bg-surface/50"
             onclick="openPopupForm()">
             <img fetchpriority="high" 
-
     decoding="async"
-
+    loading="lazy"
 class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000" src="assets/led-wall-abstract-artwork.jpg" alt="Finepitch LED">
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none"></div>
             <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
@@ -923,7 +921,7 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             <img fetchpriority="high" 
 
     decoding="async"
-
+loading="lazy"
 class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000" src="assets/hd-digital-art-wallpaper-background.jpg" alt="Creative LED">
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none"></div>
             <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
@@ -1098,7 +1096,8 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             <div class="bento-card md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -top-10 -right-10 w-32 h-32 bg-sky-600/20 opacity-50 blur-[60px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-44 overflow-hidden">
-                    <img loading="lazy" decoding="async" src="assets/programmers-data-center-using-mockup-laptop-inspecting-server-rigs.jpg" alt="Retail Display" 
+                    <!-- CHANGED TO EAGER -->
+                    <img loading="eager" decoding="async" src="assets/programmers-data-center-using-mockup-laptop-inspecting-server-rigs.jpg" alt="Retail Display" 
                         class="bento-img w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/80 to-transparent"></div>
                 </div>
@@ -1117,7 +1116,8 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             <div class="bento-card md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -top-10 -right-10 w-32 h-32 bg-emerald-600/20 opacity-50 blur-[60px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-44 overflow-hidden">
-                    <img loading="lazy" decoding="async" src="assets/financial-advisor-presents-detailed-stock-market-analysis-clients.jpg" alt="Corporate" 
+                    <!-- CHANGED TO EAGER -->
+                    <img loading="eager" decoding="async" src="assets/financial-advisor-presents-detailed-stock-market-analysis-clients.jpg" alt="Corporate" 
                         class="bento-img w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/80 to-transparent"></div>
                 </div>
@@ -1136,7 +1136,8 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             <div class="bento-card md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -top-10 -right-10 w-32 h-32 bg-orange-600/20 opacity-50 blur-[60px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-44 overflow-hidden">
-                    <img loading="lazy" decoding="async" src="assets/medium-shot-people-talking-about-color-palette.jpg" alt="Customizing" 
+                    <!-- CHANGED TO EAGER -->
+                    <img loading="eager" decoding="async" src="assets/medium-shot-people-talking-about-color-palette.jpg" alt="Customizing" 
                         class="bento-img w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/80 to-transparent"></div>
                 </div>
@@ -1155,7 +1156,8 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             <div class="bento-card md:col-span-6 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -top-10 -right-10 w-48 h-48 bg-pink-600/20 opacity-50 blur-[80px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-48 overflow-hidden">
-                    <img loading="lazy" decoding="async" src="assets/65854375_2306.w022.n003.924B.p15.924.jpg" alt="Intro" 
+                    <!-- CHANGED TO EAGER -->
+                    <img loading="eager" decoding="async" src="assets/65854375_2306.w022.n003.924B.p15.924.jpg" alt="Intro" 
                         class="bento-img w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
                 </div>
@@ -1174,7 +1176,8 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             <div class="bento-card md:col-span-6 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -top-10 -right-10 w-48 h-48 bg-yellow-600/20 opacity-50 blur-[80px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-48 overflow-hidden">
-                    <img loading="lazy" decoding="async" src="assets/confident-call-center-operator-talking-with-client.jpg" alt="Support" 
+                    <!-- CHANGED TO EAGER -->
+                    <img loading="eager" decoding="async" src="assets/confident-call-center-operator-talking-with-client.jpg" alt="Support" 
                         class="bento-img w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
                 </div>
@@ -1194,9 +1197,9 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
 </section>
 
 <!-- ========================================== -->
-<!-- GSAP HOVER ANIMATION LOGIC                 -->
+<!-- GSAP HOVER ANIMATION LOGIC (GLITCH FIXED)  -->
 <!-- ========================================== -->
-<script>
+<!-- <script>
     document.addEventListener('DOMContentLoaded', () => {
         const bentoCards = document.querySelectorAll('.bento-card');
 
@@ -1205,13 +1208,19 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             const arrow = card.querySelector('.bento-arrow');
             const glow = card.querySelector('.bento-glow');
 
-            // CRITICAL FIX 1: Strip any lingering CSS transitions that might fight GSAP
+            // 1. Strip any lingering CSS transitions that might fight GSAP
             if(img) img.style.transition = 'none';
             if(arrow) arrow.style.transition = 'none';
             if(glow) glow.style.transition = 'none';
 
+            // 2. CRITICAL FIX: Pre-initialize states and force 3D Hardware Acceleration
+            // This prevents the browser from dropping a frame on the very first hover
+            if(img) gsap.set(img, { scale: 1, transformOrigin: "center center", force3D: true });
+            if(arrow) gsap.set(arrow, { x: 0, force3D: true });
+            if(glow) gsap.set(glow, { opacity: 0.5, scale: 1, force3D: true });
+
+            // Mouse Enter Event
             card.addEventListener('mouseenter', () => {
-                // CRITICAL FIX 2: overwrite: true immediately kills the "leave" animation if you hover back in quickly
                 if (img) {
                     gsap.to(img, { scale: 1.05, duration: 0.5, ease: "power2.out", overwrite: true });
                 }
@@ -1223,6 +1232,7 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                 }
             });
 
+            // Mouse Leave Event
             card.addEventListener('mouseleave', () => {
                 if (img) {
                     gsap.to(img, { scale: 1, duration: 0.6, ease: "power3.out", overwrite: true });
@@ -1236,7 +1246,7 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             });
         });
     });
-</script>
+</script> -->
 <!-- //section 8: Testimonials -->
        <section class="py-12 md:py-16 bg-[#05050a] overflow-hidden relative">
     
