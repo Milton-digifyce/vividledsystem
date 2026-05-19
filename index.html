@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="dark" lang="en">
-
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -9,24 +8,17 @@
         href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300..800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-
     <title>Vivid LED System | India's Most Trusted LED Expert</title>
-
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
     <link
         href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;700&family=Manrope:wght@300;400;700&display=swap"
         rel="stylesheet" />
-
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
-
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -100,12 +92,10 @@
             },
         };
     </script>
-
     <style>
         body {
             font-family: "Host Grotesk", sans-serif;
         }
-
         /* Base Button Styling */
         .whatsapp-float {
             position: fixed;
@@ -124,19 +114,16 @@
             text-decoration: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
         /* Hover Animation */
         .whatsapp-float:hover {
             transform: translateY(-4px) scale(1.05);
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
         }
-
         .whatsapp-icon {
             width: 35px;
             height: 35px;
             display: block;
         }
-
         @media screen and (max-width: 768px) {
             .whatsapp-float {
                 width: 50px;
@@ -144,23 +131,40 @@
                 bottom: 20px;
                 right: 20px;
             }
-
             .whatsapp-icon {
                 width: 28px;
                 height: 28px;
             }
         }
-
         .spectral-gradient {
             background: linear-gradient(90deg, #facc15 0%, #f97316 20%, #ec4899 30%, #a855f7 50%, #38bdf8 100%);
         }
-
         .spectral-border {
             position: relative;
             background: #0f1930;
             border-radius: 0.5rem;
         }
-
+    /* Hides the standard scrollbar for a much cleaner slider look */
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        /* GPU compositing hints — make GSAP scrollLeft tweens butter-smooth */
+        -webkit-overflow-scrolling: touch;
+        will-change: scroll-position;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+    /* CRITICAL: Tailwind's `scroll-smooth` adds native CSS smooth scroll that
+       fights GSAP's per-frame writes and causes stutter. Force `auto` on the
+       sliders so GSAP fully owns the easing curve. */
+    #industry-slider,
+    #testimonial-slider,
+    #service-slider {
+        scroll-behavior: auto !important;
+    }
         .spectral-border::before {
             content: "";
             position: absolute;
@@ -174,7 +178,6 @@
             mask-composite: exclude;
             pointer-events: none;
         }
-
         .text-gradient {
             background: linear-gradient(90deg, #facc15, #f97316, #ec4899, #a855f7, #38bdf8, #facc15);
             background-size: 200% auto;
@@ -182,71 +185,56 @@
             -webkit-text-fill-color: transparent;
             animation: gradient-shift 6s ease infinite;
         }
-
         .bg-surface-container-low {
             background-color: #0f1115;
             color: #ffffff;
         }
-
         .bg-surface-container {
             background-color: #1a1d24;
         }
-
         .text-on-surface {
             color: #f3f4f6;
         }
-
         .text-on-surface-variant {
             color: #9ca3af;
         }
-
         .text-primary {
             color: #3b82f6;
         }
-
         .border-white-5 {
             border-color: rgba(255, 255, 255, 0.05);
         }
-
         .slider-grid {
             display: grid;
         }
-
         .slider-item {
             grid-area: 1 / 1;
             opacity: 0;
             visibility: hidden;
         }
-
         .slider-item.active {
             opacity: 1;
             visibility: visible;
         }
-
         .nav-btn {
             transition: all 0.3s ease;
         }
-
         .nav-btn:hover {
             background-color: rgba(255, 255, 255, 0.1);
             transform: scale(1.05);
         }
-
         .dot {
             transition: all 0.3s ease;
             cursor: pointer;
         }
-
         .dot.active {
             background-color: #3b82f6;
             transform: scale(1.2);
         }
-
         :root {
             --neon-blue: #38bdf8;
             --neon-pink: #ec4899;
         }
-
         .icon-gradient {
             background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
             -webkit-background-clip: text;
@@ -254,13 +242,11 @@
             background-clip: text;
             color: transparent;
         }
-
         .card-gradient-border {
             position: relative;
             background-clip: padding-box;
             border: 1px solid transparent;
         }
-
         .card-gradient-border::before {
             content: '';
             position: absolute;
@@ -272,84 +258,68 @@
             margin: -1px;
             border-radius: inherit;
         }
-
         .text-rotator {
             display: inline-flex;
             overflow: hidden;
             height: 1.2em;
             vertical-align: bottom;
         }
-
         .text-rotator-inner {
             display: flex;
             flex-direction: column;
             animation: rotateText 8s cubic-bezier(0.8, 0, 0.2, 1) infinite;
         }
-
         .text-rotator-inner span {
             height: 1.2em;
             line-height: 1.2em;
             display: block;
         }
-
         @keyframes rotateText {
-
             0%,
             15% {
                 transform: translateY(0);
             }
-
             20%,
             35% {
                 transform: translateY(-1.2em);
             }
-
             40%,
             55% {
                 transform: translateY(-2.4em);
             }
-
             60%,
             75% {
                 transform: translateY(-3.6em);
             }
-
             80%,
             95% {
                 transform: translateY(-4.8em);
             }
-
             100% {
                 transform: translateY(-6.0em);
             }
         }
-
         /* Smooth flowing gradient animation for the button */
         @keyframes gradient-shift {
             0% {
                 background-position: 0% 50%;
             }
-
             50% {
                 background-position: 100% 50%;
             }
-
             100% {
                 background-position: 0% 50%;
             }
         }
-
         /* Custom Marquee Animation */
         @keyframes marquee {
             0% {
                 transform: translateX(0%);
             }
-
             100% {
                 transform: translateX(-100%);
             }
         }
-
         .animated-gradient-btn {
             background: linear-gradient(270deg, #facc15, #f97316, #ec4899, #a855f7, #38bdf8, #facc15);
             background-size: 300% 300%;
@@ -358,16 +328,13 @@
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
         .animated-gradient-btn:hover {
             transform: translateY(-2px) scale(1.02);
             box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.4);
         }
-
         .animate-marquee {
             animation: marquee 25s linear infinite;
         }
-
 @keyframes multiColorPulse {
   0%, 100% { background-color: #facc15; }
   20% { background-color: #f97316; }
@@ -375,16 +342,13 @@
   60% { background-color: #a855f7; }
   80% { background-color: #38bdf8; }
 }
-
 .animate-multi-pulse {
   animation: multiColorPulse 4s infinite linear, pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
-
         /* Optional: Pause animation on hover */
         .marquee-container:hover .animate-marquee {
             animation-play-state: paused;
         }
-
         .hide-scrollbar::-webkit-scrollbar {
         display: none;
     }
@@ -392,7 +356,6 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
-
     /* Hide scrollbar for the slider but keep functionality */
     .hide-scrollbar::-webkit-scrollbar {
         display: none;
@@ -401,23 +364,57 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
+    @keyframes blob-purple {
+        0%, 100% {
+            transform: translate(0, 0) scale(1);
+        }
+        50% {
+            transform: translate(-5dvw, -10dvh) scale(1.1);
+        }
+    }
+    /* 2. Animation for the Deep Blue/Teal Blob */
+    @keyframes blob-teal {
+        0%, 100% {
+            transform: translate(0, 0) scale(1);
+        }
+        33% {
+            transform: translate(10dvw, 15dvh) scale(1.05);
+        }
+        66% {
+            transform: translate(-5dvw, 10dvh) scale(0.95);
+        }
+    }
+    /* 3. Animation for the Warm Orange/Red Blob */
+    @keyframes blob-warm {
+        0%, 100% {
+            transform: translate(0, 0) scale(1);
+        }
+        50% {
+            transform: translate(-10dvw, -15dvh) scale(1.15);
+        }
+    }
+    /* Assigning the animations to your custom Tailwind classes */
+    .animate-blob-purple {
+        animation: blob-purple 20s ease-in-out infinite;
+    }
+    .animate-blob-teal {
+        animation: blob-teal 25s ease-in-out infinite;
+    }
+    .animate-blob-warm {
+        animation: blob-warm 18s ease-in-out infinite;
+    }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
-
 <body class="bg-surface text-on-surface selection:bg-secondary/30">
-
     <!-- PRELOADER START -->
     <div id="preloader" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#05050a] pointer-events-none">
         <div class="relative flex items-center justify-center">
             <!-- Ambient animated glow -->
             <div class="absolute w-32 h-32 bg-blue-500/20 blur-[50px] rounded-full animate-pulse"></div>
             <div class="absolute w-32 h-32 bg-pink-500/20 blur-[50px] rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
-            
             <!-- Logo inside preloader -->
             <img src="assets/mbl.png" alt="Loading Vivid LED System..." class="relative z-10 h-16 md:h-20 w-auto object-contain animate-[pulse_2s_ease-in-out_infinite]">
         </div>
-        
         <!-- Animated loading dots -->
         <div class="mt-8 flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-cyan-400 animate-bounce"></span>
@@ -426,40 +423,32 @@
         </div>
     </div>
     <!-- PRELOADER END -->
-
     <header id="main-header" class="fixed top-6 left-0 h-20 right-0 w-full z-50 px-4 md:px-8">
         <nav class="relative flex justify-between h-[72px] items-center px-8 mx-auto max-w-5xl bg-surface-container/50 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] rounded-[100px]">
-
             <!-- Logo Area -->
             <a href="Index.html" class="flex items-center gap-2 no-underline">
                 <img class="h-12 w-auto object-contain" src="assets/mbl.png" loading="lazy" alt="Logo">
             </a>
-
             <!-- Navigation Links -->
             <div class="relative hidden md:flex items-center font-['Host_Grotesk'] text-[15px] font-medium" id="nav-links-container">
-
                 <!-- Sliding Active Indicator (Style removed so GSAP can calculate cleanly) -->
                 <div id="nav-indicator" class="absolute rounded-[100px] bg-white/[0.08] border-t-[1.5px] border-white/60 shadow-[0_2px_10px_rgba(0,0,0,0.2)] pointer-events-none"></div>
-
                 <a class="nav-link text-white px-4 py-2  rounded-lg transition-colors" href="#home">Home</a>
                 <a class="nav-link text-slate-300 hover:text-white px-4 py-2  rounded-lg transition-colors" href="#projects">Projects</a>
                 <a class="nav-link text-slate-300 hover:text-white px-4 py-2  rounded-lg transition-colors" href="#industries">Industries</a>
                 <a class="nav-link text-slate-300 hover:text-white px-4 py-2  rounded-lg transition-colors" href="#service">Services</a>
                 <a class="text-slate-300 hover:text-white px-5 py-2 transition-colors relative z-10" href="javascript:void(0)" onclick="openPopupForm()">Contact</a>
             </div>
-
             <!-- Action Buttons -->
             <div class="flex items-center gap-3">
                 <button onclick="openPopupForm()" class="hidden md:block text-white px-7 py-2.5 rounded-[100px] font-medium text-[15px]  transition-all duration-500 ease-in-out bg-gradient-to-b from-[#5a94fa] via-[#1d4ed8] to-[#5a94fa] bg-[length:100%_200%] bg-top hover:bg-bottom ">
                     Get Quote
                 </button>
-
                 <!-- Mobile Menu Toggle -->
                 <button id="mobile-menu-btn" class="md:hidden text-white flex items-center justify-center p-2 rounded-[100px] bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
                     <span class="material-symbols-outlined">menu</span>
                 </button>
             </div>
-
             <!-- Mobile Dropdown Menu -->
             <div id="mobile-menu" class="hidden absolute top-[80px] left-0 right-0 bg-surface-container/95 backdrop-blur-xl border border-white/10 rounded-2xl p-4 flex-col gap-4 shadow-2xl md:hidden z-50 transition-all duration-300">
                 <a class="text-white px-4 py-2  rounded-lg transition-colors" href="#home">Home</a>
@@ -468,513 +457,544 @@
                 <a class="text-slate-300 hover:text-white px-4 py-2  rounded-lg transition-colors" href="#service">Services</a>
                 <a class="text-slate-300 hover:text-white px-4 py-2  rounded-lg transition-colors" href="javascript:void(0)" onclick="openPopupForm()">Contact</a>
             </div>
-
         </nav>
     </header>
-
     <main class="bg-surface mt-20 md:mt-10">
-
         <!-- Optimized for Mobile: Full screen min-height, reduced font sizes, centered content -->
-        <section id="home" class="relative min-h-[100dvh] flex flex-col justify-center py-16 px-4 md:px-8 overflow-hidden">
-            <div class="absolute inset-0 z-0">
-                <!-- Background Image -->
-                <div class="absolute inset-0 bg-gradient-to-b from-transparent from-surface to-[10%]"></div>
-                <img loading="lazy" class="absolute inset-0 w-full h-full object-cover opacity-40"
-                    data-alt="abstract architectural led screen installation with vibrant neon waves and cinematic reflections in a dark industrial space"
-                    src="assets/1-Herobanner.jpg" />
-
-                <!-- Gradient: Stays completely transparent from 0% to 80%, then fades to the solid background color from 80% to 100% -->
-                <div class="lg:mt-40 absolute inset-0 bg-gradient-to-b from-transparent from-[70%] to-surface"></div>
-
+     <section id="home" class="relative min-h-[100dvh] flex flex-col justify-center py-16 px-4 md:px-8 overflow-hidden ">
+<style>
+    /* 1. Animation for the Deep Magenta/Purple Blob */
+    @keyframes blob-purple {
+        0%, 100% {
+            transform: translate(0, 0) scale(1);
+        }
+        50% {
+            /* Increased travel distance and scale */
+            transform: translate(-15dvw, -15dvh) scale(1.2);
+        }
+    }
+    /* 2. Animation for the Deep Blue/Teal Blob */
+    @keyframes blob-teal {
+        0%, 100% {
+            transform: translate(0, 0) scale(1);
+        }
+        33% {
+            transform: translate(20dvw, 20dvh) scale(1.1);
+        }
+        66% {
+            transform: translate(-15dvw, 15dvh) scale(0.9);
+        }
+    }
+    /* 3. Animation for the Warm Orange/Red Blob */
+    @keyframes blob-warm {
+        0%, 100% {
+            transform: translate(0, 0) scale(1);
+        }
+        50% {
+            transform: translate(-20dvw, -20dvh) scale(1.25);
+        }
+    }
+    /* Dramatically sped up the animation durations */
+    .animate-blob-purple {
+        animation: blob-purple 10s ease-in-out infinite;
+    }
+    .animate-blob-teal {
+        animation: blob-teal 12s ease-in-out infinite;
+    }
+    .animate-blob-warm {
+        animation: blob-warm 8s ease-in-out infinite;
+    }
+</style>
+<div class="absolute inset-0 z-0 overflow-hidden bg-[#02040d]">
+    <div class="absolute w-[90dvw] h-[90dvw] top-[50%] -mt-[45dvw] -left-[10dvw] rounded-full opacity-90 bg-[radial-gradient(50%_50%_at_50%_50%,#7a1053_0%,rgba(2,4,13,0)_100%)] animate-blob-purple">
+    </div> 
+    <div class="absolute w-[100dvw] h-[100dvw] top-[50%] -mt-[50dvw] right-[0dvw] rounded-full opacity-80 bg-[radial-gradient(50%_50%_at_50%_50%,#1e3a8a_0%,rgba(2,4,13,0)_100%)] animate-blob-teal" style="animation-duration: 12s; animation-direction: reverse;">
+    </div>
+    <div class="absolute w-[80dvw] h-[80dvw] top-[75%] -mt-[40dvw] -right-[10dvw] rounded-full opacity-80 bg-[radial-gradient(50%_50%_at_50%_50%,#c23b22_0%,rgba(2,4,13,0)_100%)] animate-blob-warm">
+    </div>
+    <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-[#05050a] to-transparent"></div>
+    <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#05050a] to-transparent"></div>
+</div>
+    <div class="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center justify-center w-full space-y-6 md:space-y-8 mt-8">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+            India's Trusted LED Display Screen Experts
+        </h1>
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]">
+            Bright, Bold & Built to Last
+        </h2>
+        <div class="text-sm md:text-base text-gray-200 max-w-4xl mx-auto font-light leading-relaxed space-y-4">
+            <p>
+                With over a decade of LED display expertise, Vivid Led System delivers next-generation indoor and
+                outdoor LED video walls engineered for stunning clarity and performance.
+            </p>
+            <p>
+                We design, manufacture and install high-resolution LED screens that redefine visual experiences.
+            </p>
+            <p>
+                As one of India's most reliable LED screen manufacturers, we offer premium LED displays, transparent
+                LED solutions, and fully customised installations built for advertising, branding, and large-format digital
+                communication across every industry.
+            </p>
+        </div>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 w-full px-4 sm:px-0 mt-8">
+            <div class="flex flex-col sm:flex-row justify-center gap-4 w-full px-4 sm:px-0">
+                <button onclick="openPopupForm()"
+                    class="animated-gradient-btn w-full sm:w-auto px-8 py-3 md:px-10 md:py-4 text-sm md:text-base font-bold rounded-lg border border-white/20">
+                    Get a Quote Today!
+                </button>
             </div>
-
-            <div class="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center justify-center w-full space-y-4 md:space-y-8">
-                <!-- Adjusted font sizes for mobile -->
-                <h1 class="text-3xl sm:text-4xl md:text-8xl font-bold tracking-tighter leading-[1.1]">
-                    <span class="inline-block pr-[0.1em]">India's Most Trusted </span> <br />
-                    <span class="text-rotator inline-block pr-[0.1em]">
-                        <span class="text-rotator-inner">
-                            <span class="text-gradient">Indoor</span>
-                            <span class="text-gradient">Outdoor</span>
-                            <span class="text-gradient">Custom</span>
-                            <span class="text-gradient">Creative</span>
-                            <span class="text-gradient">Transparent</span>
-                            <span class="text-gradient" aria-hidden="true">Indoor</span>
-                        </span>
-                    </span> <br />
-                    <span class="inline-block pr-[0.1em]">LED Video Wall Expert</span>
-                </h1>
-
-                <div class="h-1 w-48 mx-auto spectral-gradient rounded-full"></div>
-
-                <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed">
-                    Premium LED display solutions for every space
-                </p>
-
-                <div class="flex flex-col sm:flex-row justify-center gap-4 w-full px-4 sm:px-0 mt-4 md:mt-0">
-                    <div class="flex flex-col sm:flex-row justify-center gap-4 w-full px-4 sm:px-0">
-                        <!-- Adjusted button size for mobile -->
-                        <button onclick="openPopupForm()"
-                            class="animated-gradient-btn w-full sm:w-auto px-6 py-3 md:px-8 md:py-4 text-sm md:text-base font-bold rounded-lg border border-white/20">
-                            Get a Quote Today!
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
+        </div>
+    </div>
+</section>
         <!-- Section 2: Solutions -->
-        <section id="about" class="py-10 md:py-16 px-4 md:px-8 max-w-7xl mx-auto bg-[#05050a] text-white">
+        <section id="about" style="display: none;" class="py-10 md:py-16 px-4 md:px-8 max-w-7xl mx-auto bg-[#05050a] text-white">
             <div class="grid md:grid-cols-2 gap-8 md:gap-12">
-
-                <!-- Card 1 -->
                 <div
                     class="relative rounded-[1.5rem] p-[1px] group cursor-pointer transition-transform duration-500 hover:-translate-y-2 isolate shadow-xl">
-
                     <div
                         class="absolute inset-0 rounded-[1.5rem] bg-white/5 transition-opacity duration-500 group-hover:opacity-0 -z-10">
                     </div>
-
                     <div
                         class="absolute inset-0 rounded-[1.5rem] bg-[linear-gradient(135deg,#facc15_0%,#f97316_20%,#ec4899_30%,#a855f7_50%,#38bdf8_100%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100 -z-10">
                     </div>
-
                     <div class="relative bg-[#05050a] rounded-[calc(1.5rem-1px)] p-4 md:p-5 flex flex-col h-full z-10">
-
                         <div class="relative w-full h-64 md:h-72 overflow-hidden rounded-[1rem]">
                             <!-- Mobile Fix: grayscale-0 on mobile, grayscale on desktop -->
                             <img loading="lazy" class="w-full h-full object-cover grayscale-0 transition-all duration-700 group-hover:scale-105"
                                 alt="Indoor LED display" src="assets/long-corridor-showcase.jpg" />
                         </div>
-
                         <div class="mt-6 flex flex-col flex-grow">
-
                             <h3 class="text-2xl font-bold text-white tracking-tight">Indoor LED</h3>
-
                             <p class="text-[#a0a0a0] text-sm leading-relaxed mt-3 flex-grow">
                                 Precision pixel pitch for high-definition visual storytelling in corporate lobbies,
                                 auditoriums, and broadcast studios.
                             </p>
-
                             <div class="mt-6">
                                 <button onclick="openPopupForm()"
                                     class="group/btn flex items-center gap-4 bg-[#090a14] hover:bg-[#0c0d1a] transition-colors rounded-full py-1.5 pl-6 pr-1.5 w-fit">
-
                                     <span class="text-white text-sm font-semibold tracking-wide">Explore</span>
-                                    
                                     <!-- Mobile Fix: grayscale-0 on mobile, grayscale on desktop -->
                                     <div
                                         class="bg-[linear-gradient(135deg,#facc15_0%,#f97316_20%,#ec4899_30%,#a855f7_50%,#38bdf8_100%)] text-white w-8 h-8 rounded-full flex items-center justify-center  transition-all duration-500 group-hover/btn:translate-x-1">
                                         <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                                     </div>
-
                                 </button>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
-                <!-- Card 2 -->
                 <div
                     class="relative rounded-[1.5rem] p-[1px] group cursor-pointer transition-transform duration-500 hover:-translate-y-2 isolate">
-
                     <div
                         class="absolute inset-0 rounded-[1.5rem] bg-white/5 transition-opacity duration-500 group-hover:opacity-0 -z-10">
                     </div>
-
                     <div
                         class="absolute inset-0 rounded-[1.5rem] bg-[linear-gradient(135deg,#facc15_0%,#f97316_20%,#ec4899_30%,#a855f7_50%,#38bdf8_100%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100 -z-10">
                     </div>
-
                     <div class="relative bg-[#05050a] rounded-[calc(1.5rem-1px)] p-4 md:p-5 flex flex-col h-full z-10">
-
                         <div class="relative w-full h-64 md:h-72 overflow-hidden rounded-[1rem]">
                             <!-- Mobile Fix: grayscale-0 on mobile, grayscale on desktop -->
                             <img loading="lazy" class="w-full h-full object-cover  transition-all duration-700 group-hover:scale-105"
                                 alt="Outdoor LED display" src="assets/mall-america-scenes-cinematic-style.jpg" />
                         </div>
-
                         <div class="mt-6 flex flex-col flex-grow">
-
                             <h3 class="text-2xl font-bold text-white tracking-tight">Outdoor LED</h3>
-
                             <p class="text-[#a0a0a0] text-sm leading-relaxed mt-3 flex-grow">
                                 Weather-resistant, high-brightness solutions designed for stadiums, digital out-of-home
                                 advertising, and public landmarks.
                             </p>
-
                             <div class="mt-6">
                                 <button onclick="openPopupForm()"
                                     class="group/btn flex items-center gap-4 bg-[#090a14] hover:bg-[#0c0d1a] transition-colors rounded-full py-1.5 pl-6 pr-1.5 w-fit">
-
                                     <span class="text-white text-sm font-semibold tracking-wide">Explore</span>
-
                                     <!-- Mobile Fix: grayscale-0 on mobile, grayscale on desktop -->
                                     <div
                                         class="bg-[linear-gradient(135deg,#facc15_0%,#f97316_20%,#ec4899_30%,#a855f7_50%,#38bdf8_100%)] text-white w-8 h-8 rounded-full flex items-center justify-center  transition-all duration-500 group-hover:grayscale-0 group-hover/btn:translate-x-1">
                                         <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                                     </div>
-
                                 </button>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
-
         <!-- section 3: Marquee of Trusted Companies -->
-
-        <section id="projects" class="py-2 md:py-5 bg-surface">
-            <div class="max-w-7xl mx-auto px-4 md:px-8">
-
-                <!-- Mobile Fix: Text size reduced from text-5xl to text-2xl on mobile -->
-                <h2 class="text-center text-2xl md:text-3xl font-bold text-gray-500 mb-10">
-                    Trusted by 500+ companies
-                </h2>
-
-                <!-- Marquee Wrapper -->
-                <div class="relative flex overflow-hidden marquee-container select-none">
-
-                    <div
-                        class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none">
-                    </div>
-
-                    <!-- Track 1 -->
-                    <div
-                        class="flex min-w-full shrink-0 items-center justify-center gap-[60px] pr-[60px] animate-marquee">
-
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-24 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/tanishq.png" alt="Tanishq Logo">
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/big.png" alt="Big Logo">
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/titanwhite.png" alt="Titan Logo">
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/v-guard.png" alt="V-Guard Logo">
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/GRT LOGO.png" alt="GRT Logo">
-
-                        <!-- Repeated inside Track 1 -->
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/tanishq.png" alt="Tanishq Logo">
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/big.png" alt="Big Logo">
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/titanwhite.png" alt="Titan Logo">
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/v-guard.png" alt="V-Guard Logo">
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/GRT LOGO.png" alt="GRT Logo">
-                    </div>
-
-                    <!-- Track 2 -->
-                    <div aria-hidden="true"
-                        class="flex min-w-full shrink-0 items-center justify-center gap-[60px] pr-[60px] animate-marquee">
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/tanishq.png" alt="Tanishq Logo">
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/big.png" alt="Big Logo">
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/titanwhite.png" alt="Titan Logo">
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/v-guard.png" alt="V-Guard Logo">
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/GRT LOGO.png" alt="GRT Logo">
-
-                        <!-- Repeated inside Track 2 -->
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/tanishq.png" alt="Tanishq Logo">
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/big.png" alt="Big Logo">
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/titanwhite.png" alt="Titan Logo">
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/v-guard.png" alt="V-Guard Logo">
-                        <img loading="lazy" class="h-8 md:h-10 lg:h-16 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                            src="assets/GRT LOGO.png" alt="GRT Logo">
-                    </div>
-
-                    <div
-                        class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none">
-                    </div>
-
-                </div>
+        <section id="projects" class="mt-16 py-2 md:py-5 bg-surface">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+        <!-- Mobile Fix: Text size reduced from text-5xl to text-2xl on mobile -->
+        <h2 class="text-center text-2xl md:text-3xl font-bold text-gray-500 mb-10">
+            Trusted by India's Leading Brands
+        </h2>
+        <!-- Marquee Wrapper -->
+        <div class="relative flex overflow-hidden marquee-container select-none">
+            <!-- Left Gradient Fade -->
+            <div class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none">
             </div>
-        </section>
-
+            <!-- Track 1 -->
+            <div class="flex min-w-full shrink-0 items-center justify-around gap-[60px] pr-[60px] animate-marquee">
+                <img loading="lazy" class="h-8 md:h-12 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer" src="assets/tanishq.png" alt="Tanishq Logo">
+                <img loading="lazy" class="h-8 md:h-12 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer" src="assets/taj.png" alt="Taj Logo">
+                <img loading="lazy" class="h-8 md:h-12 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer" src="assets/pmj.png" alt="PMJ Logo">
+                <img loading="lazy" class="h-8 md:h-12 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer" src="assets/download.png" alt="Brand Logo">
+                <img loading="lazy" class="h-8 md:h-12 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer" src="assets/big.png" alt="Big Logo">
+                <img loading="lazy" class="h-8 md:h-12 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer" src="assets/titanwhite.png" alt="Titan Logo">
+                <img loading="lazy" class="h-8 md:h-12 lg:h-16 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer" src="assets/v-guard.png" alt="V-Guard Logo">
+                <img loading="lazy" class="h-8 md:h-12 lg:h-16 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer" src="assets/GRT LOGO.png" alt="GRT Logo">
+            </div>
+            <!-- Track 2 (Exact Duplicate of Track 1 for seamless looping) -->
+            <div aria-hidden="true" class="flex min-w-full shrink-0 items-center justify-around gap-[60px] pr-[60px] animate-marquee">
+                <img loading="lazy" class="h-8 md:h-12 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer" src="assets/tanishq.png" alt="Tanishq Logo">
+                <img loading="lazy" class="h-8 md:h-12 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer" src="assets/taj.png" alt="Taj Logo">
+                <img loading="lazy" class="h-8 md:h-12 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer" src="assets/pmj.png" alt="PMJ Logo">
+                <img loading="lazy" class="h-8 md:h-12 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer" src="assets/download.png" alt="Brand Logo">
+                <img loading="lazy" class="h-8 md:h-12 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer" src="assets/big.png" alt="Big Logo">
+                <img loading="lazy" class="h-8 md:h-12 lg:h-16 w-auto object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer" src="assets/titanwhite.png" alt="Titan Logo">
+                <img loading="lazy" class="h-8 md:h-12 lg:h-16 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer" src="assets/v-guard.png" alt="V-Guard Logo">
+                <img loading="lazy" class="h-8 md:h-12 lg:h-16 w-auto object-contain opacity-50 grayscale brightness-0 invert hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer" src="assets/GRT LOGO.png" alt="GRT Logo">
+            </div>
+            <!-- Right Gradient Fade -->
+            <div class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none">
+            </div>
+         </div>
+    </div>
+</section>
         <!-- section 4: Industries We Serve -->
 <section id="industries" class="py-12 md:py-16 px-4 md:px-8 z-10 relative bg-[#05050a] overflow-hidden">
-    
     <!-- Background Image Wrapper with 20% Opacity -->
     <div class="absolute inset-0 z-0 pointer-events-none">
-        <img loading="lazy" src="assets/black-background-image.jpg" alt="Industries Background" class=" opacity-20 w-full h-full object-cover opacity-20">
+        <img loading="lazy" src="assets/black-background-image.jpg" alt="Industries Background" class="w-full h-full object-cover opacity-20">
         <!-- Gradient overlays to seamlessly blend the top and bottom edges into your dark theme -->
         <div class="absolute inset-0 bg-gradient-to-b from-[#05050a] via-transparent to-[#05050a]"></div>
     </div>
-
     <!-- Content Wrapper -->
     <div class="max-w-7xl mx-auto space-y-12 relative z-10">
-
         <!-- Header Section -->
         <div class="space-y-6 max-w-3xl">
             <!-- Pill -->
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest bg-white/5 backdrop-blur-sm mb-6">
-                    <span class="w-2 h-2 rounded-full animate-multi-pulse"></span>
-                    Industries
-                </div>
-            
+                <span class="w-2 h-2 rounded-full animate-multi-pulse bg-blue-500"></span>
+                Industries
+            </div>
             <!-- Heading -->
             <h2 class="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-tight">
                 Tailored for every <br />
-                <span class="font-medium font-light text-gradient">Industry</span>
+                <span class="font-medium text-gradient">Industry</span>
             </h2>
-            
             <!-- Description -->
             <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl">
-                From retail therapy to high-stakes control rooms, our tech scales to your specific sectoral needs. Focus on creating your content, we handle the rest.
+                LED display solutions for retail, corporate, education, control rooms, hospitality, airports, DOOH, sports, broadcasting & healthcare. Custom installations with 24/7 support across India.
             </p>
         </div>
-
         <!-- Slider Container Wrapper -->
         <div class="relative group/slider">
-            
             <!-- Left Arrow -->
             <button onclick="slideLeft()" 
                 class="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center bg-[#1a1d2d]/80 hover:bg-[#252a40] border border-white/10 rounded-full text-white backdrop-blur-md opacity-0 group-hover/slider:opacity-100 transition-all duration-300 shadow-[0_0_20px_rgba(0,0,0,0.5)] hidden md:flex">
                 <span class="material-symbols-outlined text-xl">arrow_back_ios_new</span>
             </button>
-
             <!-- Right Arrow -->
             <button onclick="slideRight()" 
                 class="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center bg-[#1a1d2d]/80 hover:bg-[#252a40] border border-white/10 rounded-full text-white backdrop-blur-md opacity-0 group-hover/slider:opacity-100 transition-all duration-300 shadow-[0_0_20px_rgba(0,0,0,0.5)] hidden md:flex">
                 <span class="material-symbols-outlined text-xl">arrow_forward_ios</span>
             </button>
-
             <!-- Slider Track -->
             <div id="industry-slider" class="flex gap-6 overflow-x-auto hide-scrollbar pb-12 pt-4 px-2 -mx-2 scroll-smooth">
-
                 <!-- 1. RETAIL -->
                 <div class="tilt-card group shrink-0 w-[280px] md:w-[340px] bg-[#0a0f1c] rounded-2xl border border-white/5 relative p-8 cursor-pointer flex flex-col h-[320px] shadow-lg overflow-hidden isolate">
                     <!-- Background Image -->
-                    <img loading="lazy" src="assets/retail.jpg" alt="Retail" class="absolute inset-0 w-full h-full object-cover  opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700">
+                    <img loading="lazy" src="assets/retail.jpg" alt="Retail" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700 z-0">
                     <!-- Bottom Gradient Overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-[#0a0f1c]/90 to-transparent -z-10 pointer-events-none"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-[#0a0f1c]/90 to-transparent z-10 pointer-events-none"></div>
                     <!-- Top Gradient -->
-                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-surface/80 to-transparent pointer-events-none -z-10"></div>
-                    
-                    <div class="relative z-10 w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-8 backdrop-blur-md">
-                        <span class="material-symbols-outlined  text-gradient text-2xl">storefront</span>
+                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#05050a]/80 to-transparent pointer-events-none z-10"></div>
+                    <div class="relative z-20 w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-8 backdrop-blur-md">
+                        <span class="material-symbols-outlined text-gradient text-2xl">storefront</span>
                     </div>
-                    <div class="relative z-10 mt-auto pointer-events-none">
-                        <h3 class="text-xl font-semibold  text-gradient mb-3">Retail</h3>
+                    <div class="relative z-20 mt-auto pointer-events-none">
+                        <h3 class="text-xl font-semibold text-gradient mb-3">Retail</h3>
                         <p class="text-gray-300 text-sm leading-relaxed drop-shadow-md">
-                            Transform your retail space with vibrant LED lighting and dynamic displays that captivate customers.
+                            Transform shopping experiences with dynamic digital displays that boost engagement and sales.
                         </p>
                     </div>
                 </div>
-
-                <!-- 2. EDUCATION -->
+                <!-- 2. CORPORATE -->
                 <div class="tilt-card group shrink-0 w-[280px] md:w-[340px] bg-[#0a0f1c] rounded-2xl border border-white/5 relative p-8 cursor-pointer flex flex-col h-[320px] shadow-lg overflow-hidden isolate">
                     <!-- Background Image -->
-                    <img loading="lazy" src="assets/education.jpg" alt="Education" class="absolute inset-0 w-full h-full object-cover  opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700">
+                    <img loading="lazy" src="assets/Corporate.jpg" alt="Corporate" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700 z-0">
                     <!-- Bottom Gradient Overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-[#0a0f1c]/90 to-transparent -z-10 pointer-events-none"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-[#0a0f1c]/20 to-transparent z-10 pointer-events-none"></div>
                     <!-- Top Gradient -->
-                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-surface/80 to-transparent pointer-events-none -z-10"></div>
-
-                    <div class="relative z-10 w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-8 backdrop-blur-md">
-                        <span class="material-symbols-outlined  text-gradient text-2xl">school</span>
+                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#05050a]/90 to-transparent pointer-events-none z-10"></div>
+                    <div class="relative z-20 w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-8 backdrop-blur-md">
+                        <span class="material-symbols-outlined text-gradient text-2xl">corporate_fare</span>
                     </div>
-                    <div class="relative z-10 mt-auto pointer-events-none">
-                        <h3 class="text-xl font-semibold  text-gradient mb-3">Education</h3>
+                    <div class="relative z-20 mt-auto pointer-events-none">
+                        <h3 class="text-xl font-semibold text-gradient mb-3">Corporate</h3>
                         <p class="text-gray-300 text-sm leading-relaxed drop-shadow-md">
-                            Create engaging learning environments with LED digital displays that keep students focused.
+                            Elevate communication in lobbies, meeting rooms, and conference centers with professional displays.
                         </p>
                     </div>
                 </div>
-
-                <!-- 3. VIRTUAL -->
+                <!-- 3. EDUCATION -->
                 <div class="tilt-card group shrink-0 w-[280px] md:w-[340px] bg-[#0a0f1c] rounded-2xl border border-white/5 relative p-8 cursor-pointer flex flex-col h-[320px] shadow-lg overflow-hidden isolate">
                     <!-- Background Image -->
-                    <img loading="lazy" src="assets/virtual.jpg" alt="Virtual" class="absolute inset-0 w-full h-full object-cover  opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700">
+                    <img loading="lazy" src="assets/education.jpg" alt="Education" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700 z-0">
                     <!-- Bottom Gradient Overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-[#0a0f1c]/90 to-transparent -z-10 pointer-events-none"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-[#0a0f1c]/20  to-transparent z-10 pointer-events-none"></div>
                     <!-- Top Gradient -->
-                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-surface/80 to-transparent pointer-events-none -z-10"></div>
-
-                    <div class="relative z-10 w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-8 backdrop-blur-md">
-                        <span class="material-symbols-outlined  text-gradient text-2xl">movie</span>
+                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#05050a]/90 to-transparent pointer-events-none z-10"></div>
+                    <div class="relative z-20 w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-8 backdrop-blur-md">
+                        <span class="material-symbols-outlined text-gradient text-2xl">school</span>
                     </div>
-                    <div class="relative z-10 mt-auto pointer-events-none">
-                        <h3 class="text-xl font-semibold  text-gradient mb-3">Virtual</h3>
+                    <div class="relative z-20 mt-auto pointer-events-none">
+                        <h3 class="text-xl font-semibold text-gradient mb-3">Education</h3>
                         <p class="text-gray-300 text-sm leading-relaxed drop-shadow-md">
-                            Blending live-action footage with real-time CGI for deeply immersive media production.
+                            Interactive LED solutions for classrooms, auditoriums, and campus-wide information systems.
                         </p>
                     </div>
                 </div>
-
-                <!-- 4. CORPORATE -->
+                <!-- 4. CONTROL ROOM -->
                 <div class="tilt-card group shrink-0 w-[280px] md:w-[340px] bg-[#0a0f1c] rounded-2xl border border-white/5 relative p-8 cursor-pointer flex flex-col h-[320px] shadow-lg overflow-hidden isolate">
                     <!-- Background Image -->
-                    <img loading="lazy" src="assets/Busssiness.jpg" alt="Corporate" class="absolute inset-0 w-full h-full object-cover  opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700">
+                    <img loading="lazy" src="assets/ControlRoom.jpg" alt="Control Room" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700 z-0">
                     <!-- Bottom Gradient Overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-[#0a0f1c]/90 to-transparent -z-10 pointer-events-none"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-[#0a0f1c]/20  to-transparent z-10 pointer-events-none"></div>
                     <!-- Top Gradient -->
-                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-surface/80 to-transparent pointer-events-none -z-10"></div>
-
-                    <div class="relative z-10 w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-8 backdrop-blur-md">
-                        <span class="material-symbols-outlined  text-gradient text-2xl">business</span>
+                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#05050a]/90 to-transparent pointer-events-none z-10"></div>
+                    <div class="relative z-20 w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-8 backdrop-blur-md">
+                        <span class="material-symbols-outlined text-gradient text-2xl">monitoring</span>
                     </div>
-                    <div class="relative z-10 mt-auto pointer-events-none">
-                        <h3 class="text-xl font-semibold  text-gradient mb-3">Corporate</h3>
+                    <div class="relative z-20 mt-auto pointer-events-none">
+                        <h3 class="text-xl font-semibold text-gradient mb-3">Control Room</h3>
                         <p class="text-gray-300 text-sm leading-relaxed drop-shadow-md">
-                            Sleek LED displays that enhance professionalism, presentations, and workplace productivity.
+                            Mission-critical video wall solutions for command centers and monitoring facilities.
                         </p>
                     </div>
                 </div>
-
-                <!-- 5. CONTROL ROOM -->
+                <!-- 5. HOSPITALITY -->
                 <div class="tilt-card group shrink-0 w-[280px] md:w-[340px] bg-[#0a0f1c] rounded-2xl border border-white/5 relative p-8 cursor-pointer flex flex-col h-[320px] shadow-lg overflow-hidden isolate">
                     <!-- Background Image -->
-                    <img loading="lazy" src="assets/controlroom.jpg" alt="Control Room" class="absolute inset-0 w-full h-full object-cover  opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700">
+                    <img loading="lazy" src="assets/Hospitality.jpg" alt="Hospitality" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700 z-0">
                     <!-- Bottom Gradient Overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-[#0a0f1c]/90 to-transparent -z-10 pointer-events-none"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-[#0a0f1c]/20  to-transparent z-10 pointer-events-none"></div>
                     <!-- Top Gradient -->
-                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-surface/80 to-transparent pointer-events-none -z-10"></div>
-
-                    <div class="relative z-10 w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-8 backdrop-blur-md">
-                        <span class="material-symbols-outlined  text-gradient text-2xl">dashboard</span>
+                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#05050a]/90 to-transparent pointer-events-none z-10"></div>
+                    <div class="relative z-20 w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-8 backdrop-blur-md">
+                        <span class="material-symbols-outlined text-gradient text-2xl">hotel</span>
                     </div>
-                    <div class="relative z-10 mt-auto pointer-events-none">
-                        <h3 class="text-xl font-semibold  text-gradient mb-3">Control Room</h3>
+                    <div class="relative z-20 mt-auto pointer-events-none">
+                        <h3 class="text-xl font-semibold text-gradient mb-3">Hospitality</h3>
                         <p class="text-gray-300 text-sm leading-relaxed drop-shadow-md">
-                            High-performance, ultra-reliable video walls designed specifically for 24/7 monitoring.
+                            Create memorable guest experiences with stunning displays in hotels and restaurants.
                         </p>
                     </div>
                 </div>
-
-                <!-- 6. SPORTS -->
+                <!-- 6. AIRPORT -->
                 <div class="tilt-card group shrink-0 w-[280px] md:w-[340px] bg-[#0a0f1c] rounded-2xl border border-white/5 relative p-8 cursor-pointer flex flex-col h-[320px] shadow-lg overflow-hidden isolate">
                     <!-- Background Image -->
-                    <img loading="lazy" src="assets/sports.jpg" alt="Sports" class="absolute inset-0 w-full h-full object-cover  opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700">
+                    <img loading="lazy" src="assets/Airport.jpg" alt="Airport" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700 z-0">
                     <!-- Bottom Gradient Overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-[#0a0f1c]/90 to-transparent -z-10 pointer-events-none"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-[#0a0f1c]/20  to-transparent z-10 pointer-events-none"></div>
                     <!-- Top Gradient -->
-                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-surface/80 to-transparent pointer-events-none -z-10"></div>
-                    <div class="relative z-10 w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-8 backdrop-blur-md">
-                        <span class="material-symbols-outlined  text-gradient text-2xl">directions_run</span>
+                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#05050a]/90 to-transparent pointer-events-none z-10"></div>
+                    <div class="relative z-20 w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-8 backdrop-blur-md">
+                        <span class="material-symbols-outlined text-gradient text-2xl">flight_takeoff</span>
                     </div>
-                    <div class="relative z-10 mt-auto pointer-events-none">
-                        <h3 class="text-xl font-semibold  text-gradient mb-3">Sports</h3>
+                    <div class="relative z-20 mt-auto pointer-events-none">
+                        <h3 class="text-xl font-semibold text-gradient mb-3">Airport</h3>
                         <p class="text-gray-300 text-sm leading-relaxed drop-shadow-md">
-                            Massive stadium scoreboards and vivid perimeter displays to amplify fan energy and engagement.
+                            Reliable information displays and advertising solutions for airports and transportation hubs.
                         </p>
                     </div>
                 </div>
-
+                <!-- 7. DOOH -->
+                <div class="tilt-card group shrink-0 w-[280px] md:w-[340px] bg-[#0a0f1c] rounded-2xl border border-white/5 relative p-8 cursor-pointer flex flex-col h-[320px] shadow-lg overflow-hidden isolate">
+                    <!-- Background Image -->
+                    <img loading="lazy" src="assets/DOOH.jpg" alt="DOOH" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700 z-0">
+                    <!-- Bottom Gradient Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-[#0a0f1c]/20  to-transparent z-10 pointer-events-none"></div>
+                    <!-- Top Gradient -->
+                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#05050a]/90 to-transparent pointer-events-none z-10"></div>
+                    <div class="relative z-20 w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-8 backdrop-blur-md">
+                        <span class="material-symbols-outlined text-gradient text-2xl">tv</span>
+                    </div>
+                    <div class="relative z-20 mt-auto pointer-events-none">
+                        <h3 class="text-xl font-semibold text-gradient mb-3">DOOH</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed drop-shadow-md">
+                            Digital out-of-home advertising displays for maximum visibility and impact.
+                        </p>
+                    </div>
+                </div>
+                <!-- 8. SPORTS -->
+                <div class="tilt-card group shrink-0 w-[280px] md:w-[340px] bg-[#0a0f1c] rounded-2xl border border-white/5 relative p-8 cursor-pointer flex flex-col h-[320px] shadow-lg overflow-hidden isolate">
+                    <!-- Background Image -->
+                    <img loading="lazy" src="assets/sport.jpg" alt="sports" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700 z-0">
+                    <!-- Bottom Gradient Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-[#0a0f1c]/20  to-transparent z-10 pointer-events-none"></div>
+                    <!-- Top Gradient -->
+                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#05050a]/90 to-transparent pointer-events-none z-10"></div>
+                    <div class="relative z-20 w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-8 backdrop-blur-md">
+                        <span class="material-symbols-outlined text-gradient text-2xl">sports_score</span>
+                    </div>
+                    <div class="relative z-20 mt-auto pointer-events-none">
+                        <h3 class="text-xl font-semibold text-gradient mb-3">Sports</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed drop-shadow-md">
+                           High-brightness stadium displays and scoreboards for unforgettable sports experiences.
+                        </p>
+                    </div>
+                </div>
+                <!-- 9. BROADCASTING -->
+                <div class="tilt-card group shrink-0 w-[280px] md:w-[340px] bg-[#0a0f1c] rounded-2xl border border-white/5 relative p-8 cursor-pointer flex flex-col h-[320px] shadow-lg overflow-hidden isolate">
+                    <!-- Background Image -->
+                    <img loading="lazy" src="assets/broadcast.jpg" alt="broadcasting" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700 z-0">
+                    <!-- Bottom Gradient Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-[#0a0f1c]/20  to-transparent z-10 pointer-events-none"></div>
+                    <!-- Top Gradient -->
+                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#05050a]/90 to-transparent pointer-events-none z-10"></div>
+                    <div class="relative z-20 w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-8 backdrop-blur-md">
+                        <span class="material-symbols-outlined text-gradient text-2xl">live_tv</span>
+                    </div>
+                    <div class="relative z-20 mt-auto pointer-events-none">
+                        <h3 class="text-xl font-semibold text-gradient mb-3">Broadcasting</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed drop-shadow-md">
+                            Professional broadcast-quality displays for studios and production environments.
+                        </p>
+                    </div>
+                </div>
+                <!-- 10. HOSPITAL -->
+                <div class="tilt-card group shrink-0 w-[280px] md:w-[340px] bg-[#0a0f1c] rounded-2xl border border-white/5 relative p-8 cursor-pointer flex flex-col h-[320px] shadow-lg overflow-hidden isolate">
+                    <!-- Background Image -->
+                    <img loading="lazy" src="assets/hospital.jpg" alt="hospital" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700 z-0">
+                    <!-- Bottom Gradient Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-[#0a0f1c]/20  to-transparent z-10 pointer-events-none"></div>
+                    <!-- Top Gradient -->
+                    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#05050a]/90 to-transparent pointer-events-none z-10"></div>
+                    <div class="relative z-20 w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-8 backdrop-blur-md">
+                        <span class="material-symbols-outlined text-gradient text-2xl">local_hospital</span>
+                    </div>
+                    <div class="relative z-20 mt-auto pointer-events-none">
+                        <h3 class="text-xl font-semibold text-gradient mb-3">Hospital</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed drop-shadow-md">
+                            Clear, reliable displays for hospitals, clinics, and medical facilities.
+                        </p>
+                    </div>
+                </div>
             </div>
+             <div class="flex flex-col sm:flex-row justify-center gap-4 w-full px-4 sm:px-0 mt-8">
+            <div class="flex flex-col sm:flex-row justify-center gap-4 w-full px-4 sm:px-0">
+                <button onclick="openPopupForm()"
+                    class="animated-gradient-btn w-full sm:w-auto px-8 py-3 md:px-10 md:py-4 text-sm md:text-base font-bold rounded-lg border border-white/20">
+                    Get a Quote Today!
+                </button>
+            </div>
+        </div>
         </div>
     </div>
 </section>
-
-
         <!-- section 5: LED Systems -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
 <section id="service" class="scroll-mt-32 px-4 mt-[2rem] mb-[4rem] md:px-8 max-w-7xl mx-auto">
-    <div class="mb-10 md:mb-16 text-center">
+    <div class="mb-10 md:mb-12 text-center">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest bg-white/5 backdrop-blur-sm mb-6">
             <span class="w-2 h-2 rounded-full animate-multi-pulse"></span>
             Services
         </div>
         <h2 class="text-3xl md:text-5xl font-medium text-white tracking-tight">
-            LED Systems
-            <span class="font-medium font-light text-gradient">Collection</span>
+            Advanced LED Video 
+            <span class="font-medium font-light text-gradient">Wall Collection</span>
         </h2>
     </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-        <!-- Card 1 -->
-        <div class="relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden group cursor-pointer bg-surface/50"
-            onclick="openPopupForm()">
-            <img 
-class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000" src="assets/traditional-christmas-stollen-christmas-symbol.jpg" alt="Indoor LED"
-                class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000">
-            <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none"></div>
-            <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
-                <p class="text-2xl font-bold text-white mb-2">Indoor</p>
-                <p class="text-on-surface-variant text-sm mb-4 line-clamp-2">
-                    High-resolution indoor systems for seamless visual experiences.
-                </p>
-                <div class="text-white text-sm font-bold flex items-center gap-2 group-hover:text-primary transition-colors">
-                    Enquire Now <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+    <div class="relative group">
+        <button onclick="slideServicesGSAP('left')" class="absolute left-0 top-1/2 -translate-y-1/2 -ml-2 sm:-ml-6 z-10 w-12 h-12 flex items-center justify-center rounded-full border border-white/20 bg-[#0a0e1c]/80 hover:bg-white/10 text-white backdrop-blur-md transition-all shadow-lg opacity-0 group-hover:opacity-100 hidden md:flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+        </button>
+        <div id="service-slider" class="flex overflow-x-auto gap-6 hide-scrollbar pb-6">
+            <div class="flex-none w-[85%] sm:w-[45%] lg:w-[23%] relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden cursor-pointer bg-surface/50 group/card"
+                onclick="openPopupForm()">
+                <img src="assets/indoordisplay.jpg" alt="Indoor LED"
+                    class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-1000">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#02040d] via-[#02040d]/60 to-transparent pointer-events-none"></div>
+                <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
+                    <p class="text-2xl font-bold text-white mb-2">Indoor</p>
+                    <p class="text-gray-300 text-sm mb-4 line-clamp-4">
+                        High-resolution indoor displays perfect for retail spaces, corporate environments, and events with stunning image quality.
+                    </p>
+                </div>
+            </div>
+            <div class="flex-none w-[85%] sm:w-[45%] lg:w-[23%] relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden cursor-pointer bg-surface/50 group/card"
+                onclick="openPopupForm()">
+                <img src="assets/outdoordisplay.jpg" alt="Outdoor"
+                    class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-1000">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#02040d] via-[#02040d]/60 to-transparent pointer-events-none"></div>
+                <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
+                    <p class="text-2xl font-bold text-white mb-2">Outdoor</p>
+                    <p class="text-gray-300 text-sm mb-4 line-clamp-4">
+                        Weather-resistant outdoor displays designed for advertising, stadiums, and public spaces with superior brightness.
+                    </p>
+                </div>
+            </div>
+            <div class="flex-none w-[85%] sm:w-[45%] lg:w-[23%] relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden cursor-pointer bg-surface/50 group/card"
+                onclick="openPopupForm()">
+                <img src="assets/finepitch.jpg" alt="Finepitch LED"
+                    class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-1000">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#02040d] via-[#02040d]/60 to-transparent pointer-events-none"></div>
+                <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
+                    <p class="text-2xl font-bold text-white mb-2">Finepitch</p>
+                    <p class="text-gray-300 text-sm mb-4 line-clamp-4">
+                        Ultra-high resolution displays for control rooms, broadcasting studios, and premium installations requiring exceptional clarity.
+                    </p>
+                </div>
+            </div>
+            <div class="flex-none w-[85%] sm:w-[45%] lg:w-[23%] relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden cursor-pointer bg-surface/50 group/card"
+                onclick="openPopupForm()">
+                <img src="assets/curveddisplay.jpg" alt="Curved LED"
+                    class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-1000">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#02040d] via-[#02040d]/60 to-transparent pointer-events-none"></div>
+                <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
+                    <p class="text-2xl font-bold text-white mb-2">Curved</p>
+                    <p class="text-gray-300 text-sm mb-4 line-clamp-4">
+                        Innovative curved displays that create immersive viewing experiences for premium installations and creative projects.
+                    </p>
+                </div>
+            </div>
+            <div class="flex-none w-[85%] sm:w-[45%] lg:w-[23%] relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden cursor-pointer bg-surface/50 group/card"
+                onclick="openPopupForm()">
+                <img src="assets/transparent.jpg" alt="Transparent LED"
+                    class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-1000">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#02040d] via-[#02040d]/60 to-transparent pointer-events-none"></div>
+                <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
+                    <p class="text-2xl font-bold text-white mb-2">Transparent</p>
+                    <p class="text-gray-300 text-sm mb-4 line-clamp-4">
+                        See-through LED technology perfect for retail windows, exhibitions, and architectural applications with unique visual appeal.
+                    </p>
+                </div>
+            </div>
+            <div class="flex-none w-[85%] sm:w-[45%] lg:w-[23%] relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden cursor-pointer bg-surface/50 group/card"
+                onclick="openPopupForm()">
+                <img src="assets/Cylinder display.jpg" alt="Cylindrical LED"
+                    class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-1000">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#02040d] via-[#02040d]/60 to-transparent pointer-events-none"></div>
+                <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
+                    <p class="text-2xl font-bold text-white mb-2">Cylindrical</p>
+                    <p class="text-gray-300 text-sm mb-4 line-clamp-4">
+                        360-degree cylindrical displays ideal for shopping malls, airports, and high-impact advertising installations.
+                    </p>
                 </div>
             </div>
         </div>
-
-        <!-- Card 2 -->
-        <div class="relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden group cursor-pointer bg-surface/50"
-            onclick="openPopupForm()">
-            <img
-
-class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000" src="assets/dynamic-digital-flyer-mockup.jpg" alt="Outdoor"
-                class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000">
-            <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none"></div>
-            <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
-                <p class="text-2xl font-bold text-white mb-2">Outdoor</p>
-                <p class="text-on-surface-variant text-sm mb-4 line-clamp-2">
-                    Durable and weatherproof for vibrant outdoor advertising.
-                </p>
-                <div class="text-white text-sm font-bold flex items-center gap-2 group-hover:text-secondary transition-colors">
-                    Enquire Now <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden group cursor-pointer bg-surface/50"
-            onclick="openPopupForm()">
-            <img 
-   
-class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000" src="assets/led-wall-abstract-artwork.jpg" alt="Finepitch LED">
-            <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none"></div>
-            <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
-                <p class="text-2xl font-bold text-white mb-2">Finepitch</p>
-                <p class="text-on-surface-variant text-sm mb-4 line-clamp-2">
-                    Ultra-high resolution displays for close-proximity viewing.
-                </p>
-                <div class="text-white text-sm font-bold flex items-center gap-2 group-hover:text-tertiary transition-colors">
-                    Enquire Now <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="relative aspect-[3/4] md:aspect-[4/5] rounded-xl border border-white/10 overflow-hidden group cursor-pointer bg-surface/50"
-            onclick="openPopupForm()">
-            <img 
-
-class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-105 transition-transform duration-1000" src="assets/hd-digital-art-wallpaper-background.jpg" alt="Creative LED">
-            <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none"></div>
-            <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
-                <p class="text-2xl font-bold text-white mb-2">Creative</p>
-                <p class="text-on-surface-variant text-sm mb-4 line-clamp-2">
-                    Customizable solutions for unique architectural shapes.
-                </p>
-                <div class="text-white text-sm font-bold flex items-center gap-2 group-hover:text-cyan-400 transition-colors">
-                    Enquire Now <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
-                </div>
-            </div>
-        </div>
-
+        <button onclick="slideServicesGSAP('right')" class="absolute right-0 top-1/2 -translate-y-1/2 -mr-2 sm:-mr-6 z-10 w-12 h-12 flex items-center justify-center rounded-full border border-white/20 bg-[#0a0e1c]/80 hover:bg-white/10 text-white backdrop-blur-md transition-all shadow-lg opacity-0 group-hover:opacity-100 hidden md:flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+        </button>
     </div>
 </section>
         <!-- section 6: Visit Us -->
-        <section class="py-10 md:py-16 px-4 md:px-8">
+        <!-- <section class="py-10 md:py-16 px-4 md:px-8">
             <div class="max-w-7xl mx-auto">
                 <div class="overflow-hidden ">
                     <div class="grid md:grid-cols-2  group cursor-pointer">
@@ -985,7 +1005,6 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                 </div>
                             <h2 style="margin: 0;" class="text-3xl mt-0 md:text-5xl font-black transition-all duration-700">
                                 Visit us at
-
                                 <span class="relative inline-block pr-[0.1em]">
                                     <span
                                         class="bg-clip-text text-transparent bg-[linear-gradient(to_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] transition-opacity duration-700 group-hover:opacity-0">
@@ -996,15 +1015,13 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                                         Vivid LED System's
                                     </span>
                                 </span>
-
                                 comprehensive visual technology experience centers
                             </h2>
-
                             <div class="space-y-4">
                                 <div class="flex items-start gap-4">
                                     <div class="relative w-6 h-6 mt-1 flex-shrink-0">
                                         <!-- Mobile Fix: grayscale-0 on mobile, grayscale on desktop -->
-                                        <span
+                                        <!-- <span
                                             class="material-symbols-outlined  text-primary absolute inset-0 transition-opacity duration-700 group-hover:opacity-0">location_on</span>
                                         <span
                                             class="material-symbols-outlined absolute inset-0 bg-clip-text text-transparent bg-[linear-gradient(to_bottom_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)]   opacity-0 transition-opacity duration-700 group-hover:opacity-100">location_on</span>
@@ -1019,11 +1036,10 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                                         </p>
                                     </div>
                                 </div>
-
                                 <div class="flex items-center gap-4">
                                     <div class="relative w-6 h-6 flex-shrink-0">
                                         <!-- Mobile Fix: grayscale-0 on mobile, grayscale on desktop -->
-                                        <span
+                                        <!-- <span
                                             class="material-symbols-outlined text-primary absolute inset-0  transition-opacity duration-700 group-hover:opacity-0">schedule</span>
                                         <span
                                             class="material-symbols-outlined absolute inset-0 bg-clip-text  text-transparent bg-[linear-gradient(to_bottom_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] opacity-0 transition-opacity duration-700 group-hover:opacity-100">schedule</span>
@@ -1032,45 +1048,35 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                                         Open Mon - Sat | 10:00 AM - 07:00 PM
                                     </p>
                                 </div>
-                            </div>
-
-<div class="relative inline-block mt-4">
+                            </div> -->
+<!-- <div class="relative inline-block mt-4">
     <div class="absolute inset-0 rounded-[calc(0.5rem-1px)] bg-white/10 transition-opacity duration-700 group-hover:opacity-0"></div>
-    
     <div class="absolute inset-0 rounded-[calc(0.5rem-1px)] bg-[linear-gradient(to_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
-    
     <button onclick="openPopupForm()"
         class="relative z-10 block ml-[2px] mt-[2px] m-[1px] px-10 py-4 bg-surface text-white font-bold rounded-[calc(0.5rem-1px)] hover:bg-slate-900 transition-colors duration-500">
         Schedule Visit
     </button>
-</div>
-
-                        </div>
-
+</div> -->
+                        <!-- </div>
                         <div class="relative h-96 md:h-auto overflow-hidden">
                             <!-- Mobile Fix: grayscale-0 on mobile, grayscale on desktop -->
-                            <img loading="lazy" class="absolute inset-0 w-full h-full object-cover border border-white/10 rounded-3xl  group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                            <!-- <img loading="lazy" class="absolute inset-0 w-full h-full object-cover border border-white/10 rounded-3xl  group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                                 alt="Ultra modern futuristic showroom interior with immersive floor-to-ceiling led walls and floating digital displays"
                                 src="assets/digital-art-inmersive-exhibition.jpg" />
-
                             <div
                                 class="absolute inset-0 bg-gradient-to-l from-transparent to-surface-container/50 group-hover:to-surface-container/20 transition-all duration-700">
                             </div>
-                        </div>
-
-                    </div>
+                        </div> -->
+                    <!-- </div>
                 </div>
-            </div>
-        </section>
-
+            </div> -->
+        <!-- </section> -->
 <!-- section 7: Learn More about LED Display Solutions -->
         <!-- ========================================== -->
 <!-- SOLUTIONS SECTION (GSAP OPTIMIZED)         -->
 <!-- ========================================== -->
-<section id="solutions" class="py-12 md:py-16 px-4 md:px-8 z-10 relative bg-surface">
+<!-- <section id="solutions" class="py-12 md:py-16 px-4 md:px-8 z-10 relative bg-surface">
     <div class="max-w-7xl mx-auto space-y-10">
-
-        <!-- Header Section -->
         <div class="space-y-4 text-center md:text-left flex flex-col items-center md:items-start">
            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest bg-white/5 backdrop-blur-sm mb-6">
                 <span class="w-2 h-2 rounded-full animate-multi-pulse"></span>
@@ -1086,17 +1092,12 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                 Discover our innovative LED solutions with cutting-edge technology, tailored to scale and adapt to your specific sectoral needs.
             </p>
         </div>
-
-        <!-- Bento Grid Layout -->
         <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
-
-            <!-- 1. BENEFITS (Span 7) -->
             <div class="bento-card md:col-span-7 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -top-10 -right-10 w-64 h-64 bg-cyan-600/20 opacity-50 blur-[80px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-56 overflow-hidden">
-                    <!-- ADDED GPU CLASSES -->
-                    <img  src="assets/compact-fluorescent-light-bulb-hand.jpg" alt="Abstract tech particles" 
-                        class="bento-img preloader-critical w-full h-full object-cover transform-gpu will-change-transform">
+                    <img src="assets/compact-fluorescent-light-bulb-hand.jpg" alt="Abstract tech particles" 
+                        class="bento-img  w-full h-full object-cover"> 
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
                 </div>
                 <div class="p-7 md:p-9 flex flex-col flex-grow relative z-20 -mt-16">
@@ -1109,14 +1110,11 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                     </div>
                 </div>
             </div>
-
-            <!-- 2. CHOOSING RIGHT (Span 5) -->
             <div class="bento-card md:col-span-5 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -bottom-10 -left-10 w-48 h-48 bg-purple-600/20 opacity-50 blur-[80px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-56 overflow-hidden">
-                    <!-- ADDED GPU CLASSES -->
                     <img src="assets/shopping-girl-looking-store-window.jpg" alt="Choosing LED" 
-                        class="bento-img preloader-critical w-full h-full object-cover transform-gpu will-change-transform">
+                        class="bento-img  w-full h-full object-cover ">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
                 </div>
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
@@ -1129,14 +1127,11 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                     </div>
                 </div>
             </div>
-
-            <!-- 3. RETAIL (Span 4) -->
             <div class="bento-card md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -top-10 -right-10 w-32 h-32 bg-sky-600/20 opacity-50 blur-[60px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-44 overflow-hidden">
-                    <!-- RESTORED LAZY + ADDED GPU CLASSES -->
                     <img src="assets/programmers-data-center-using-mockup-laptop-inspecting-server-rigs.jpg" alt="Retail Display" 
-                        class="bento-img w-full h-full object-cover transform-gpu will-change-transform">
+                        class="bento-img w-full h-full object-cover ">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/80 to-transparent"></div>
                 </div>
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
@@ -1149,14 +1144,11 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                     </div>
                 </div>
             </div>
-
-            <!-- 4. CORPORATE (Span 4) -->
             <div class="bento-card md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -top-10 -right-10 w-32 h-32 bg-emerald-600/20 opacity-50 blur-[60px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-44 overflow-hidden">
-                    <!-- RESTORED LAZY + ADDED GPU CLASSES -->
                     <img src="assets/financial-advisor-presents-detailed-stock-market-analysis-clients.jpg" alt="Corporate" 
-                        class="bento-img w-full h-full object-cover transform-gpu will-change-transform">
+                        class="bento-img w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/80 to-transparent"></div>
                 </div>
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
@@ -1169,14 +1161,11 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                     </div>
                 </div>
             </div>
-
-            <!-- 5. CUSTOMIZING (Span 4) -->
             <div class="bento-card md:col-span-4 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -top-10 -right-10 w-32 h-32 bg-orange-600/20 opacity-50 blur-[60px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-44 overflow-hidden">
-                    <!-- RESTORED LAZY + ADDED GPU CLASSES -->
-                    <img  src="assets/medium-shot-people-talking-about-color-palette.jpg" alt="Customizing" 
-                        class="bento-img w-full h-full object-cover transform-gpu will-change-transform">
+                    <img src="assets/medium-shot-people-talking-about-color-palette.jpg" alt="Customizing" 
+                        class="bento-img w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/80 to-transparent"></div>
                 </div>
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
@@ -1189,14 +1178,11 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                     </div>
                 </div>
             </div>
-
-            <!-- 6. INTRODUCING (Span 6) -->
             <div class="bento-card md:col-span-6 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -top-10 -right-10 w-48 h-48 bg-pink-600/20 opacity-50 blur-[80px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-48 overflow-hidden">
-                    <!-- RESTORED LAZY + ADDED GPU CLASSES -->
                     <img src="assets/65854375_2306.w022.n003.924B.p15.924.jpg" alt="Intro" 
-                        class="bento-img w-full h-full object-cover transform-gpu will-change-transform">
+                        class="bento-img w-full h-full object-cover ">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
                 </div>
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
@@ -1209,14 +1195,11 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                     </div>
                 </div>
             </div>
-
-            <!-- 7. EXPERT SUPPORT (Span 6) -->
             <div class="bento-card md:col-span-6 bg-surface-container rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden flex flex-col cursor-pointer shadow-xl">
                 <div class="bento-glow absolute -top-10 -right-10 w-48 h-48 bg-yellow-600/20 opacity-50 blur-[80px] pointer-events-none z-10"></div>
                 <div class="relative w-full h-48 overflow-hidden">
-                    <!-- RESTORED LAZY + ADDED GPU CLASSES -->
                     <img  src="assets/confident-call-center-operator-talking-with-client.jpg" alt="Support" 
-                        class="bento-img w-full h-full object-cover transform-gpu will-change-transform">
+                        class="bento-img w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
                 </div>
                 <div class="p-7 flex flex-col flex-grow relative z-20 -mt-16">
@@ -1229,201 +1212,158 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-</section>
-
-
-       <section class="py-12 md:py-16 bg-[#05050a] overflow-hidden relative">
+</section> -->
+     <section class="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-[#05050a] relative overflow-hidden z-10 animate-fade-in">
     
-    <!-- Header Section (Left Aligned) -->
-    <div class="max-w-7xl mx-auto px-4 md:px-8 mb-12 md:mb-16">
-        <!-- Green Pill -->
-         <div class="absolute inset-0 z-0 pointer-events-none">
-        <img loading="lazy" src="assets/black-background-image.jpg" alt="Industries Background" class=" opacity-20 w-full h-full object-cover opacity-20">
-        <!-- Gradient overlays to seamlessly blend the top and bottom edges into your dark theme -->
-        <div class="absolute inset-0 bg-gradient-to-b from-[#05050a] via-transparent to-[#05050a]"></div>
-    </div>
+    <svg width="0" height="0" class="absolute w-0 h-0 pointer-events-none" aria-hidden="true">
+        <defs>
+            <linearGradient id="star-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#38bdf8" />
+                <stop offset="50%" stop-color="#818cf8" />
+                <stop offset="100%" stop-color="#e879f9" />
+            </linearGradient>
+        </defs>
+    </svg>
 
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest bg-white/5 backdrop-blur-sm mb-6">
-                    <span class="w-2 h-2 rounded-full animate-multi-pulse"></span>
-                    Testimonials
-                </div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+
+    <div class="container mx-auto w-full max-w-7xl relative z-10">
         
-        <!-- Heading -->
-        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">
-            What Our Customers <br class="hidden md:block" /> 
-            Are Saying About Their Experience
-        </h2>   
-    </div>
-
-    <!-- Slider Wrapper (Full width for edge-to-edge scrolling) -->
-    <div class="relative w-full group">
-        
-        <!-- Left Gradient Fade -->
-        <div class="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-[#05050a] to-transparent z-10 pointer-events-none"></div>
-
-        <!-- Left Navigation Arrow (Mobile Fix: Hidden on mobile using hidden md:flex) -->
-        <button onclick="slideTestimonialLeft()" 
-            class="hidden md:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-[#1a1d2d]/90 hover:bg-[#252a40] border border-white/10 rounded-full text-white backdrop-blur-md opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 shadow-xl cursor-pointer">
-            <span class="material-symbols-outlined text-xl">arrow_back_ios_new</span>
-        </button>
-
-        <!-- Right Gradient Fade -->
-        <div class="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-[#05050a] to-transparent z-10 pointer-events-none"></div>
-
-        <!-- Right Navigation Arrow (Mobile Fix: Hidden on mobile using hidden md:flex) -->
-        <button onclick="slideTestimonialRight()" 
-            class="hidden md:flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-[#1a1d2d]/90 hover:bg-[#252a40] border border-white/10 rounded-full text-white backdrop-blur-md opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 shadow-xl cursor-pointer">
-            <span class="material-symbols-outlined text-xl">arrow_forward_ios</span>
-        </button>
-
-        <!-- Slider Track -->
-        <div id="testimonial-slider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar pb-12 pt-4 px-8 md:px-[10%]">
+        <div class="text-center mb-10 sm:mb-16">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest bg-white/5 backdrop-blur-sm mb-6">
+                <span class="w-2 h-2 rounded-full animate-multi-pulse bg-purple-500"></span>
+                Testimonials  
+            </div>
             
-            <!-- Testimonial 1 -->
-            <div class="snap-center shrink-0 w-[300px] md:w-[380px] bg-[#0e0e11] border border-white/5 rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:border-white/10 shadow-xl">
-                <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
-                
-                <h3 class="text-white font-bold text-lg relative z-10 mt-4">Managing Ethernet</h3>
-                <p class="text-gray-500 text-xs md:text-sm mb-5 relative z-10 uppercase tracking-widest mt-1">Mobile License for LCL Channel</p>
-                
-                <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-5 relative z-10"></div>
-                
-                <div class="flex items-center gap-1 mb-5 relative z-10">
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="text-white font-bold text-sm ml-1.5">5.0</span>
-                </div>
-                
-                <p class="text-gray-400 text-sm leading-relaxed relative z-10 flex-grow">
-                    "Using the LED tool to fit digital system, it helps a good experience and build up and improve our ability to fly. That supports our own highly competitive and able to maintain all the time ahead."
-                </p>
-            </div>
-
-            <!-- Testimonial 2 -->
-            <div class="snap-center shrink-0 w-[300px] md:w-[380px] bg-[#0e0e11] border border-white/5 rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:border-white/10 shadow-xl">
-                <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
-                
-                <h3 class="text-white font-bold text-lg relative z-10 mt-4">Field Manager</h3>
-                <p class="text-gray-500 text-xs md:text-sm mb-5 relative z-10 uppercase tracking-widest mt-1">Tanishq</p>
-                
-                <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-5 relative z-10"></div>
-                
-                <div class="flex items-center gap-1 mb-5 relative z-10">
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="text-white font-bold text-sm ml-1.5">5.0</span>
-                </div>
-                
-                <p class="text-gray-400 text-sm leading-relaxed relative z-10 flex-grow">
-                    "Excellent support has the aim to fit our digital team into some of our professional strengths and capabilities. This is worthy of being the most well working skill that Vivid uses."
-                </p>
-            </div>
-
-            <!-- Testimonial 3 -->
-            <div class="snap-center shrink-0 w-[300px] md:w-[380px] bg-[#0e0e11] border border-white/5 rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:border-white/10 shadow-xl">
-                <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
-                
-                <h3 class="text-white font-bold text-lg relative z-10 mt-4">Learning Technology Director</h3>
-                <p class="text-gray-500 text-xs md:text-sm mb-5 relative z-10 uppercase tracking-widest mt-1">Tech Corp</p>
-                
-                <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-5 relative z-10"></div>
-                
-                <div class="flex items-center gap-1 mb-5 relative z-10">
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="text-white font-bold text-sm ml-1.5">5.0</span>
-                </div>
-                
-                <p class="text-gray-400 text-sm leading-relaxed relative z-10 flex-grow">
-                    "Experience Vivid uses a large-scale virtual smartphone, which provides an immersive experience with the global user experience, reflecting their career trajectory."
-                </p>
-            </div>
-
-            <!-- Testimonial 4 -->
-            <div class="snap-center shrink-0 w-[300px] md:w-[380px] bg-[#0e0e11] border border-white/5 rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:border-white/10 shadow-xl">
-                <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
-                
-                <h3 class="text-white font-bold text-lg relative z-10 mt-4">Suganya R</h3>
-                <p class="text-gray-500 text-xs md:text-sm mb-5 relative z-10 uppercase tracking-widest mt-1">GV residency</p>
-                
-                <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-5 relative z-10"></div>
-                
-                <div class="flex items-center gap-1 mb-5 relative z-10">
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="text-white font-bold text-sm ml-1.5">5.0</span>
-                </div>
-                
-                <p class="text-gray-400 text-sm leading-relaxed relative z-10 flex-grow">
-                    "I recently installed LED video wall in GV residency. The team was very approachable and able to clarify my queries in a professional manner. I initially had minor hiccups, but the team was able to respond appropriately. I would definitely recommend the service."
-                </p>
-            </div>
-
-            <!-- Testimonial 5 -->
-            <div class="snap-center shrink-0 w-[300px] md:w-[380px] bg-[#0e0e11] border border-white/5 rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:border-white/10 shadow-xl">
-                <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
-                
-                <h3 class="text-white font-bold text-lg relative z-10 mt-4">Vignesh Karuppaiya</h3>
-                <p class="text-gray-500 text-xs md:text-sm mb-5 relative z-10 uppercase tracking-widest mt-1">Moonlight Villa Resort</p>
-                
-                <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-5 relative z-10"></div>
-                
-                <div class="flex items-center gap-1 mb-5 relative z-10">
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="text-white font-bold text-sm ml-1.5">5.0</span>
-                </div>
-                
-                <p class="text-gray-400 text-sm leading-relaxed relative z-10 flex-grow">
-                    "We’re extremely happy with the installation of the VIVID LED system at our Moonlight Villa Resort. It has elevated the entire look and feel of the property, giving it a modern and luxurious ambiance."
-                </p>
-            </div>
-
-            <!-- Testimonial 6 -->
-            <div class="snap-center shrink-0 w-[300px] md:w-[380px] bg-[#0e0e11] border border-white/5 rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:border-white/10 shadow-xl">
-                <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
-                
-                <h3 class="text-white font-bold text-lg relative z-10 mt-4">Rajmahal</h3>
-                <p class="text-gray-500 text-xs md:text-sm mb-5 relative z-10 uppercase tracking-widest mt-1">Retail Private Limited</p>
-                
-                <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-5 relative z-10"></div>
-                
-                <div class="flex items-center gap-1 mb-5 relative z-10">
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[16px] text-[#f97316]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="text-white font-bold text-sm ml-1.5">5.0</span>
-                </div>
-                
-                <p class="text-gray-400 text-sm leading-relaxed relative z-10 flex-grow">
-                    "Integration with our existing systems was seamless. The support team was responsive and knowledgeable throughout the implementation process."
-                </p>
-            </div>
-
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight">
+                Real Feedback. <br class="hidden md:block" />
+                <span class="text-transparent bg-clip-text bg-[linear-gradient(to_right,#38bdf8,#818cf8,#c084fc,#e879f9)]">
+                    Real Success
+                </span>
+            </h2>
         </div>
+
+        <div class="relative w-full mx-auto group/slider" role="region" aria-roledescription="carousel">
+            
+            <div id="testimonial-slider" class="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth px-2 py-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                    
+                <div role="group" aria-roledescription="slide" class="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] shrink-0 snap-start">
+                    <div class="bg-[#0e0e11]/50 rounded-2xl p-6 sm:p-8 border border-white/5 backdrop-blur-sm hover:border-white/10 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 h-[260px] flex flex-col cursor-default">
+                        
+                        <div class="flex gap-1 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        
+                        <p class="text-base text-gray-300 mb-auto leading-relaxed italic">"The team was very approachable and professional. I would definitely recommend the service."</p>
+                        
+                        <div class="border-t border-white/10 pt-4 mt-6 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-white font-bold">
+                                SR
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Suganya R</h4>
+                                <p class="text-xs text-gray-400">GV Residency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div role="group" aria-roledescription="slide" class="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] shrink-0 snap-start">
+                    <div class="bg-[#0e0e11]/50 rounded-2xl p-6 sm:p-8 border border-white/5 backdrop-blur-sm hover:border-white/10 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 h-[260px] flex flex-col cursor-default">
+                        
+                        <div class="flex gap-1 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        
+                        <p class="text-base text-gray-300 mb-auto leading-relaxed italic">"Excellent experience! The VIVID team was highly professional, punctual and handled the entire setup smoothly."</p>
+                        
+                        <div class="border-t border-white/10 pt-4 mt-6 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-sky-500 flex items-center justify-center text-white font-bold">
+                                TR
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">TN Nanta Rajesh</h4>
+                                <p class="text-xs text-gray-400">Customer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div role="group" aria-roledescription="slide" class="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] shrink-0 snap-start">
+                    <div class="bg-[#0e0e11]/50 rounded-2xl p-6 sm:p-8 border border-white/5 backdrop-blur-sm hover:border-white/10 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 h-[260px] flex flex-col cursor-default">
+                        
+                        <div class="flex gap-1 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        
+                        <p class="text-base text-gray-300 mb-auto leading-relaxed italic">"Fantastic experience with the team's bright LED system. Professional work completed efficiently on time."</p>
+                        
+                        <div class="border-t border-white/10 pt-4 mt-6 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white font-bold">
+                                FJ
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Francis Joseph</h4>
+                                <p class="text-xs text-gray-400">Customer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div role="group" aria-roledescription="slide" class="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] shrink-0 snap-start">
+                    <div class="bg-[#0e0e11]/50 rounded-2xl p-6 sm:p-8 border border-white/5 backdrop-blur-sm hover:border-white/10 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 h-[260px] flex flex-col cursor-default">
+                        
+                        <div class="flex gap-1 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="url(#star-gradient)" stroke="none" class="lucide lucide-star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        
+                        <p class="text-base text-gray-300 mb-auto leading-relaxed italic">"Absolutely thrilled with the outcome! The installation was seamless and the result is breathtaking."</p>
+                        
+                        <div class="border-t border-white/10 pt-4 mt-6 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold">
+                                VP
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Vice President</h4>
+                                <p class="text-xs text-gray-400">Ocean Spray Resort</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button onclick="const s = document.getElementById('testimonial-slider'); s.scrollBy({ left: -s.offsetWidth / 1.5, behavior: 'smooth' });" class="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center bg-[#1a1d2d]/80 hover:bg-[#252a40] border border-white/10 rounded-full text-white backdrop-blur-md opacity-0 group-hover/slider:opacity-100 transition-all duration-300 shadow-[0_0_20px_rgba(0,0,0,0.5)] hidden md:flex disabled:opacity-50 disabled:cursor-not-allowed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+                <span class="sr-only">Previous slide</span>
+            </button>
+
+            <button onclick="const s = document.getElementById('testimonial-slider'); s.scrollBy({ left: s.offsetWidth / 1.5, behavior: 'smooth' });" class="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center bg-[#1a1d2d]/80 hover:bg-[#252a40] border border-white/10 rounded-full text-white backdrop-blur-md opacity-0 group-hover/slider:opacity-100 transition-all duration-300 shadow-[0_0_20px_rgba(0,0,0,0.5)] hidden md:flex disabled:opacity-50 disabled:cursor-not-allowed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                <span class="sr-only">Next slide</span>
+            </button>
+        </div>
+
     </div>
 </section>
-
         <a href="https://wa.me/919626383000?text=Hi,%20I%E2%80%99m%20looking%20for%20LED%20solutions"
             class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
             <svg viewBox="0 0 32 32" class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg">
@@ -1432,269 +1372,260 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                     fill="#FFF" />
             </svg>
         </a>
-
-        <section class="py-16 md:py-20 px-4 md:px-8 bg-[#05050a] relative overflow-hidden">
-    
-    <!-- Ambient Background Glow -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10">
-        
-        <!-- Left Column: Content & Features -->
-        <div class="space-y-12">
-            
-            <!-- Heading Section -->
-            <div>
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest bg-white/5 backdrop-blur-sm mb-6">
-                    <span class="w-2 h-2 rounded-full animate-multi-pulse"></span>
-                    Why Us
+      <section id="why-choose-us" class="py-16 md:py-24 px-4 md:px-8 bg-[#05050a] relative overflow-hidden z-10">
+    <div class="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-[#05050a] via-[#05050a]/90 to-transparent pointer-events-none z-0"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 text-white tracking-tight">
+                Why Choose <span class="text-transparent bg-clip-text bg-[linear-gradient(to_right,#38bdf8,#818cf8,#c084fc,#e879f9)]">Vivid LED?</span>
+            </h2>
+            <p class="text-gray-400 text-base md:text-lg leading-relaxed">
+                Innovation, quality, and reliability in every display
+            </p>
+        </div>
+        <div class="flex flex-col md:flex-row justify-center items-center divide-y md:divide-y-0 md:divide-x divide-white/10 border-y border-white/10 py-8 mb-16 bg-white/[0.02] backdrop-blur-sm rounded-2xl">
+            <div class="flex flex-col items-center text-center px-8 py-4 md:py-0 w-full md:w-1/4">
+                <span class="material-symbols-outlined text-blue-400 text-3xl mb-3">workspace_premium</span>
+                <p class="text-3xl font-bold text-white mb-1">100k+</p>
+                <p class="text-xs font-bold tracking-widest text-gray-500 uppercase">Sq. Ft. Delivered</p>
+            </div>
+            <div class="flex flex-col items-center text-center px-8 py-4 md:py-0 w-full md:w-1/4">
+                <span class="material-symbols-outlined text-purple-400 text-3xl mb-3">groups</span>
+                <p class="text-3xl font-bold text-white mb-1">10+</p>
+                <p class="text-xs font-bold tracking-widest text-gray-500 uppercase">Years of Trust</p>
+            </div>
+            <div class="flex flex-col items-center text-center px-8 py-4 md:py-0 w-full md:w-1/4">
+                <span class="material-symbols-outlined text-pink-400 text-3xl mb-3">headset_mic</span>
+                <p class="text-3xl font-bold text-white mb-1">450+</p>
+                <p class="text-xs font-bold tracking-widest text-gray-500 uppercase">Locations</p>
+            </div>
+            <div class="flex flex-col items-center text-center px-8 py-4 md:py-0 w-full md:w-1/4">
+                <span class="material-symbols-outlined text-green-400 text-3xl mb-3">verified</span>
+                <p class="text-3xl font-bold text-white mb-1">Pan India</p>
+                <p class="text-xs font-bold tracking-widest text-gray-500 uppercase">On-Site Support</p>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="group p-8 bg-[#0e0e11]/50 border border-white/5 hover:border-white/10 rounded-2xl transition-all duration-500 hover:bg-[#12121a] hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10 cursor-default">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center border border-blue-500/20 text-blue-400 group-hover:scale-110 transition-transform duration-300">
+                        <span class="material-symbols-outlined">bolt</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Ultra-High Brightness Displays</h3>
                 </div>
-                
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] mb-6 text-white tracking-tight">
-                    Why Choose <br />
-                    <span class="text-transparent bg-clip-text bg-[linear-gradient(to_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)]">
-                        Vivid LED System?
-                    </span>
-                </h2>
-                <p class="text-gray-400 text-base md:text-lg max-w-lg leading-relaxed">
-                    Innovative LED Solutions Backed by Expertise. We don't just build displays; we engineer visual experiences that leave a lasting impact.
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Achieve crystal-clear visibility even under direct sunlight with 10,000-nits outdoor LED brightness, perfect for billboards, storefronts, and large-format outdoor displays.
                 </p>
             </div>
-
-            <!-- Features List -->
-            <div class="space-y-4">
-                
-                <!-- Feature 1 -->
-                <div class="group flex gap-5 md:gap-6 p-5 md:p-6 bg-[#0e0e11]/50 border border-white/5 hover:border-white/10 rounded-2xl transition-all duration-500 hover:bg-[#12121a] hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/5 cursor-default">
-                    <!-- Icon Box -->
-                    <div class="shrink-0 relative w-14 h-14 rounded-xl p-[1px] pr-[2px] pb-[2px] isolate transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-white/10 group-hover:bg-[linear-gradient(135deg,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] rounded-xl transition-colors duration-500 -z-10"></div>
-                        <div class="w-full h-full bg-[#05050a] rounded-[calc(0.75rem-1px)] flex items-center justify-center">
-                            <span class="material-symbols-outlined text-gray-500 transition-colors duration-500 group-hover:text-white">desktop_windows</span>
-                        </div>
+            <div class="group p-8 bg-[#0e0e11]/50 border border-white/5 hover:border-white/10 rounded-2xl transition-all duration-500 hover:bg-[#12121a] hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10 cursor-default">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center border border-purple-500/20 text-purple-400 group-hover:scale-110 transition-transform duration-300">
+                        <span class="material-symbols-outlined">shield</span>
                     </div>
-                    <!-- Text -->
-                    <div>
-                        <p class="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-[linear-gradient(to_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] transition-all duration-500 w-fit">Crystal Clear Displays</p>
-                        <p class="text-gray-400 text-sm leading-relaxed">Experience ultra-sharp, vibrant visuals with our high-resolution LED video walls designed for maximum impact.</p>
-                    </div>
+                    <h3 class="text-lg font-bold text-white">All-Weather IP65 Protection</h3>
                 </div>
-
-                <!-- Feature 2 -->
-                <div class="group flex gap-5 md:gap-6 p-5 md:p-6 bg-[#0e0e11]/50 border border-white/5 hover:border-white/10 rounded-2xl transition-all duration-500 hover:bg-[#12121a] hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/5 cursor-default">
-                    <!-- Icon Box -->
-                    <div class="shrink-0 relative w-14 h-14 rounded-xl p-[1px] pr-[2px] pb-[2px] isolate transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-white/10 group-hover:bg-[linear-gradient(135deg,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] rounded-xl transition-colors duration-500 -z-10"></div>
-                        <div class="w-full h-full bg-[#05050a] rounded-[calc(0.75rem-1px)] flex items-center justify-center">
-                            <span class="material-symbols-outlined text-gray-500 transition-colors duration-500 group-hover:text-white">trending_up</span>
-                        </div>
-                    </div>
-                    <!-- Text -->
-                    <div>
-                        <p class="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-[linear-gradient(to_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] transition-all duration-500 w-fit">Reliable Performance (24/7)</p>
-                        <p class="text-gray-400 text-sm leading-relaxed">Built for durability, our LED systems deliver uninterrupted performance 24/7 — even in the toughest environments.</p>
-                    </div>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="group flex gap-5 md:gap-6 p-5 md:p-6 bg-[#0e0e11]/50 border border-white/5 hover:border-white/10 rounded-2xl transition-all duration-500 hover:bg-[#12121a] hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/5 cursor-default">
-                    <!-- Icon Box -->
-                    <div class="shrink-0 relative w-14 h-14 rounded-xl p-[1px] pr-[2px] pb-[2px] isolate transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-white/10 group-hover:bg-[linear-gradient(135deg,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] rounded-xl transition-colors duration-500 -z-10"></div>
-                        <div class="w-full h-full bg-[#05050a] rounded-[calc(0.75rem-1px)] flex items-center justify-center">
-                            <span class="material-symbols-outlined text-gray-500 transition-colors duration-500 group-hover:text-white">handyman</span>
-                        </div>
-                    </div>
-                    <!-- Text -->
-                    <div>
-                        <p class="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-[linear-gradient(to_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] transition-all duration-500 w-fit">1 L+ Sq. Ft. Installed</p>
-                        <p class="text-gray-400 text-sm leading-relaxed">Successfully installed over 1 lakh square feet of LED displays across diverse industries and spaces.</p>
-                    </div>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="group flex gap-5 md:gap-6 p-5 md:p-6 bg-[#0e0e11]/50 border border-white/5 hover:border-white/10 rounded-2xl transition-all duration-500 hover:bg-[#12121a] hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/5 cursor-default">
-                    <!-- Icon Box -->
-                    <div class="shrink-0 relative w-14 h-14 rounded-xl p-[1px] pr-[2px] pb-[2px] isolate transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-white/10 group-hover:bg-[linear-gradient(135deg,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] rounded-xl transition-colors duration-500 -z-10"></div>
-                        <div class="w-full h-full bg-[#05050a] rounded-[calc(0.75rem-1px)] flex items-center justify-center">
-                            <span class="material-symbols-outlined text-gray-500 transition-colors duration-500 group-hover:text-white">handshake</span>
-                        </div>
-                    </div>
-                    <!-- Text -->
-                    <div>
-                        <p class="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-[linear-gradient(to_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] transition-all duration-500 w-fit">Trusted by 10,000+ Customers</p>
-                        <p class="text-gray-400 text-sm leading-relaxed">Join over 10,000 satisfied clients who trust Vivid LED System for dependable display solutions that deliver results.</p>
-                    </div>
-                </div>
-
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Engineered with IP65-rated outdoor LED durability, ensuring consistent performance in rain, heat, dust, and harsh Indian climate conditions.
+                </p>
             </div>
-        </div>
-
-        <!-- Right Column: Visual & Stat Badge -->
-        <div class="relative w-full h-[500px] lg:h-[750px] mt-12 lg:mt-0">
-            
-            <!-- Image Card Wrapper with Gradient Border Hover -->
-            <div class="relative w-full h-full rounded-[2rem] p-[1px] isolate group cursor-pointer shadow-2xl">
-                <!-- Default Subtle Border -->
-                <div class="absolute inset-0 rounded-[2rem] bg-white/10 transition-opacity duration-700 group-hover:opacity-0 -z-10"></div>
-                <!-- Hover Gradient Border -->
-                <div class="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] opacity-0 transition-opacity duration-700 group-hover:opacity-100 -z-10"></div>
-                
-                <!-- Inner Image Box -->
-                <div class="relative w-full h-full rounded-[calc(2rem-1px)] overflow-hidden bg-[#0a0f1c]">
-                    <!-- Image: Grayscale to Color + Slow Zoom -->
-                    <img loading="lazy" class="w-full h-full object-cover group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
-                        alt="Team of engineers and designers collaborating around a large glowing led interface in a high tech workspace"
-                        src="assets/smiling-business-partners-shaking-hands-lounge.jpg" />
-                    
-                    <!-- Dark Gradient Overlay for better contrast -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#05050a] via-[#05050a]/20 to-transparent opacity-80 transition-opacity duration-700 group-hover:opacity-30 pointer-events-none"></div>
-                </div>
-
-                <!-- Floating Glassmorphism Badge -->
-                <div class="absolute -bottom-8 -left-4 md:-bottom-12 md:-left-12 p-[1px] isolate rounded-2xl transition-transform duration-700 group-hover:-translate-y-4 shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20">
-                    <!-- Badge Gradient Border -->
-                    <div class="absolute inset-0 rounded-2xl bg-[linear-gradient(135deg,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] -z-10"></div>
-                    
-                    <!-- Badge Inner Content -->
-                    <div class="bg-[#0e0e11]/90 ml-[2px] mb-[2px] backdrop-blur-xl rounded-[calc(1rem-1px)] p-6 md:p-10 flex flex-col items-center text-center w-[160px] md:w-[220px]">
-                        <p class="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-[linear-gradient(to_right,#facc15,#f97316,#ec4899,#a855f7,#38bdf8)] mb-2 md:mb-3">
-                            11+
-                        </p>
-                        <p class="text-xs md:text-sm uppercase tracking-widest text-gray-300 font-bold leading-relaxed">
-                            Years of <br/> Excellence
-                        </p>
+            <div class="group p-8 bg-[#0e0e11]/50 border border-white/5 hover:border-white/10 rounded-2xl transition-all duration-500 hover:bg-[#12121a] hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/10 cursor-default">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-pink-500/10 flex items-center justify-center border border-pink-500/20 text-pink-400 group-hover:scale-110 transition-transform duration-300">
+                        <span class="material-symbols-outlined">cloud_sync</span>
                     </div>
+                    <h3 class="text-lg font-bold text-white">Smart Cloud-Based Control</h3>
                 </div>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Manage your LED video walls effortlessly with cloud content scheduling, remote monitoring, and real-time diagnostics for multi-location control.
+                </p>
             </div>
-
+            <div class="group p-8 bg-[#0e0e11]/50 border border-white/5 hover:border-white/10 rounded-2xl transition-all duration-500 hover:bg-[#12121a] hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-500/10 cursor-default">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center border border-green-500/20 text-green-400 group-hover:scale-110 transition-transform duration-300">
+                        <span class="material-symbols-outlined">support_agent</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">24/7 Pan-India Service Support</h3>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Enjoy uninterrupted performance with nationwide on-site support, quick response times, and reliable maintenance for LED video wall networks.
+                </p>
+            </div>
+            <div class="group p-8 bg-[#0e0e11]/50 border border-white/5 hover:border-white/10 rounded-2xl transition-all duration-500 hover:bg-[#12121a] hover:-translate-y-1 hover:shadow-2xl hover:shadow-yellow-500/10 cursor-default">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-yellow-500/10 flex items-center justify-center border border-yellow-500/20 text-yellow-400 group-hover:scale-110 transition-transform duration-300">
+                        <span class="material-symbols-outlined">eco</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Energy-Efficient LED Technology</h3>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Reduce operational costs with low-power consumption drivers and high-efficiency LED modules, optimized for long-hour outdoor usage.
+                </p>
+            </div>
+            <div class="group p-8 bg-[#0e0e11]/50 border border-white/5 hover:border-white/10 rounded-2xl transition-all duration-500 hover:bg-[#12121a] hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10 cursor-default">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center border border-blue-500/20 text-blue-400 group-hover:scale-110 transition-transform duration-300">
+                        <span class="material-symbols-outlined">workspace_premium</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Vivid Prime Warranty Assurance</h3>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Get complete peace of mind with comprehensive warranty coverage, free part replacements, and trusted pan-India support across all premium series.
+                </p>
+            </div>
         </div>
     </div>
 </section>
-
-<section class="py-12 md:py-16 px-4 md:px-8 bg-[#05050a]">
-    <div class="max-w-3xl mx-auto flex flex-col items-center">
-        
-        <!-- Header Section -->
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest bg-white/5 backdrop-blur-sm mb-6">
-                    <span class="w-2 h-2 rounded-full animate-multi-pulse"></span>
-                    Common Questions
+<section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#05050a] relative overflow-hidden z-10 animate-fade-in">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+    <div class="container mx-auto w-full max-w-4xl relative z-10">
+        <div class="text-center mb-10 sm:mb-16">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest bg-white/5 backdrop-blur-sm mb-6">
+                <span class="w-2 h-2 rounded-full animate-multi-pulse bg-blue-500"></span>
+                Support  
+            </div>
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-4">
+                Frequently Asked <br class="hidden md:block" />
+                <span class="text-transparent bg-clip-text bg-[linear-gradient(to_right,#38bdf8,#818cf8,#c084fc,#e879f9)]">
+                    Questions
+                </span>
+            </h2>
+            <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto px-2">
+                Expert answers to help you make informed decisions about LED displays
+            </p>
+        </div>
+        <div class="bg-[#0e0e11]/50 backdrop-blur-md border border-white/5 rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl">
+            <div class="w-full faq-container" data-orientation="vertical">
+                <div data-state="closed" data-orientation="vertical" class="border-b border-white/10 group faq-item">
+                    <h3 data-orientation="vertical" data-state="closed" class="flex">
+                        <button type="button" aria-controls="faq-1" aria-expanded="false" data-state="closed" data-orientation="vertical" class="faq-button flex flex-1 items-center justify-between transition-all hover:text-white [&[data-state=open]>svg]:rotate-180 text-left text-base sm:text-lg font-medium text-gray-300 py-5">
+                            What is the typical lifespan of LED display systems?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 transition-transform duration-300 text-gray-500 group-hover:text-blue-400"><path d="m6 9 6 6 6-6"></path></svg>
+                        </button>
+                    </h3>
+                    <div data-state="closed" id="faq-1" hidden="" role="region" data-orientation="vertical" class="faq-content overflow-hidden text-sm md:text-base text-gray-400 pb-5 transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                        Most high-quality LED displays have a lifespan of around 100,000 hours, which roughly translates to 10-11 years of continuous 24/7 operation depending on brightness levels and environmental factors.
+                    </div>
                 </div>
-
-        <h2 class="text-3xl md:text-5xl font-bold text-center text-white mb-4 tracking-tight leading-tight">
-            Frequently Asked <br class="hidden md:block" /> <span class="text-gradient">Questions</span> 
-        </h2>
-
-
-        <!-- Accordion Container -->
-        <div class="w-full space-y-3" id="faq-accordion">
-
-            <!-- Question 1 -->
-            <div class="accordion-item bg-[#0e0e11] border border-white/5 hover:border-white/10 rounded-2xl p-5 md:p-6 cursor-pointer transition-all duration-300">
-                <div class="accordion-header flex justify-between items-center gap-4 select-none">
-                    <p class="accordion-title text-gray-300 font-medium transition-colors duration-300">What industries can benefit from your LED display solutions?</p>
-                    <span class="material-symbols-outlined text-gray-400 accordion-icon inline-block">add</span>
+                <div data-state="closed" data-orientation="vertical" class="border-b border-white/10 group faq-item">
+                    <h3 data-orientation="vertical" data-state="closed" class="flex">
+                        <button type="button" aria-controls="faq-2" aria-expanded="false" data-state="closed" data-orientation="vertical" class="faq-button flex flex-1 items-center justify-between transition-all hover:text-white [&[data-state=open]>svg]:rotate-180 text-left text-base sm:text-lg font-medium text-gray-300 py-5">
+                            How do I choose the right LED display for my business?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 transition-transform duration-300 text-gray-500 group-hover:text-blue-400"><path d="m6 9 6 6 6-6"></path></svg>
+                        </button>
+                    </h3>
+                    <div data-state="closed" id="faq-2" hidden="" role="region" data-orientation="vertical" class="faq-content overflow-hidden text-sm md:text-base text-gray-400 pb-5 transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                        Choosing the right display depends on viewing distance (pixel pitch), indoor vs. outdoor usage (brightness and IP rating), and the specific content you plan to show. Our team provides free consultations to help you match the perfect tech to your goals.
+                    </div>
                 </div>
-                <!-- Replaced 'hidden' with GSAP-ready classes: h-0, opacity-0, overflow-hidden -->
-                <div class="accordion-content h-0 opacity-0 overflow-hidden">
-                    <div class="pt-4 pr-8">
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Our LED solutions serve diverse industries including retail, hospitality, corporate, education, entertainment, sports venues, transportation hubs, and more. Any business looking to enhance visual communication can benefit from our displays.
-                        </p>
+                <div data-state="closed" data-orientation="vertical" class="border-b border-white/10 group faq-item">
+                    <h3 data-orientation="vertical" data-state="closed" class="flex">
+                        <button type="button" aria-controls="faq-3" aria-expanded="false" data-state="closed" data-orientation="vertical" class="faq-button flex flex-1 items-center justify-between transition-all hover:text-white [&[data-state=open]>svg]:rotate-180 text-left text-base sm:text-lg font-medium text-gray-300 py-5">
+                            What maintenance is required for LED video walls?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 transition-transform duration-300 text-gray-500 group-hover:text-blue-400"><path d="m6 9 6 6 6-6"></path></svg>
+                        </button>
+                    </h3>
+                    <div data-state="closed" id="faq-3" hidden="" role="region" data-orientation="vertical" class="faq-content overflow-hidden text-sm md:text-base text-gray-400 pb-5 transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                        LED walls require minimal maintenance. Routine dusting, ensuring proper ventilation, and occasional software updates are usually sufficient. We also offer comprehensive AMC (Annual Maintenance Contracts) for total peace of mind.
+                    </div>
+                </div>
+                <div data-state="closed" data-orientation="vertical" class="border-b border-white/10 group faq-item">
+                    <h3 data-orientation="vertical" data-state="closed" class="flex">
+                        <button type="button" aria-controls="faq-4" aria-expanded="false" data-state="closed" data-orientation="vertical" class="faq-button flex flex-1 items-center justify-between transition-all hover:text-white [&[data-state=open]>svg]:rotate-180 text-left text-base sm:text-lg font-medium text-gray-300 py-5">
+                            Can LED displays work in extreme weather conditions?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 transition-transform duration-300 text-gray-500 group-hover:text-blue-400"><path d="m6 9 6 6 6-6"></path></svg>
+                        </button>
+                    </h3>
+                    <div data-state="closed" id="faq-4" hidden="" role="region" data-orientation="vertical" class="faq-content overflow-hidden text-sm md:text-base text-gray-400 pb-5 transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                        Yes! Our outdoor LED displays feature IP65 or higher ratings, making them completely waterproof, dust-resistant, and capable of operating flawlessly in extreme heat, heavy rain, and direct sunlight.
+                    </div>
+                </div>
+                <div data-state="closed" data-orientation="vertical" class="border-b border-white/10 group faq-item">
+                    <h3 data-orientation="vertical" data-state="closed" class="flex">
+                        <button type="button" aria-controls="faq-5" aria-expanded="false" data-state="closed" data-orientation="vertical" class="faq-button flex flex-1 items-center justify-between transition-all hover:text-white [&[data-state=open]>svg]:rotate-180 text-left text-base sm:text-lg font-medium text-gray-300 py-5">
+                            What content formats and control systems are supported?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 transition-transform duration-300 text-gray-500 group-hover:text-blue-400"><path d="m6 9 6 6 6-6"></path></svg>
+                        </button>
+                    </h3>
+                    <div data-state="closed" id="faq-5" hidden="" role="region" data-orientation="vertical" class="faq-content overflow-hidden text-sm md:text-base text-gray-400 pb-5 transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                        Our systems support almost all media formats including MP4, AVI, JPEG, PNG, and live video feeds. We provide intuitive cloud-based software that allows you to manage content remotely from any device.
+                    </div>
+                </div>
+                <div data-state="closed" data-orientation="vertical" class="border-b border-white/10 group faq-item">
+                    <h3 data-orientation="vertical" data-state="closed" class="flex">
+                        <button type="button" aria-controls="faq-6" aria-expanded="false" data-state="closed" data-orientation="vertical" class="faq-button flex flex-1 items-center justify-between transition-all hover:text-white [&[data-state=open]>svg]:rotate-180 text-left text-base sm:text-lg font-medium text-gray-300 py-5">
+                            How energy-efficient are LED display systems?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 transition-transform duration-300 text-gray-500 group-hover:text-blue-400"><path d="m6 9 6 6 6-6"></path></svg>
+                        </button>
+                    </h3>
+                    <div data-state="closed" id="faq-6" hidden="" role="region" data-orientation="vertical" class="faq-content overflow-hidden text-sm md:text-base text-gray-400 pb-5 transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                        Modern LED technology is highly energy efficient. Our displays utilize common-cathode technology and smart brightness sensors that adjust to ambient light, reducing power consumption by up to 30% compared to traditional screens.
+                    </div>
+                </div>
+                <div data-state="closed" data-orientation="vertical" class="border-b-0 group faq-item">
+                    <h3 data-orientation="vertical" data-state="closed" class="flex">
+                        <button type="button" aria-controls="faq-7" aria-expanded="false" data-state="closed" data-orientation="vertical" class="faq-button flex flex-1 items-center justify-between transition-all hover:text-white [&[data-state=open]>svg]:rotate-180 text-left text-base sm:text-lg font-medium text-gray-300 py-5">
+                            What is your installation and support process?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 transition-transform duration-300 text-gray-500 group-hover:text-blue-400"><path d="m6 9 6 6 6-6"></path></svg>
+                        </button>
+                    </h3>
+                    <div data-state="closed" id="faq-7" hidden="" role="region" data-orientation="vertical" class="faq-content overflow-hidden text-sm md:text-base text-gray-400 pb-5 transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                        We handle everything end-to-end. Starting with a site inspection and structural design, followed by professional installation, software training, and ongoing 24/7 Pan-India support.
                     </div>
                 </div>
             </div>
-
-            <!-- Question 2 -->
-            <div class="accordion-item bg-[#0e0e11] border border-white/5 hover:border-white/10 rounded-2xl p-5 md:p-6 cursor-pointer transition-all duration-300">
-                <div class="accordion-header flex justify-between items-center gap-4 select-none">
-                    <p class="accordion-title text-gray-300 font-medium transition-colors duration-300">How do your LED Video Walls enhance business visibility and engagement?</p>
-                    <span class="material-symbols-outlined text-gray-400 accordion-icon inline-block">add</span>
-                </div>
-                <div class="accordion-content h-0 opacity-0 overflow-hidden">
-                    <div class="pt-4 pr-8">
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Our high-brightness, vibrant displays capture attention effectively. They enable dynamic content delivery, interactive experiences, and real-time information updates that significantly increase customer engagement and brand recall.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 3 -->
-            <div class="accordion-item bg-[#0e0e11] border border-white/5 hover:border-white/10 rounded-2xl p-5 md:p-6 cursor-pointer transition-all duration-300">
-                <div class="accordion-header flex justify-between items-center gap-4 select-none">
-                    <p class="accordion-title text-gray-300 font-medium transition-colors duration-300">What kind of support and maintenance services do you provide?</p>
-                    <span class="material-symbols-outlined text-gray-400 accordion-icon inline-block">add</span>
-                </div>
-                <div class="accordion-content h-0 opacity-0 overflow-hidden">
-                    <div class="pt-4 pr-8">
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            We offer comprehensive support including 24/7 technical assistance, regular maintenance programs, on-site repairs, remote diagnostics, and warranty coverage. Our team ensures your displays operate at peak performance.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 4 -->
-            <div class="accordion-item bg-[#0e0e11] border border-white/5 hover:border-white/10 rounded-2xl p-5 md:p-6 cursor-pointer transition-all duration-300">
-                <div class="accordion-header flex justify-between items-center gap-4 select-none">
-                    <p class="accordion-title text-gray-300 font-medium transition-colors duration-300">How can businesses integrate Digital Display into their existing infrastructure?</p>
-                    <span class="material-symbols-outlined text-gray-400 accordion-icon inline-block">add</span>
-                </div>
-                <div class="accordion-content h-0 opacity-0 overflow-hidden">
-                    <div class="pt-4 pr-8">
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Our displays feature versatile connectivity options (HDMI, USB, network) and compatibility with most content management systems. We provide custom integration services to seamlessly connect with your current AV infrastructure and IT systems.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 5 -->
-            <div class="accordion-item bg-[#0e0e11] border border-white/5 hover:border-white/10 rounded-2xl p-5 md:p-6 cursor-pointer transition-all duration-300">
-                <div class="accordion-header flex justify-between items-center gap-4 select-none">
-                    <p class="accordion-title text-gray-300 font-medium transition-colors duration-300">What sets your Digital Display solutions apart from competitors?</p>
-                    <span class="material-symbols-outlined text-gray-400 accordion-icon inline-block">add</span>
-                </div>
-                <div class="accordion-content h-0 opacity-0 overflow-hidden">
-                    <div class="pt-4 pr-8">
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            We differentiate through superior pixel pitch technology, energy efficiency, customizable configurations, robust construction for all environments, and our proprietary content management platform with advanced scheduling capabilities.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 6 -->
-            <div class="accordion-item bg-[#0e0e11] border border-white/5 hover:border-white/10 rounded-2xl p-5 md:p-6 cursor-pointer transition-all duration-300">
-                <div class="accordion-header flex justify-between items-center gap-4 select-none">
-                    <p class="accordion-title text-gray-300 font-medium transition-colors duration-300">Can your LED displays be used for advertising and promotional purposes?</p>
-                    <span class="material-symbols-outlined text-gray-400 accordion-icon inline-block">add</span>
-                </div>
-                <div class="accordion-content h-0 opacity-0 overflow-hidden">
-                    <div class="pt-4 pr-8">
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Absolutely! Our displays are perfect for digital signage advertising, promotional campaigns, product showcases, and brand storytelling. They support high-resolution images, videos, animations, and even interactive content to maximize impact.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqButtons = document.querySelectorAll('.faq-button');
+            faqButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const isClosed = button.getAttribute('data-state') === 'closed';
+                    const contentId = button.getAttribute('aria-controls');
+                    const content = document.getElementById(contentId);
+                    const parentItem = button.closest('.faq-item');
+                    // First, close all other open FAQs (Optional: remove this block if you want multiple open at once)
+                    document.querySelectorAll('.faq-button').forEach(otherBtn => {
+                        if (otherBtn !== button) {
+                            otherBtn.setAttribute('data-state', 'closed');
+                            otherBtn.setAttribute('aria-expanded', 'false');
+                            const otherContent = document.getElementById(otherBtn.getAttribute('aria-controls'));
+                            if (otherContent) {
+                                otherContent.setAttribute('data-state', 'closed');
+                                otherContent.setAttribute('hidden', '');
+                            }
+                            otherBtn.closest('.faq-item').setAttribute('data-state', 'closed');
+                        }
+                    });
+                    // Toggle clicked button state
+                    button.setAttribute('data-state', isClosed ? 'open' : 'closed');
+                    button.setAttribute('aria-expanded', isClosed ? 'true' : 'false');
+                    if (parentItem) {
+                        parentItem.setAttribute('data-state', isClosed ? 'open' : 'closed');
+                    }
+                    // Toggle content visibility
+                    if (content) {
+                        content.setAttribute('data-state', isClosed ? 'open' : 'closed');
+                        if (isClosed) {
+                            content.removeAttribute('hidden');
+                        } else {
+                            content.setAttribute('hidden', '');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </section>
-
-<!-- GSAP Accordion Logic -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const accordionItems = document.querySelectorAll('.accordion-item');
-
         // Initialize: Open the first item by default
         if(accordionItems.length > 0) {
             const firstItem = accordionItems[0];
             const content = firstItem.querySelector('.accordion-content');
-            
             // Set initial state for the first item
             gsap.set(content, { height: 'auto', opacity: 1 });
             firstItem.classList.add('is-open');
@@ -1702,16 +1633,13 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             firstItem.querySelector('.accordion-title').classList.replace('text-gray-300', 'text-white');
             firstItem.querySelector('.accordion-title').classList.replace('font-medium', 'font-bold');
         }
-
         accordionItems.forEach(item => {
             const header = item.querySelector('.accordion-header');
             const content = item.querySelector('.accordion-content');
             const icon = item.querySelector('.accordion-icon');
             const title = item.querySelector('.accordion-title');
-
             header.addEventListener('click', () => {
                 const isOpen = item.classList.contains('is-open');
-
                 // Close all currently open items
                 accordionItems.forEach(otherItem => {
                     if (otherItem.classList.contains('is-open')) {
@@ -1719,7 +1647,6 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                         const otherContent = otherItem.querySelector('.accordion-content');
                         const otherIcon = otherItem.querySelector('.accordion-icon');
                         const otherTitle = otherItem.querySelector('.accordion-title');
-                        
                         // GSAP Close Animation
                         gsap.to(otherContent, { 
                             height: 0, 
@@ -1727,18 +1654,15 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                             duration: 0.4, 
                             ease: "power2.inOut" 
                         });
-                        
                         // Reset Text & Icon
                         otherIcon.textContent = 'add';
                         otherTitle.classList.remove('text-white', 'font-bold');
                         otherTitle.classList.add('text-gray-300', 'font-medium');
                     }
                 });
-
                 // If the clicked item wasn't open, open it now
                 if (!isOpen) {
                     item.classList.add('is-open');
-                    
                     // GSAP Open Animation
                     gsap.to(content, { 
                         height: 'auto', 
@@ -1746,13 +1670,11 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                         duration: 0.4, 
                         ease: "power2.out" 
                     });
-                    
                     // Spin animation for the minus icon to make it playful
                     gsap.fromTo(icon, 
                         { rotation: -90 }, 
                         { rotation: 0, duration: 0.3, ease: "back.out(1.7)" }
                     );
-
                     // Update Text & Icon
                     icon.textContent = 'remove';
                     title.classList.remove('text-gray-300', 'font-medium');
@@ -1762,9 +1684,7 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
         });
     });
 </script>
-
     </main>
-
     <!-- Footer background changed to surface globally -->
     <footer id="footer" class="bg-surface w-full py-16 border-t border-white/10">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-6 md:px-12 max-w-screen-2xl mx-auto">
@@ -1791,7 +1711,6 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                     </p>
                 </div>
             </div>
-
             <div class="space-y-6">
                 <p class="text-white font-bold uppercase tracking-widest text-xs">
                     Quick Links
@@ -1803,7 +1722,6 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                     <li><a href="javascript:void(0)" onclick="openPopupForm()" class="hover:text-yellow-400 transition-colors">Contact</button></li>
                 </ul>
             </div>
-
             <div class="space-y-6">
                 <p class="text-white font-bold uppercase tracking-widest text-xs">
                     Contact Us
@@ -1819,12 +1737,10 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                     </li>
                 </ul>
             </div>
-
             <div class="space-y-6">
                 <p class="text-white font-bold uppercase tracking-widest text-xs">
                     Stay Connected
                 </p>
-
                 <div class="flex flex-wrap gap-3">
                     <a href="http://api.whatsapp.com/send/?phone=%2B919626262481&text=Hi+there%21+I+am+interested+in+learning+more+about+your+LED+display+solutions.+Can+you+provide+me+with+more+information%3F&type=phone_number&app_absent=0"
                         title="WhatsApp" target="_blank"
@@ -1854,7 +1770,6 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                 </div>
             </div>
         </div>
-
         <div
             class="mt-16 pt-8 border-t border-white/5 px-6 md:px-12 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <p class="font-['Host_Grotesk'] font-normal text-slate-500 text-xs">
@@ -1866,7 +1781,6 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             </div>
         </div>
     </footer>
-
     <div id="popupForm" class="popup-form">
         <div class="popup-content">
             <button class="close-popup" id="closePopup">×</button>
@@ -1934,25 +1848,21 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             </form>
         </div>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
     <script src="pop.js"></script>
     <script src="main.js"></script>
-
     <!-- Script for mobile menu logic -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const mobileBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
-
             if(mobileBtn && mobileMenu) {
                 // Toggle menu on hamburger click
                 mobileBtn.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
                     mobileMenu.classList.toggle('flex');
                 });
-
                 // Close menu when a link is clicked
                 mobileMenu.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
@@ -1963,19 +1873,14 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             }
         });
     </script>
-
-    
-
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const slides = document.querySelectorAll(".slider-item");
             const prevBtn = document.getElementById("prevBtn");
             const nextBtn = document.getElementById("nextBtn");
             const dotsContainer = document.getElementById("sliderDots");
-
             let currentIndex = 0;
             let isAnimating = false;
-
             function initSlider() {
                 if(!dotsContainer) return; // safety check
                 slides.forEach((_, i) => {
@@ -1985,11 +1890,9 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                     dot.addEventListener("click", () => goToSlide(i));
                     dotsContainer.appendChild(dot);
                 });
-
-                gsap.set(slides, { autoAlpha: 0, x: 50 });
-                if(slides[0]) gsap.set(slides[0], { autoAlpha: 1, x: 0 });
+                gsap.set(slides, { autoAlpha: 0, x: 60, force3D: true, willChange: 'transform, opacity' });
+                if(slides[0]) gsap.set(slides[0], { autoAlpha: 1, x: 0, force3D: true });
             }
-
             function updateDots(index) {
                 document.querySelectorAll(".dot").forEach((dot, i) => {
                     if (i === index) {
@@ -2001,80 +1904,68 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                     }
                 });
             }
-
             function goToSlide(index, direction = 'next') {
                 if (isAnimating || index === currentIndex) return;
                 isAnimating = true;
-
                 const currentSlide = slides[currentIndex];
                 const nextSlide = slides[index];
-                const slideX = direction === 'next' ? -50 : 50;
-                const enterX = direction === 'next' ? 50 : -50;
-
+                const slideX = direction === 'next' ? -60 : 60;
+                const enterX = direction === 'next' ? 60 : -60;
                 gsap.to(currentSlide, {
                     autoAlpha: 0,
                     x: slideX,
-                    duration: 0.6,
-                    ease: "power2.inOut"
+                    duration: 0.7,
+                    ease: "power3.out",
+                    force3D: true,
+                    overwrite: 'auto'
                 });
-
                 gsap.fromTo(nextSlide,
-                    { autoAlpha: 0, x: enterX },
+                    { autoAlpha: 0, x: enterX, force3D: true },
                     {
                         autoAlpha: 1,
                         x: 0,
-                        duration: 0.6,
-                        ease: "power2.inOut",
+                        duration: 0.8,
+                        ease: "power3.out",
+                        force3D: true,
+                        overwrite: 'auto',
                         onComplete: () => {
                             isAnimating = false;
                         }
                     }
                 );
-
                 currentIndex = index;
                 updateDots(currentIndex);
             }
-
             if(nextBtn) {
                 nextBtn.addEventListener("click", () => {
                     let nextIndex = (currentIndex + 1) % slides.length;
                     goToSlide(nextIndex, 'next');
                 });
             }
-
             if(prevBtn) {
                 prevBtn.addEventListener("click", () => {
                     let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
                     goToSlide(prevIndex, 'prev');
                 });
             }
-
             initSlider();
         });
     </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-
   <script src="pop.js"></script>
-
   <script src="main.js"></script>
-
    <script>
     // Register the plugin only once
     gsap.registerPlugin(ScrollToPlugin);
-
     // Header functionality & sliding indicator wrapper 
     const navLinks = document.querySelectorAll('.nav-link');
     const indicator = document.getElementById('nav-indicator');
     const sections = document.querySelectorAll("section[id]");
-
     let isAutoScrolling = false;
-
     // Handles dynamically shifting the active pill overlay
     function updateIndicator(el) {
         if (!el || !indicator) return;
-
         // Premium smooth easing for the tracking pill
         gsap.to(indicator, {
             width: el.offsetWidth,
@@ -2084,7 +1975,6 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             duration: 0.4,
             ease: "back.out(1.2)"
         });
-
         // Adjust text contrast based on selection
         navLinks.forEach(link => {
             link.classList.remove('text-white');
@@ -2093,11 +1983,9 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
         el.classList.add('text-white');
         el.classList.remove('text-slate-300');
     }
-
     // Setup the initial layout & Preloader Fade Out
     window.addEventListener('load', () => {
         const preloader = document.getElementById('preloader');
-        
         if(preloader) {
             gsap.to(preloader, {
                 opacity: 0,
@@ -2106,7 +1994,6 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                 ease: "power2.inOut",
                 onComplete: () => {
                     preloader.style.display = 'none';
-                    
                     // Initialize indicator once the page is fully visible
                     if (navLinks.length > 0) {
                         setTimeout(() => updateIndicator(navLinks[0]), 100);
@@ -2120,20 +2007,16 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             }
         }
     });
-
     // Handle Click Smooth Scrolling
     document.querySelectorAll('a.nav-link').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = this.getAttribute('href');
             if (target === '#') return;
-
             // Pause the scroll spy
             isAutoScrolling = true;
-
             // Instantly update the indicator for a snappy feel
             updateIndicator(this);
-
             // Execute the scroll
             gsap.to(window, {
                 duration: 1.2,
@@ -2150,12 +2033,10 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             });
         });
     });
-
     // Scroll spy: Update the pill dynamically as you naturally scroll
     window.addEventListener("scroll", () => {
         // Escape early if GSAP is currently animating the scroll
         if (isAutoScrolling) return;
-
         let current = "";
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -2163,7 +2044,6 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                 current = section.getAttribute("id");
             }
         });
-
         navLinks.forEach(link => {
             if (link.getAttribute("href") === `#${current}`) {
                 updateIndicator(link);
@@ -2177,10 +2057,8 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             const prevBtn = document.getElementById("prevBtn");
             const nextBtn = document.getElementById("nextBtn");
             const dotsContainer = document.getElementById("sliderDots");
-
             let currentIndex = 0;
             let isAnimating = false;
-
             // Initialize Slider
             function initSlider() {
                 // Create dots dynamically
@@ -2191,12 +2069,10 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                     dot.addEventListener("click", () => goToSlide(i));
                     dotsContainer.appendChild(dot);
                 });
-
-                // Set initial state for GSAP
-                gsap.set(slides, { autoAlpha: 0, x: 50 });
-                gsap.set(slides[0], { autoAlpha: 1, x: 0 });
+                // Set initial state for GSAP (GPU-composited, hinted for smoothness)
+                gsap.set(slides, { autoAlpha: 0, x: 60, force3D: true, willChange: 'transform, opacity' });
+                gsap.set(slides[0], { autoAlpha: 1, x: 0, force3D: true });
             }
-
             function updateDots(index) {
                 document.querySelectorAll(".dot").forEach((dot, i) => {
                     if (i === index) {
@@ -2208,131 +2084,95 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
                     }
                 });
             }
-
             function goToSlide(index, direction = 'next') {
                 if (isAnimating || index === currentIndex) return;
                 isAnimating = true;
-
                 const currentSlide = slides[currentIndex];
                 const nextSlide = slides[index];
-                const slideX = direction === 'next' ? -50 : 50;
-                const enterX = direction === 'next' ? 50 : -50;
-
-                // Animate current slide out
+                const slideX = direction === 'next' ? -60 : 60;
+                const enterX = direction === 'next' ? 60 : -60;
+                // Animate current slide out — power3.out feels premium (decelerates naturally)
                 gsap.to(currentSlide, {
                     autoAlpha: 0,
                     x: slideX,
-                    duration: 0.6,
-                    ease: "power2.inOut"
+                    duration: 0.7,
+                    ease: "power3.out",
+                    force3D: true,
+                    overwrite: 'auto'
                 });
-
                 // Set up next slide position and animate in
                 gsap.fromTo(nextSlide,
-                    { autoAlpha: 0, x: enterX },
+                    { autoAlpha: 0, x: enterX, force3D: true },
                     {
                         autoAlpha: 1,
                         x: 0,
-                        duration: 0.6,
-                        ease: "power2.inOut",
+                        duration: 0.8,
+                        ease: "power3.out",
+                        force3D: true,
+                        overwrite: 'auto',
                         onComplete: () => {
                             isAnimating = false;
                         }
                     }
                 );
-
                 currentIndex = index;
                 updateDots(currentIndex);
             }
-
             // Event Listeners
             nextBtn.addEventListener("click", () => {
                 let nextIndex = (currentIndex + 1) % slides.length;
                 goToSlide(nextIndex, 'next');
             });
-
             prevBtn.addEventListener("click", () => {
                 let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
                 goToSlide(prevIndex, 'prev');
             });
-
             initSlider();
         });
     </script>
-
     <script>
-
         // GSAP Smooth Scroll Initialization
-
         gsap.registerPlugin(ScrollToPlugin);
-
-
-
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
             anchor.addEventListener('click', function (e) {
-
                 e.preventDefault();
-
                 const target = this.getAttribute('href');
-
                 if (target === '#') return;
-
-
-
                 gsap.to(window, {
-
                     duration: 1.2,
-
                     scrollTo: {
-
                         y: target,
-
                         offsetY: 80
                     },
-
                     ease: "power4.out",
-
                     overwrite: true
-
                 });
-
             });
-
         });
-
     </script>
-
     <script>
-        // Section Horizontal Slider Controls
-        function slideLeft() {
-            const slider = document.getElementById('industry-slider');
-            if (slider) {
-                // Scroll back by approximately one card width
-                slider.scrollBy({ left: -340, behavior: 'smooth' });
-            }
+        // Section Horizontal Slider Controls — GSAP-driven for buttery-smooth motion.
+        // Native scrollBy({behavior:'smooth'}) is jittery on Win/Android; ScrollToPlugin runs at 60fps.
+        if (window.gsap && window.ScrollToPlugin) { gsap.registerPlugin(ScrollToPlugin); }
+        const __sliderLocks = { industry: false, testimonial: false };
+        function __gsapHSlide(slider, delta, lockKey) {
+            if (!slider || __sliderLocks[lockKey]) return;
+            const max = slider.scrollWidth - slider.clientWidth;
+            const target = Math.max(0, Math.min(slider.scrollLeft + delta, max));
+            if (Math.abs(target - slider.scrollLeft) < 1) return;
+            __sliderLocks[lockKey] = true;
+            gsap.to(slider, {
+                scrollTo: { x: target, autoKill: false },
+                duration: 0.9,
+                ease: "expo.out",        // strong glide — fast start, soft landing
+                overwrite: true,
+                onComplete: () => { __sliderLocks[lockKey] = false; }
+            });
         }
-
-        function slideRight() {
-            const slider = document.getElementById('industry-slider');
-            if (slider) {
-                slider.scrollBy({ left: 340, behavior: 'smooth' });
-            }
-        }
-
-        function slideTestimonialLeft() {
-            const slider = document.getElementById('testimonial-slider');
-            if (slider) {
-                slider.scrollBy({ left: -380, behavior: 'smooth' });
-            }
-        }
-
-        function slideTestimonialRight() {
-            const slider = document.getElementById('testimonial-slider');
-            if (slider) {
-                slider.scrollBy({ left: 380, behavior: 'smooth' });
-            }
-        }
-
+        function slideLeft()  { __gsapHSlide(document.getElementById('industry-slider'),    -340, 'industry');    }
+        function slideRight() { __gsapHSlide(document.getElementById('industry-slider'),     340, 'industry');    }
+        function slideTestimonialLeft()  { __gsapHSlide(document.getElementById('testimonial-slider'), -380, 'testimonial'); }
+        function slideTestimonialRight() { __gsapHSlide(document.getElementById('testimonial-slider'),  380, 'testimonial'); }
         window.addEventListener('load', () => {
     const images = document.querySelectorAll('.preloader-critical');
     const imagePromises = Array.from(images).map(img => {
@@ -2342,28 +2182,22 @@ class="w-full h-full object-cover transform-gpu will-change-transform group-hove
             img.onerror = resolve; // Continue even if an image fails
         });
     });
-
     Promise.all(imagePromises).then(() => {
         // Replace this with your actual preloader hide function
         document.getElementById('preloader').classList.add('fade-out');
     });
 });
-        
 document.addEventListener("DOMContentLoaded", () => {
     const tiltCards = document.querySelectorAll('.tilt-card');
-
     tiltCards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left; // x position within the element
             const y = e.clientY - rect.top;  // y position within the element
-
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-
             const rotateX = ((y - centerY) / centerY) * -15; // Max 15deg rotation
             const rotateY = ((x - centerX) / centerX) * 15;
-
             gsap.to(card, {
                 rotationX: rotateX,
                 rotationY: rotateY,
@@ -2372,7 +2206,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 duration: 0.3
             });
         });
-
         card.addEventListener('mouseleave', () => {
             gsap.to(card, {
                 rotationX: 0,
@@ -2384,7 +2217,40 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+// Register the plugin with GSAP
+    gsap.registerPlugin(ScrollToPlugin);
+    // 1. Create a "lock" to prevent spam-clicking from sticking the animation
+    let isSliding = false;
+    function slideServicesGSAP(direction) {
+        // If it's already moving, ignore new clicks until it finishes
+        if (isSliding) return;
+        const slider = document.getElementById('service-slider');
+        if (!slider) return;
+        const card = slider.querySelector('.flex-none');
+        if (!card) return;
+        // Calculate the exact width of a card plus the 24px gap
+        const scrollAmount = card.offsetWidth + 24;
+        // Calculate the absolute maximum the container is allowed to scroll
+        const maxScroll = slider.scrollWidth - slider.clientWidth;
+        // Figure out the new target position based on current position
+        let targetScroll = slider.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
+        // Clamp the target to ensure it NEVER tries to scroll past 0 or past the max width
+        targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
+        // Bail if there's nowhere left to go (prevents wasted animation + flicker at the edges)
+        if (Math.abs(targetScroll - slider.scrollLeft) < 1) return;
+        // Lock the slider
+        isSliding = true;
+        // Animate using premium "expo.out" easing — strong initial kick, silky deceleration
+        gsap.to(slider, {
+            scrollTo: { x: targetScroll, autoKill: false },
+            duration: 0.9,               // A touch longer so the glide is felt, not snapped
+            ease: "expo.out",            // Premium ease: fast start, very soft landing
+            overwrite: true,             // Cancel any in-flight tween instantly on direction change
+            onComplete: () => {
+                isSliding = false;       // Unlock the slider when the animation finishes
+            }
+        });
+    }
     </script>
-
 </body>
 </html>
