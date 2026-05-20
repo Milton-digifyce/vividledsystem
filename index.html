@@ -505,7 +505,7 @@
         animation: blob-warm 8s ease-in-out infinite;
     }
 </style>
-<div class="absolute inset-0 z-0 overflow-hidden bg-[#02040d]">
+<div id="home" class="absolute inset-0 z-0 overflow-hidden bg-[#02040d]">
     <div class="absolute w-[90dvw] h-[90dvw] top-[50%] -mt-[45dvw] -left-[10dvw] rounded-full opacity-90 bg-[radial-gradient(50%_50%_at_50%_50%,#7a1053_0%,rgba(2,4,13,0)_100%)] animate-blob-purple">
     </div> 
     <div class="absolute w-[100dvw] h-[100dvw] top-[50%] -mt-[50dvw] right-[0dvw] rounded-full opacity-80 bg-[radial-gradient(50%_50%_at_50%_50%,#1e3a8a_0%,rgba(2,4,13,0)_100%)] animate-blob-teal" style="animation-duration: 12s; animation-direction: reverse;">
@@ -1958,11 +1958,14 @@
    <script>
     // Register the plugin only once
     gsap.registerPlugin(ScrollToPlugin);
+    
     // Header functionality & sliding indicator wrapper 
     const navLinks = document.querySelectorAll('.nav-link');
     const indicator = document.getElementById('nav-indicator');
     const sections = document.querySelectorAll("section[id]");
     let isAutoScrolling = false;
+    let activeSectionId = ""; // 1. Added state variable to track the active section
+
     // Handles dynamically shifting the active pill overlay
     function updateIndicator(el) {
         if (!el || !indicator) return;
@@ -1973,8 +1976,10 @@
             x: el.offsetLeft,
             y: el.offsetTop,
             duration: 0.4,
-            ease: "back.out(1.2)"
+            ease: "back.out(1.2)",
+            overwrite: true // 2. Forces GSAP to cleanly override any running pill animations
         });
+        
         // Adjust text contrast based on selection
         navLinks.forEach(link => {
             link.classList.remove('text-white');
@@ -1983,6 +1988,7 @@
         el.classList.add('text-white');
         el.classList.remove('text-slate-300');
     }
+
     // Setup the initial layout & Preloader Fade Out
     window.addEventListener('load', () => {
         const preloader = document.getElementById('preloader');
@@ -1990,65 +1996,95 @@
             gsap.to(preloader, {
                 opacity: 0,
                 duration: 0.8,
-                delay: 0.5, // Keeps it visible for just a half-second minimum for a smooth effect
+                delay: 0.5, 
                 ease: "power2.inOut",
                 onComplete: () => {
                     preloader.style.display = 'none';
-                    // Initialize indicator once the page is fully visible
                     if (navLinks.length > 0) {
+                        activeSectionId = "home";
                         setTimeout(() => updateIndicator(navLinks[0]), 100);
                     }
                 }
             });
         } else {
-            // Fallback if preloader isn't found
             if (navLinks.length > 0) {
+                activeSectionId = "home";
                 setTimeout(() => updateIndicator(navLinks[0]), 100);
             }
         }
     });
+
     // Handle Click Smooth Scrolling
     document.querySelectorAll('a.nav-link').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = this.getAttribute('href');
             if (target === '#') return;
+            
             // Pause the scroll spy
             isAutoScrolling = true;
+            activeSectionId = target.substring(1); // Manually set active state
+            
             // Instantly update the indicator for a snappy feel
             updateIndicator(this);
+            
             // Execute the scroll
             gsap.to(window, {
                 duration: 1.2,
                 scrollTo: {
                     y: target,
-                    offsetY: 80
+                    offsetY: 80,
+                    autoKill: true 
                 },
                 ease: "power4.out",
                 overwrite: true,
                 onComplete: () => {
-                    // Re-enable the scroll spy once the animation is finished
                     isAutoScrolling = false;
+                },
+                onInterrupt: () => {
+                    // 3. Fixes the broken state if user manually scrolls during click animation
+                    isAutoScrolling = false; 
                 }
             });
         });
     });
+
+    // 4. Global fail-safes to release the scroll lock if the user touches the screen or scrolls
+    window.addEventListener("wheel", () => { isAutoScrolling = false; }, { passive: true });
+    window.addEventListener("touchstart", () => { isAutoScrolling = false; }, { passive: true });
+
     // Scroll spy: Update the pill dynamically as you naturally scroll
     window.addEventListener("scroll", () => {
         // Escape early if GSAP is currently animating the scroll
         if (isAutoScrolling) return;
-        let current = "";
+
+        let current = ""; 
+
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (window.scrollY >= sectionTop - 150) {
+            if (section.offsetHeight === 0) return;
+
+            const rect = section.getBoundingClientRect();
+            // Offset logic: if the section is currently occupying the upper part of the screen
+            if (rect.top <= 150 && rect.bottom > 150) {
                 current = section.getAttribute("id");
             }
         });
-        navLinks.forEach(link => {
-            if (link.getAttribute("href") === `#${current}`) {
-                updateIndicator(link);
-            }
-        });
+
+        // Absolute fallback for scrolling cleanly to the very top
+        if (window.scrollY < 50) {
+            current = "home";
+        }
+
+        // 5. Only trigger the GSAP animation if the section ACTUALLY changed. 
+        // This eliminates the glitching effect entirely.
+        if (current && current !== activeSectionId) {
+            activeSectionId = current;
+            navLinks.forEach(link => {
+                if (link.getAttribute("href") === `#${current}`) {
+                    updateIndicator(link);
+                }
+            });
+        }
     });
 </script>
   <script>
@@ -2130,7 +2166,7 @@
             initSlider();
         });
     </script>
-    <script>
+   <script>
         // GSAP Smooth Scroll Initialization
         gsap.registerPlugin(ScrollToPlugin);
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
