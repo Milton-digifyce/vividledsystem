@@ -162,32 +162,32 @@ document.addEventListener('DOMContentLoaded', function () {
             .popup-content .submit-btn { padding: 10px; font-size: 0.95rem; }
         }
         /* Snackbar */
-.snackbar {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%) translateY(100px);
-    background: rgba(10, 10, 26, 0.95);
-    color: #fff;
-    padding: 14px 24px;
-    border-radius: 8px;
-    border: 1px solid rgba(0, 240, 255, 0.2);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    font-size: 0.9rem;
-    opacity: 0;
-    transition: all 0.4s ease;
-    z-index: 10000;
-}
-.snackbar.show {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-.snackbar.error {
-    border-color: #ff3860;
-}
-.snackbar.success {
-    border-color: #00f0ff;
-}
+        .snackbar {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(10, 10, 26, 0.95);
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 10000;
+        }
+        .snackbar.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        .snackbar.error {
+            border-color: #ff3860;
+        }
+        .snackbar.success {
+            border-color: #00f0ff;
+        }
     `;
     document.head.appendChild(style);
     function showSnackbar(message, type = 'error') {
@@ -350,10 +350,17 @@ document.addEventListener('DOMContentLoaded', function () {
         return valid;
     }
 
+    // Flag to prevent double submission
+    let isSubmitting = false;
+
     // Handle form submission
     if (contactForm) {
         contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
+            
+            // Prevent multiple triggers
+            if (isSubmitting) return;
+
             // Get form data
             const formData = new FormData(contactForm);
             const data = {
@@ -373,7 +380,9 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             try {
+                isSubmitting = true; // Lock the submission
                 const submitButton = contactForm.querySelector('.submit-btn');
+                
                 if (submitButton) {
                     submitButton.disabled = true;
                     submitButton.textContent = 'Submitting...';
@@ -386,21 +395,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const resultData = await response.json();
 
-                if (submitButton) {
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Submit';
-                }
-
                 if (resultData.result === "success") {
-                    contactForm.reset();
-                    closePopupForm();
-                    // Redirect based on budget
-                    if (data.budget === "3 - 10 Lakhs" || data.budget === "10 - 25 Lakhs") {
-                        window.location.href = 'thank-you2.html';
-                    } else {
-                        window.location.href = 'thank-you.html';
+                    if (submitButton) {
+                        // Change button text to success message
+                        submitButton.textContent = 'Thank you for submitting';
                     }
+                    
+                    contactForm.reset();
+                    
+                    // Add a slight delay (1.5 seconds) so the user can read the new button text before closing
+                    setTimeout(() => {
+                        closePopupForm();
+                        
+                        // Re-enable and reset button text in case the user opens the modal again later
+                        if (submitButton) {
+                            submitButton.disabled = false;
+                            submitButton.textContent = 'Submit';
+                        }
+                    }, 1500); 
+
                 } else {
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Submit';
+                    }
                     showSnackbar('Submission failed. Please try again.');
                 }
             } catch (error) {
@@ -411,6 +429,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     submitButton.disabled = false;
                     submitButton.textContent = 'Submit';
                 }
+            } finally {
+                // Unlock the submission flag regardless of success or failure
+                isSubmitting = false; 
             }
         });
     }
@@ -431,4 +452,4 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
-}); 
+});
