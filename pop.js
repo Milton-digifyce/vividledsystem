@@ -38,21 +38,22 @@ document.addEventListener('DOMContentLoaded', function () {
             overflow-y: auto;
         }
         .popup-content .close-popup {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            color: #00f0ff;
-            font-size: 24px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-        .popup-content .close-popup:hover {
-            transform: scale(1.1);
-            color: #ff00f0;
-        }
+    position: absolute;
+    top: 15px;
+    right: 15px; /* Changed from left to right */
+    background: none;
+    border: none;
+    color: #00f0ff; /* Note: the image shows a purple 'X', you might want to change this to something like #a855f7 if you want it to match the screenshot! */
+    font-size: 24px; /* Increased from 1px so the icon is visible */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.popup-content .close-popup:hover {
+    transform: scale(1.1);
+    color: #ff00f0;
+}
         .popup-content h2 {
             text-align: center;
             font-size: 1.6rem;
@@ -96,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
             -moz-appearance: none;
             padding-right: 35px;
             cursor: pointer;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2300f0ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-image: url(assets/close-icon.png);");
             background-repeat: no-repeat;
             background-position: right 10px center;
             background-size: 14px;
