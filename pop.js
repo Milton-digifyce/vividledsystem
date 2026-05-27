@@ -38,22 +38,21 @@ document.addEventListener('DOMContentLoaded', function () {
             overflow-y: auto;
         }
         .popup-content .close-popup {
-    position: absolute;
-    top: 15px;
-    right: 15px; /* Changed from left to right */
-    background: none;
-    border: none;
-    color: #00f0ff; /* Note: the image shows a purple 'X', you might want to change this to something like #a855f7 if you want it to match the screenshot! */
-    font-size: 24px; /* Increased from 1px so the icon is visible */
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 10;
-}
-
-.popup-content .close-popup:hover {
-    transform: scale(1.1);
-    color: #ff00f0;
-}
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #00f0ff; 
+            font-size: 24px; 
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        .popup-content .close-popup:hover {
+            transform: scale(1.1);
+            color: #ff00f0;
+        }
         .popup-content h2 {
             text-align: center;
             font-size: 1.6rem;
@@ -97,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
             -moz-appearance: none;
             padding-right: 35px;
             cursor: pointer;
-            background-image: url(assets/close-icon.png);");
+            background-image: url('assets/close-icon.png');
             background-repeat: no-repeat;
             background-position: right 10px center;
             background-size: 14px;
@@ -145,6 +144,38 @@ document.addEventListener('DOMContentLoaded', function () {
             margin-top: 0.2em;
             height: 0.8em;
         }
+        /* New Thank You Message Styles */
+        .thank-you-message {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 300px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .thank-you-message.active {
+            display: flex;
+        }
+        .thank-you-message h3 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #00f0ff, #ff00f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .thank-you-message p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            font-style: italic;
+            line-height: 1.6;
+            max-width: 80%;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         @media (max-width: 768px) {
             .popup-content { padding: 30px 20px; }
             .popup-content .form-row { flex-direction: column; gap: 15px; margin-bottom: 20px; }
@@ -153,6 +184,8 @@ document.addEventListener('DOMContentLoaded', function () {
             .popup-content .form-group input, .popup-content .form-group select { padding: 10px; font-size: 0.95rem; }
             .popup-content .form-group select { background-position: right 10px center; background-size: 14px; padding-right: 35px; }
             .popup-content .submit-btn { padding: 12px; font-size: 1rem; }
+            .thank-you-message h3 { font-size: 1.8rem; }
+            .thank-you-message p { font-size: 1rem; }
         }
         @media (max-width: 480px) {
             .popup-content { padding: 20px 15px; }
@@ -191,6 +224,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     `;
     document.head.appendChild(style);
+
     function showSnackbar(message, type = 'error') {
         let snackbar = document.getElementById('snackbar');
 
@@ -208,6 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
             snackbar.classList.remove('show');
         }, 3000);
     }
+
     // Function to close popup
     function closePopupForm() {
         if (popupForm) {
@@ -223,6 +258,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to open popup (expose globally)
     window.openPopupForm = function () {
         if (popupForm) {
+            // Restore form visibility in case it was hidden by the Thank You message
+            const formHeader = popupForm.querySelector('h2');
+            if (formHeader) formHeader.style.display = '';
+            if (contactForm) contactForm.style.display = '';
+            
+            const thankYouDiv = document.getElementById('thankYouMessage');
+            if (thankYouDiv) thankYouDiv.classList.remove('active');
+
+            // Reset submit button state
+            if (contactForm) {
+                const submitButton = contactForm.querySelector('.submit-btn');
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Submit';
+                }
+            }
+
             popupForm.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
@@ -358,6 +410,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (contactForm) {
         contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
+            e.stopImmediatePropagation(); 
             
             // Prevent multiple triggers
             if (isSubmitting) return;
@@ -397,23 +450,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 const resultData = await response.json();
 
                 if (resultData.result === "success") {
-                    if (submitButton) {
-                        // Change button text to success message
-                        submitButton.textContent = 'Thank you for submitting';
-                    }
-                    
                     contactForm.reset();
                     
-                    // Add a slight delay (1.5 seconds) so the user can read the new button text before closing
-                    setTimeout(() => {
-                        closePopupForm();
-                        
-                        // Re-enable and reset button text in case the user opens the modal again later
-                        if (submitButton) {
-                            submitButton.disabled = false;
-                            submitButton.textContent = 'Submit';
-                        }
-                    }, 1500); 
+                    // --- REDIRECT BEHAVIOR ---
+                    // Send the user to the new Thank You page
+                    window.location.href = "thankyou.html";
 
                 } else {
                     if (submitButton) {
@@ -449,7 +490,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const phoneInput = contactForm.querySelector('#phone');
         if (phoneInput) {
             phoneInput.addEventListener('input', function (e) {
-
+                // Future implementation
             });
         }
     }

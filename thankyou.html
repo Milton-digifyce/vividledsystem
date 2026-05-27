@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #05050f;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .thank-you-container {
+            background: rgba(10, 10, 26, 0.95);
+            padding: 40px 50px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.1);
+            max-width: 500px;
+            width: 90%; /* Ensures responsiveness on smaller screens */
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            margin-top: 0;
+            background: linear-gradient(90deg, #00f0ff, #ff00f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        /* --- New Loading Bar Styles --- */
+        .redirect-text {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .loading-bar-container {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .loading-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #00f0ff, #b400ff);
+            border-radius: 10px;
+            /* Fills the bar smoothly over 5 seconds */
+            animation: fillBar 5s linear forwards;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #00f0ff, #b400ff);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 240, 255, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fillBar {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="thank-you-container">
+        <h1>Thank You!</h1>
+        <p>Your request has been submitted successfully.<br>Our team will get back to you shortly.</p>
+        
+        <div class="redirect-text">Redirecting to homepage...</div>
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+        
+        <a href="index.html" class="btn-back">Go Back Now</a>
+    </div>
+
+    <script>
+        // Redirect after 5 seconds (5000 milliseconds) to match the CSS animation
+        setTimeout(() => {
+            window.location.href = 'index.html'; 
+        }, 5000); 
+    </script>
+
+</body>
+</html>
