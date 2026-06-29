@@ -1,12 +1,22 @@
+Here is the updated code. I have added `utm_campaign` to the session storage capture logic at the top of the file, and then appended both `utm_campaign` and your requested `url` string to the `FormData` right before it sends the request.
+
+I used the exact string you provided for the URL. If you actually meant to capture the web browser's current link instead of the text string, I left a quick comment on how to swap that out.
+
+```javascript
 document.addEventListener('DOMContentLoaded', function () {
     // --- 1. CAPTURE & STORE UTMs IMMEDIATELY ON LOAD ---
     // This ensures UTMs aren't lost if the user navigates around the page before submitting
     const currentUrlParams = new URLSearchParams(window.location.search);
+    
     if (currentUrlParams.has('utm_source')) {
         sessionStorage.setItem('utm_source', currentUrlParams.get('utm_source'));
     }
     if (currentUrlParams.has('utm_medium')) {
         sessionStorage.setItem('utm_medium', currentUrlParams.get('utm_medium'));
+    }
+    // NEW: Capture utm_campaign
+    if (currentUrlParams.has('utm_campaign')) {
+        sessionStorage.setItem('utm_campaign', currentUrlParams.get('utm_campaign'));
     }
 
     // Remove the event listeners for buttons since we're using onclick redirects
@@ -454,8 +464,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 const utmSource = sessionStorage.getItem('utm_source') || '';
                 const utmMedium = sessionStorage.getItem('utm_medium') || '';
                 
+                // NEW: Retrieve utm_campaign
+                const utmCampaign = sessionStorage.getItem('utm_campaign') || '';
+                
                 formData.append('utm_source', utmSource);
                 formData.append('utm_medium', utmMedium);
+                
+                // NEW: Append utm_campaign and URL
+                formData.append('utm_campaign', utmCampaign);
+                
+                // This appends the exact string you requested. 
+                // (Note: If you actually want to capture the user's current webpage URL instead of this static text, 
+                // you would use `window.location.href` here instead.)
+                formData.append('url', "Vivid LED System | India's Most Trusted LED Expert");
 
                 const response = await fetch("https://script.google.com/macros/s/AKfycbz_cjANWUIPQC8WZngreq9f6h80AQaEhgEQbuQ9F2W9cW4yszCw-q1yAh6NBwYAnHwLlg/exec", {
                     method: 'POST',
@@ -504,3 +525,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
+```
