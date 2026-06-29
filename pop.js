@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
     // --- 1. CAPTURE & STORE UTMs IMMEDIATELY ON LOAD ---
-    // This ensures UTMs aren't lost if the user navigates around the page before submitting
     const currentUrlParams = new URLSearchParams(window.location.search);
     
     if (currentUrlParams.has('utm_source')) {
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (currentUrlParams.has('utm_medium')) {
         sessionStorage.setItem('utm_medium', currentUrlParams.get('utm_medium'));
     }
-    // NEW: Capture utm_campaign
     if (currentUrlParams.has('utm_campaign')) {
         sessionStorage.setItem('utm_campaign', currentUrlParams.get('utm_campaign'));
     }
@@ -262,8 +260,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function closePopupForm() {
         if (popupForm) {
             popupForm.classList.remove('active');
-            document.body.style.overflow = ''; // Restore scrolling
-            // Clear all field errors on close
+            document.body.style.overflow = ''; 
             ['firstName', 'lastName', 'phone', 'email', 'company', 'city', 'budget', 'timeline'].forEach(function (id) {
                 clearFieldError(id);
             });
@@ -273,7 +270,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to open popup (expose globally)
     window.openPopupForm = function () {
         if (popupForm) {
-            // Restore form visibility in case it was hidden by the Thank You message
             const formHeader = popupForm.querySelector('h2');
             if (formHeader) formHeader.style.display = '';
             if (contactForm) contactForm.style.display = '';
@@ -281,7 +277,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const thankYouDiv = document.getElementById('thankYouMessage');
             if (thankYouDiv) thankYouDiv.classList.remove('active');
 
-            // Reset submit button state
             if (contactForm) {
                 const submitButton = contactForm.querySelector('.submit-btn');
                 if (submitButton) {
@@ -291,16 +286,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             popupForm.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden'; 
         }
     };
 
-    // Close popup when close button is clicked
     if (closePopup) {
         closePopup.addEventListener('click', closePopupForm);
     }
 
-    // Close popup when clicking outside the form
     if (popupForm) {
         popupForm.addEventListener('click', function (e) {
             if (e.target === popupForm) {
@@ -309,19 +302,16 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Phone number validation
     function validatePhone(phone) {
         const phoneRegex = /^[0-9]{10}$/;
         return phoneRegex.test(phone.replace(/[- ]/g, ''));
     }
 
-    // Email validation
     function validateEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
 
-    // Show inline field error
     function setFieldError(fieldId, message) {
         const field = document.getElementById(fieldId);
         const errorEl = document.getElementById(fieldId + '-error');
@@ -329,7 +319,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (errorEl) errorEl.textContent = message;
     }
 
-    // Clear inline field error
     function clearFieldError(fieldId) {
         const field = document.getElementById(fieldId);
         const errorEl = document.getElementById(fieldId + '-error');
@@ -337,7 +326,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (errorEl) errorEl.textContent = '';
     }
 
-    // Clear errors on input/change
     const fieldIds = ['firstName', 'lastName', 'phone', 'email', 'company', 'city', 'budget', 'timeline'];
     if (contactForm) {
         fieldIds.forEach(function (id) {
@@ -349,79 +337,34 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Validate all fields, return true if valid
     function validateForm(data) {
         let valid = true;
 
-        if (!data.firstName.trim()) {
-            setFieldError('firstName', 'First name is required');
-            valid = false;
-        } else {
-            clearFieldError('firstName');
-        }
-
-        if (!data.lastName.trim()) {
-            setFieldError('lastName', 'Last name is required');
-            valid = false;
-        } else {
-            clearFieldError('lastName');
-        }
-
-        if (!data.phone.trim()) {
-            setFieldError('phone', 'Phone number is required');
-            valid = false;
-        } else if (!validatePhone(data.phone)) {
-            setFieldError('phone', 'Enter a valid 10-digit phone number');
-            valid = false;
-        } else {
-            clearFieldError('phone');
-        }
-
-        if (!data.email.trim()) {
-            setFieldError('email', 'Email is required');
-            valid = false;
-        } else if (!validateEmail(data.email)) {
-            setFieldError('email', 'Enter a valid email address');
-            valid = false;
-        } else {
-            clearFieldError('email');
-        }
-
-        if (!data.company.trim()) {
-            setFieldError('company', 'Company name is required');
-            valid = false;
-        } else {
-            clearFieldError('company');
-        }
-
-        if (!data.city.trim()) {
-            setFieldError('city', 'City is required');
-            valid = false;
-        } else {
-            clearFieldError('city');
-        }
-
-        if (!data.budget) {
-            setFieldError('budget', 'Please select a budget');
-            valid = false;
-        } else {
-            clearFieldError('budget');
-        }
-
-        if (!data.timeline) {
-            setFieldError('timeline', 'Please select a timeline');
-            valid = false;
-        } else {
-            clearFieldError('timeline');
-        }
+        if (!data.firstName.trim()) { setFieldError('firstName', 'First name is required'); valid = false; } else { clearFieldError('firstName'); }
+        if (!data.lastName.trim()) { setFieldError('lastName', 'Last name is required'); valid = false; } else { clearFieldError('lastName'); }
+        
+        if (!data.phone.trim()) { 
+            setFieldError('phone', 'Phone number is required'); valid = false; 
+        } else if (!validatePhone(data.phone)) { 
+            setFieldError('phone', 'Enter a valid 10-digit phone number'); valid = false; 
+        } else { clearFieldError('phone'); }
+        
+        if (!data.email.trim()) { 
+            setFieldError('email', 'Email is required'); valid = false; 
+        } else if (!validateEmail(data.email)) { 
+            setFieldError('email', 'Enter a valid email address'); valid = false; 
+        } else { clearFieldError('email'); }
+        
+        if (!data.company.trim()) { setFieldError('company', 'Company name is required'); valid = false; } else { clearFieldError('company'); }
+        if (!data.city.trim()) { setFieldError('city', 'City is required'); valid = false; } else { clearFieldError('city'); }
+        if (!data.budget) { setFieldError('budget', 'Please select a budget'); valid = false; } else { clearFieldError('budget'); }
+        if (!data.timeline) { setFieldError('timeline', 'Please select a timeline'); valid = false; } else { clearFieldError('timeline'); }
 
         return valid;
     }
 
-    // Flag to prevent double submission
     let isSubmitting = false;
 
-    // Handle form submission
     if (contactForm) {
         contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
@@ -429,7 +372,6 @@ document.addEventListener('DOMContentLoaded', function () {
             
             if (isSubmitting) return;
 
-            // Get form data
             const formData = new FormData(contactForm);
             const data = {
                 firstName: formData.get('firstName'),
@@ -442,9 +384,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 timeline: formData.get('timeline')
             };
 
-            if (!validateForm(data)) {
-                return;
-            }
+            if (!validateForm(data)) return;
 
             try {
                 isSubmitting = true; 
@@ -455,23 +395,24 @@ document.addEventListener('DOMContentLoaded', function () {
                     submitButton.textContent = 'Submitting...';
                 }
 
-                // --- 2. RETRIEVE UTMS FROM MEMORY AND ATTACH ---
-                const utmSource = sessionStorage.getItem('utm_source') || '';
-                const utmMedium = sessionStorage.getItem('utm_medium') || '';
+                // --- 2. ATTACH UTMs AND URL USING formData.set() ---
+                // Using .set() overwrites existing fields preventing duplicate data issues
+                const fallbackParams = new URLSearchParams(window.location.search);
                 
-                // NEW: Retrieve utm_campaign
-                const utmCampaign = sessionStorage.getItem('utm_campaign') || '';
+                const utmSource = sessionStorage.getItem('utm_source') || fallbackParams.get('utm_source') || '';
+                const utmMedium = sessionStorage.getItem('utm_medium') || fallbackParams.get('utm_medium') || '';
+                const utmCampaign = sessionStorage.getItem('utm_campaign') || fallbackParams.get('utm_campaign') || '';
                 
-                formData.append('utm_source', utmSource);
-                formData.append('utm_medium', utmMedium);
+                formData.set('utm_source', utmSource);
+                formData.set('utm_medium', utmMedium);
+                formData.set('utm_campaign', utmCampaign);
                 
-                // NEW: Append utm_campaign and URL
-                formData.append('utm_campaign', utmCampaign);
-                
-                // This appends the exact string you requested. 
-                // (Note: If you actually want to capture the user's current webpage URL instead of this static text, 
-                // you would use `window.location.href` here instead.)
-                formData.append('url', "Vivid LED System | India's Most Trusted LED Expert");
+                // Hardcoded URL string as requested
+                formData.set('url', "Vivid LED System | India's Most Trusted LED Expert");
+
+                // Debugging: View the payload in your browser console before it sends
+                console.log("Submitting the following Campaign:", formData.get('utm_campaign'));
+                console.log("Submitting the following URL:", formData.get('url'));
 
                 const response = await fetch("https://script.google.com/macros/s/AKfycbz_cjANWUIPQC8WZngreq9f6h80AQaEhgEQbuQ9F2W9cW4yszCw-q1yAh6NBwYAnHwLlg/exec", {
                     method: 'POST',
@@ -504,7 +445,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Add keyboard support for closing popup with Escape key
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && popupForm && popupForm.classList.contains('active')) {
             closePopupForm();
