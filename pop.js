@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // --- 1. CAPTURE & STORE UTMs IMMEDIATELY ON LOAD ---
+    // This ensures UTMs aren't lost if the user navigates around the page before submitting
+    const currentUrlParams = new URLSearchParams(window.location.search);
+    if (currentUrlParams.has('utm_source')) {
+        sessionStorage.setItem('utm_source', currentUrlParams.get('utm_source'));
+    }
+    if (currentUrlParams.has('utm_medium')) {
+        sessionStorage.setItem('utm_medium', currentUrlParams.get('utm_medium'));
+    }
+
     // Remove the event listeners for buttons since we're using onclick redirects
     const popupForm = document.getElementById('popupForm');
     const closePopup = document.getElementById('closePopup');
@@ -412,7 +422,6 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             e.stopImmediatePropagation(); 
             
-            // Prevent multiple triggers
             if (isSubmitting) return;
 
             // Get form data
@@ -428,13 +437,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 timeline: formData.get('timeline')
             };
 
-            // Validate all fields
             if (!validateForm(data)) {
                 return;
             }
 
             try {
-                isSubmitting = true; // Lock the submission
+                isSubmitting = true; 
                 const submitButton = contactForm.querySelector('.submit-btn');
                 
                 if (submitButton) {
@@ -442,16 +450,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     submitButton.textContent = 'Submitting...';
                 }
 
-                // --- CAPTURING UTM PARAMETERS ---
-                // Grabbing the UTM params dynamically from the current browser URL
-                const urlParams = new URLSearchParams(window.location.search);
-                const utmSource = urlParams.get('utm_source') || '';
-                const utmMedium = urlParams.get('utm_medium') || '';
+                // --- 2. RETRIEVE UTMS FROM MEMORY AND ATTACH ---
+                const utmSource = sessionStorage.getItem('utm_source') || '';
+                const utmMedium = sessionStorage.getItem('utm_medium') || '';
                 
-                // Attaching Brevo & Mail (if present in URL) to the data payload
                 formData.append('utm_source', utmSource);
                 formData.append('utm_medium', utmMedium);
-                // --------------------------------
 
                 const response = await fetch("https://script.google.com/macros/s/AKfycbz_cjANWUIPQC8WZngreq9f6h80AQaEhgEQbuQ9F2W9cW4yszCw-q1yAh6NBwYAnHwLlg/exec", {
                     method: 'POST',
@@ -462,11 +466,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (resultData.result === "success") {
                     contactForm.reset();
-                    
-                    // --- REDIRECT BEHAVIOR ---
-                    // Send the user to the new Thank You page
                     window.location.href = "thankyou.html";
-
                 } else {
                     if (submitButton) {
                         submitButton.disabled = false;
@@ -483,7 +483,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     submitButton.textContent = 'Submit';
                 }
             } finally {
-                // Unlock the submission flag regardless of success or failure
                 isSubmitting = false; 
             }
         });
@@ -496,7 +495,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Format phone number as user types
     if (contactForm) {
         const phoneInput = contactForm.querySelector('#phone');
         if (phoneInput) {
