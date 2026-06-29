@@ -452,7 +452,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 formData.append('utm_medium', utmMedium);
                 // -------------------------------------------------
 
-                const response = await fetch("https://script.google.com/macros/s/AKfycbz_cjANWUIPQC8WZngreq9f6h80AQaEhgEQbuQ9F2W9cW4yszCw-q1yAh6NBwYAnHwLlg/exec", {
+                const response = await fetch("https://script.google.com/macros/s/AKfycbwPg37F5W65CRh3f-LPgeYCK6WWoqf1IJv_VqOsG1QmDRHy3cVGngXb1mVNo0JrHATu/exec", {
                     method: 'POST',
                     body: formData
                 });
