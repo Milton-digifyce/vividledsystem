@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const closePopup = document.getElementById('closePopup');
     const contactForm = document.getElementById('contactForm');
 
-    // Inject popup styles into the document dynamically so we don't need to change any CSS files
+    // Inject popup styles into the document dynamically
     const style = document.createElement('style');
     style.innerHTML = `
         .popup-form {
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
             margin-top: 0.2em;
             height: 0.8em;
         }
-        /* New Thank You Message Styles */
+        /* Thank You Message Styles */
         .thank-you-message {
             display: none;
             flex-direction: column;
@@ -442,15 +442,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     submitButton.textContent = 'Submitting...';
                 }
 
-                // --- NEW CODE: Extract UTM Parameters from URL ---
+                // --- CAPTURING UTM PARAMETERS ---
+                // Grabbing the UTM params dynamically from the current browser URL
                 const urlParams = new URLSearchParams(window.location.search);
                 const utmSource = urlParams.get('utm_source') || '';
                 const utmMedium = urlParams.get('utm_medium') || '';
                 
-                // Append them to the FormData payload
+                // Attaching Brevo & Mail (if present in URL) to the data payload
                 formData.append('utm_source', utmSource);
                 formData.append('utm_medium', utmMedium);
-                // -------------------------------------------------
+                // --------------------------------
 
                 const response = await fetch("https://script.google.com/macros/s/AKfycbz_cjANWUIPQC8WZngreq9f6h80AQaEhgEQbuQ9F2W9cW4yszCw-q1yAh6NBwYAnHwLlg/exec", {
                     method: 'POST',
@@ -500,7 +501,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const phoneInput = contactForm.querySelector('#phone');
         if (phoneInput) {
             phoneInput.addEventListener('input', function (e) {
-                // Future implementation
+                // Future implementation for formatting
             });
         }
     }
