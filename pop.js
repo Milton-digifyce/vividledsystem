@@ -1,10 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // --- 1. CAPTURE & STORE UTMs IMMEDIATELY ON LOAD ---
+    // This ensures UTMs aren't lost if the user navigates around the page before submitting
+    const currentUrlParams = new URLSearchParams(window.location.search);
+    if (currentUrlParams.has('utm_source')) {
+        sessionStorage.setItem('utm_source', currentUrlParams.get('utm_source'));
+    }
+    if (currentUrlParams.has('utm_medium')) {
+        sessionStorage.setItem('utm_medium', currentUrlParams.get('utm_medium'));
+    }
+
     // Remove the event listeners for buttons since we're using onclick redirects
     const popupForm = document.getElementById('popupForm');
     const closePopup = document.getElementById('closePopup');
     const contactForm = document.getElementById('contactForm');
 
-    // Inject popup styles into the document dynamically so we don't need to change any CSS files
+    // Inject popup styles into the document dynamically
     const style = document.createElement('style');
     style.innerHTML = `
         .popup-form {
@@ -43,8 +53,8 @@ document.addEventListener('DOMContentLoaded', function () {
             right: 15px;
             background: none;
             border: none;
-            color: #00f0ff;
-            font-size: 24px;
+            color: #00f0ff; 
+            font-size: 24px; 
             cursor: pointer;
             transition: all 0.3s ease;
             z-index: 10;
@@ -96,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
             -moz-appearance: none;
             padding-right: 35px;
             cursor: pointer;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2300f0ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-image: url('assets/close-icon.png');
             background-repeat: no-repeat;
             background-position: right 10px center;
             background-size: 14px;
@@ -144,6 +154,38 @@ document.addEventListener('DOMContentLoaded', function () {
             margin-top: 0.2em;
             height: 0.8em;
         }
+        /* Thank You Message Styles */
+        .thank-you-message {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 300px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .thank-you-message.active {
+            display: flex;
+        }
+        .thank-you-message h3 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #00f0ff, #ff00f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .thank-you-message p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            font-style: italic;
+            line-height: 1.6;
+            max-width: 80%;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         @media (max-width: 768px) {
             .popup-content { padding: 30px 20px; }
             .popup-content .form-row { flex-direction: column; gap: 15px; margin-bottom: 20px; }
@@ -152,6 +194,8 @@ document.addEventListener('DOMContentLoaded', function () {
             .popup-content .form-group input, .popup-content .form-group select { padding: 10px; font-size: 0.95rem; }
             .popup-content .form-group select { background-position: right 10px center; background-size: 14px; padding-right: 35px; }
             .popup-content .submit-btn { padding: 12px; font-size: 1rem; }
+            .thank-you-message h3 { font-size: 1.8rem; }
+            .thank-you-message p { font-size: 1rem; }
         }
         @media (max-width: 480px) {
             .popup-content { padding: 20px 15px; }
@@ -162,34 +206,35 @@ document.addEventListener('DOMContentLoaded', function () {
             .popup-content .submit-btn { padding: 10px; font-size: 0.95rem; }
         }
         /* Snackbar */
-.snackbar {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%) translateY(100px);
-    background: rgba(10, 10, 26, 0.95);
-    color: #fff;
-    padding: 14px 24px;
-    border-radius: 8px;
-    border: 1px solid rgba(0, 240, 255, 0.2);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    font-size: 0.9rem;
-    opacity: 0;
-    transition: all 0.4s ease;
-    z-index: 10000;
-}
-.snackbar.show {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-.snackbar.error {
-    border-color: #ff3860;
-}
-.snackbar.success {
-    border-color: #00f0ff;
-}
+        .snackbar {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(10, 10, 26, 0.95);
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 10000;
+        }
+        .snackbar.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        .snackbar.error {
+            border-color: #ff3860;
+        }
+        .snackbar.success {
+            border-color: #00f0ff;
+        }
     `;
     document.head.appendChild(style);
+
     function showSnackbar(message, type = 'error') {
         let snackbar = document.getElementById('snackbar');
 
@@ -207,6 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
             snackbar.classList.remove('show');
         }, 3000);
     }
+
     // Function to close popup
     function closePopupForm() {
         if (popupForm) {
@@ -222,6 +268,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to open popup (expose globally)
     window.openPopupForm = function () {
         if (popupForm) {
+            // Restore form visibility in case it was hidden by the Thank You message
+            const formHeader = popupForm.querySelector('h2');
+            if (formHeader) formHeader.style.display = '';
+            if (contactForm) contactForm.style.display = '';
+            
+            const thankYouDiv = document.getElementById('thankYouMessage');
+            if (thankYouDiv) thankYouDiv.classList.remove('active');
+
+            // Reset submit button state
+            if (contactForm) {
+                const submitButton = contactForm.querySelector('.submit-btn');
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Submit';
+                }
+            }
+
             popupForm.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
@@ -350,10 +413,17 @@ document.addEventListener('DOMContentLoaded', function () {
         return valid;
     }
 
+    // Flag to prevent double submission
+    let isSubmitting = false;
+
     // Handle form submission
     if (contactForm) {
         contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
+            e.stopImmediatePropagation(); 
+            
+            if (isSubmitting) return;
+
             // Get form data
             const formData = new FormData(contactForm);
             const data = {
@@ -367,40 +437,41 @@ document.addEventListener('DOMContentLoaded', function () {
                 timeline: formData.get('timeline')
             };
 
-            // Validate all fields
             if (!validateForm(data)) {
                 return;
             }
 
             try {
+                isSubmitting = true; 
                 const submitButton = contactForm.querySelector('.submit-btn');
+                
                 if (submitButton) {
                     submitButton.disabled = true;
                     submitButton.textContent = 'Submitting...';
                 }
 
-                const response = await fetch("https://script.google.com/macros/s/AKfycbwPg37F5W65CRh3f-LPgeYCK6WWoqf1IJv_VqOsG1QmDRHy3cVGngXb1mVNo0JrHATu/exec", {
+                // --- 2. RETRIEVE UTMS FROM MEMORY AND ATTACH ---
+                const utmSource = sessionStorage.getItem('utm_source') || '';
+                const utmMedium = sessionStorage.getItem('utm_medium') || '';
+                
+                formData.append('utm_source', utmSource);
+                formData.append('utm_medium', utmMedium);
+
+                const response = await fetch("https://script.google.com/macros/s/AKfycbz_cjANWUIPQC8WZngreq9f6h80AQaEhgEQbuQ9F2W9cW4yszCw-q1yAh6NBwYAnHwLlg/exec", {
                     method: 'POST',
                     body: formData
                 });
 
                 const resultData = await response.json();
 
-                if (submitButton) {
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Submit';
-                }
-
                 if (resultData.result === "success") {
                     contactForm.reset();
-                    closePopupForm();
-                    // Redirect based on budget
-                    if (data.budget === "3 - 10 Lakhs" || data.budget === "10 - 25 Lakhs") {
-                        window.location.href = 'thank-you2.html';
-                    } else {
-                        window.location.href = 'thank-you.html';
-                    }
+                    window.location.href = "thankyou.html";
                 } else {
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Submit';
+                    }
                     showSnackbar('Submission failed. Please try again.');
                 }
             } catch (error) {
@@ -411,6 +482,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     submitButton.disabled = false;
                     submitButton.textContent = 'Submit';
                 }
+            } finally {
+                isSubmitting = false; 
             }
         });
     }
@@ -422,13 +495,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Format phone number as user types
     if (contactForm) {
         const phoneInput = contactForm.querySelector('#phone');
         if (phoneInput) {
             phoneInput.addEventListener('input', function (e) {
-
+                // Future implementation for formatting
             });
         }
     }
-}); 
+});
