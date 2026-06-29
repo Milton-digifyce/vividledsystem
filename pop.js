@@ -442,6 +442,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     submitButton.textContent = 'Submitting...';
                 }
 
+                // --- NEW CODE: Extract UTM Parameters from URL ---
+                const urlParams = new URLSearchParams(window.location.search);
+                const utmSource = urlParams.get('utm_source') || '';
+                const utmMedium = urlParams.get('utm_medium') || '';
+                
+                // Append them to the FormData payload
+                formData.append('utm_source', utmSource);
+                formData.append('utm_medium', utmMedium);
+                // -------------------------------------------------
+
                 const response = await fetch("https://script.google.com/macros/s/AKfycbz_cjANWUIPQC8WZngreq9f6h80AQaEhgEQbuQ9F2W9cW4yszCw-q1yAh6NBwYAnHwLlg/exec", {
                     method: 'POST',
                     body: formData
