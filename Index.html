@@ -1882,8 +1882,18 @@ Tamilnadu, INDIA - 641002
 
     </script>
 
+<script>
+        window.addEventListener('load', function() {
+            // A slight delay (1000ms = 1 second) is added for a better user experience.
+            // Change 1000 to 0 if you want it to appear instantly.
+            setTimeout(function() {
+                if (typeof openPopupForm === 'function') {
+                    openPopupForm();
+                } else {
+                    console.error("openPopupForm function is not defined. Check your pop.js file.");
+                }
+            }, 1000); 
+        });
+    </script>
 </body>
-
-
-
 </html>
