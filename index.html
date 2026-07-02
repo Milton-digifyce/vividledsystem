@@ -1920,6 +1920,11 @@ We handle everything from initial consultation, site survey, custom design, prof
                         activeSectionId = "home";
                         setTimeout(() => updateIndicator(navLinks[0]), 100);
                     }
+                    
+                    // NEW: Auto-trigger popup form after preloader finishes
+                    setTimeout(() => {
+                        if (typeof openPopupForm === 'function') openPopupForm();
+                    }, 500);
                 }
             });
         } else {
@@ -1927,6 +1932,11 @@ We handle everything from initial consultation, site survey, custom design, prof
                 activeSectionId = "home";
                 setTimeout(() => updateIndicator(navLinks[0]), 100);
             }
+            
+            // NEW: Fallback auto-trigger if there's no preloader
+            setTimeout(() => {
+                if (typeof openPopupForm === 'function') openPopupForm();
+            }, 500);
         }
     });
 
